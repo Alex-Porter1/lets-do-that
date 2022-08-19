@@ -13,7 +13,7 @@ Team Members:
 - Lijah Jordan
 - Perla Carlson
 
-This application will be used for planning dates/activities, both solo and with friends, based on what the user and their friends/dates are interested in.
+This application will be used for planning dates/activities, both solo and with friends, based on what the user and their friends/dates are interested in. We will use Django for backend, React for frontend, and PostgreSQL for the database.
 
 ## Intended Market
 
