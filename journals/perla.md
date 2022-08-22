@@ -1,3 +1,10 @@
+## August 22, 2022
+
+Today I worked on:
+
+* Our group talked about how to divide responsibilities. I expressed interest in working on the activities portion of it. We are also going to go through the list of issues on git to continue working on the project. 
+
+
 ## August 19, 2022
 
 Today I worked on:
