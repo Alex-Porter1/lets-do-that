@@ -101,3 +101,26 @@ def api_list_ratings(request):
             {"message": "Rating doesn't exist"},
             status=400
         )
+
+
+@require_http_methods(["GET", "PUT", "DELETE"])
+def api_show_activities(request, pk):
+    if request.method == "GET":
+        activity = Activity.objects.get(id=pk)
+        return JsonResponse(
+            activity,
+            encoder=ActivityListEncoder,
+            safe=False,
+        )
+    elif request.method == "PUT":
+        content = json.loads(request.body)
+        Activity.objects.filter(id=pk).update(**content)
+        activity = Activity.objects.get(id=pk)
+        return JsonResponse(
+            activity,
+            encoder=ActivityListEncoder,
+            safe=False,
+        )
+    else:
+        count, _ = Activity.objects.filter(id=pk).delete()
+        return JsonResponse({"deleted": count > 0})
