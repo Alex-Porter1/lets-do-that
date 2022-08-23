@@ -35,6 +35,7 @@ services:
     environment:
         DATABASE_URL: postgresql://user-name:password@postgres/db-name
         WAIT_HOSTS: postgres:5432
+        YELP_API_KEY: ${YELP_API_KEY}
   ghi:
     image: node:lts-bullseye
     command: /bin/bash run.sh
@@ -47,5 +48,5 @@ services:
         HOST_OS: ${OS}
         NODE_ENV: development
         HOST: "0.0.0.0"
-        REACT_APP_ACCOUNTS_REST: http://localhost:8000
-        REACT_APP_ACTIVITIES_REST: http://localhost:8000
+        REACT_APP_ACCOUNTS: http://localhost:8000
+        REACT_APP_ACTIVITIES: http://localhost:8000
