@@ -98,20 +98,28 @@ def api_list_categories(request):
             )
 
 
-@require_http_methods(["GET"])
+@require_http_methods(["GET", "POST"])
 def api_list_ratings(request):
     if request.method == "GET":
-        ratings = Rating.objects.all()
+        ratings = Rating.objects.all().order_by("value")
         return JsonResponse(
             {"ratings": ratings},
-            encoder=RatingEncoder,
+            encoder=RatingEncoder
         )
     else:
-        return JsonResponse(
-            {"message": "Rating doesn't exist"},
-            status=400
-        )
-
+        content = json.loads(request.body)
+        try:
+            rating = Rating.objects.create(**content)
+            return JsonResponse(
+                rating,
+                encoder=RatingEncoder,
+                safe=False,
+            )
+        except IntegrityError:
+            return JsonResponse(
+                {"message": "Rating ID already exists"},
+                status=400,
+            )
 
 @require_http_methods(["GET", "PUT", "DELETE"])
 def api_show_activities(request, pk):
@@ -194,3 +202,25 @@ def api_show_categories(request, pk):
         count, _ = Category.objects.filter(id=pk).delete()
         return JsonResponse({"deleted": count > 0})
 
+
+@require_http_methods(["GET", "PUT", "DELETE"])
+def api_show_ratings(request, pk):
+    if request.method == "GET":
+        rating = Rating.objects.get(id=pk)
+        return JsonResponse(
+            rating,
+            encoder=RatingEncoder,
+            safe=False,
+        )
+    elif request.method == "PUT":
+        content = json.loads(request.body)
+        Rating.objects.filter(id=pk).update(**content)
+        rating = Rating.objects.get(id=pk)
+        return JsonResponse(
+            rating,
+            encoder=RatingEncoder,
+            safe=False,
+        )
+    else:
+        count, _ = Rating.objects.filter(id=pk).delete()
+        return JsonResponse({"deleted": count > 0})
