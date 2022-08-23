@@ -16,3 +16,5 @@ Format for each entry:
 Will need to probably make adjustments with the Rating model/how it's implemented. Would rather have users be able to rate activities, rather than create ratings and apply them to the activities.
 
 Was surprised to find how much I recalled when creating models, views. I thought after a little time away from not doing them, I would be really confused. But, I retained more than I realized.
+
+

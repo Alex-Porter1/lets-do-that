@@ -10,6 +10,7 @@ from sqlite3 import IntegrityError
 class CategoryEncoder(ModelEncoder):
     model = Category
     properties = [
+        "id",
         "name",
         "description"
     ]
@@ -46,6 +47,7 @@ def api_list_activities(request):
             encoder=ActivityListEncoder
         )
     else:
+        content = json.loads(request.body)
         try:
             category = Category.objects.get(id=content["category"])
             content["category"] = category
@@ -54,16 +56,12 @@ def api_list_activities(request):
                 {"message": "Category does not exist"},
                 status=400
             )
-        try:
+        if content["rating"]:
             rating = Rating.objects.get(id=content["rating"])
             content["rating"] = rating
-        except Rating.DoesNotExist:
-            return JsonResponse(
-                {"message": "Rating does not exist"},
-                status=400
-            )
+        else:
+            content["rating"] = "No rating given"
         try:
-            content = json.loads(request.body)
             activity = Activity.objects.create(**content)
             return JsonResponse(
                 activity,
@@ -75,3 +73,31 @@ def api_list_activities(request):
                 {"message": "Activity ID already exists"},
                 status=400,
             )
+
+@require_http_methods(["GET"])
+def api_list_categories(request):
+    if request.method == "GET":
+        categories = Category.objects.all()
+        return JsonResponse(
+            {"categories": categories},
+            encoder=CategoryEncoder,
+        )
+    else:
+        return JsonResponse(
+            {"message": "Category doesn't exist"},
+            status=400
+        )
+
+@require_http_methods(["GET"])
+def api_list_ratings(request):
+    if request.method == "GET":
+        ratings = Rating.objects.all()
+        return JsonResponse(
+            {"ratings": ratings},
+            encoder=RatingEncoder,
+        )
+    else:
+        return JsonResponse(
+            {"message": "Rating doesn't exist"},
+            status=400
+        )
