@@ -22,7 +22,7 @@ def api_accounts(request):
             content = json.loads(request.body)
 
             activity_data = content["activity"]
-            activity = ActivityVO.objects.get(name=activity_data)
+            activity = ActivityVO.objects.get(id=activity_data)
             content["activity"] = activity
         except ActivityVO.DoesNotExist:
             response = JsonResponse(
@@ -39,3 +39,15 @@ def api_accounts(request):
         )
 
 
+@require_http_methods(["DELETE", "GET"])
+def api_show_accounts(request, pk):
+    if request.method == "GET":
+        account = Account.objects.filter(id=pk)
+        return JsonResponse(
+            account,
+            encoder=AccountEncoder,
+            safe=False,
+        )
+    else:
+        count, _ = Account.objects.filter(id=pk).delete()
+        return JsonResponse({"deleted": count > 0})

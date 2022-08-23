@@ -1,5 +1,9 @@
 # Lijah's Journal
 
+## August 23, 2022
+
+
+
 ## August 22, 2022
 
 Today I worked on:
