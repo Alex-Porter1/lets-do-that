@@ -1,7 +1,8 @@
-import logo from './logo.svg';
+
 import './App.css';
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
-import SignUpForm from '.SignUpForm';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import SignUpForm from './SignUpForm';
 // // @mui material components
 // import { ThemeProvider } from "@mui/material/styles";
 // import CssBaseline from "@mui/material/CssBaseline";
@@ -12,13 +13,12 @@ import SignUpForm from '.SignUpForm';
 function App() {
   return (
     <BrowserRouter>
-    <Nav>
       <Routes>
         <Route path= "/signup">
           <Route path="new" element={<SignUpForm />} />
         </Route>
       </Routes>
-    </Nav>
+
     </BrowserRouter>
   
   )
