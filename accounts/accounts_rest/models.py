@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 
 class ActivityVO(models.Model):
+    import_href = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
     description = models.TextField(max_length=200)
     picture_url = models.CharField(max_length=200)

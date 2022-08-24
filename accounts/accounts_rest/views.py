@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 import json
 
-from .encoders import AccountEncoder, ActivityVOEncoder
+from .encoders import AccountEncoder
 
 from .models import Account, ActivityVO
 
@@ -18,11 +18,10 @@ def api_accounts(request):
             encoder=AccountEncoder,
         )
     else:
+        content = json.loads(request.body)
         try:
-            content = json.loads(request.body)
-
             activity_data = content["activity"]
-            activity = ActivityVO.objects.get(name=activity_data)
+            activity = ActivityVO.objects.get(id=activity_data)
             content["activity"] = activity
         except ActivityVO.DoesNotExist:
             response = JsonResponse(
@@ -39,3 +38,15 @@ def api_accounts(request):
         )
 
 
+@require_http_methods(["DELETE", "GET"])
+def api_show_accounts(request, pk):
+    if request.method == "GET":
+        account = Account.objects.filter(id=pk)
+        return JsonResponse(
+            account,
+            encoder=AccountEncoder,
+            safe=False,
+        )
+    else:
+        count, _ = Account.objects.filter(id=pk).delete()
+        return JsonResponse({"deleted": count > 0})

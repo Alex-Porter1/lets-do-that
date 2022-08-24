@@ -25,3 +25,7 @@ class AccountEncoder(ModelEncoder):
         "last_name",
         "activity",
     ]
+
+    encoders = {
+        "activity": ActivityVOEncoder()
+    }
