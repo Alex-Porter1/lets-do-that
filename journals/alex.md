@@ -18,3 +18,11 @@ Will need to probably make adjustments with the Rating model/how it's implemente
 Was surprised to find how much I recalled when creating models, views. I thought after a little time away from not doing them, I would be really confused. But, I retained more than I realized.
 
 
+08/23/2022
+-Created a view to show the detail of an activity, update an activity and delete an activity
+-Created a view to get a list of categories, create, update, and delete a category
+-Created a view to get a list of ratings, create, update, and delete a rating
+
+Still trying to figure out exactly how I want to implement rating, will talk with the team more about what the best option is moving forward.
+
+Had a decent amount of small errors come up, but I was surprised with my ability to debug and come to solutions quickly.

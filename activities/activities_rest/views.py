@@ -5,7 +5,7 @@ from common.json import ModelEncoder
 from django.views.decorators.http import require_http_methods
 from django.http import JsonResponse
 from sqlite3 import IntegrityError
-# Create your views here.
+
 
 class CategoryEncoder(ModelEncoder):
     model = Category
@@ -14,6 +14,7 @@ class CategoryEncoder(ModelEncoder):
         "name",
         "description"
     ]
+
 
 class RatingEncoder(ModelEncoder):
     model = Rating
@@ -74,52 +75,6 @@ def api_list_activities(request):
                 status=400,
             )
 
-@require_http_methods(["GET", "POST"])
-def api_list_categories(request):
-    if request.method == "GET":
-        categories = Category.objects.all().order_by("name")
-        return JsonResponse(
-            {"categories": categories},
-            encoder=CategoryEncoder
-        )
-    else:
-        content = json.loads(request.body)
-        try:
-            category = Category.objects.create(**content)
-            return JsonResponse(
-                category,
-                encoder=CategoryEncoder,
-                safe=False,
-            )
-        except IntegrityError:
-            return JsonResponse(
-                {"message": "Category ID already exists"},
-                status=400,
-            )
-
-
-@require_http_methods(["GET", "POST"])
-def api_list_ratings(request):
-    if request.method == "GET":
-        ratings = Rating.objects.all().order_by("value")
-        return JsonResponse(
-            {"ratings": ratings},
-            encoder=RatingEncoder
-        )
-    else:
-        content = json.loads(request.body)
-        try:
-            rating = Rating.objects.create(**content)
-            return JsonResponse(
-                rating,
-                encoder=RatingEncoder,
-                safe=False,
-            )
-        except IntegrityError:
-            return JsonResponse(
-                {"message": "Rating ID already exists"},
-                status=400,
-            )
 
 @require_http_methods(["GET", "PUT", "DELETE"])
 def api_show_activities(request, pk):
@@ -143,39 +98,27 @@ def api_show_activities(request, pk):
         count, _ = Activity.objects.filter(id=pk).delete()
         return JsonResponse({"deleted": count > 0})
 
+
 @require_http_methods(["GET", "POST"])
-def api_list_activities(request):
+def api_list_categories(request):
     if request.method == "GET":
-        activities = Activity.objects.all().order_by("name")
+        categories = Category.objects.all().order_by("name")
         return JsonResponse(
-            {"activities": activities},
-            encoder=ActivityListEncoder
+            {"categories": categories},
+            encoder=CategoryEncoder
         )
     else:
         content = json.loads(request.body)
         try:
-            category = Category.objects.get(id=content["category"])
-            content["category"] = category
-        except Category.DoesNotExist:
+            category = Category.objects.create(**content)
             return JsonResponse(
-                {"message": "Category does not exist"},
-                status=400
-            )
-        if content["rating"]:
-            rating = Rating.objects.get(id=content["rating"])
-            content["rating"] = rating
-        else:
-            content["rating"] = "No rating given"
-        try:
-            activity = Activity.objects.create(**content)
-            return JsonResponse(
-                activity,
-                encoder=ActivityListEncoder,
+                category,
+                encoder=CategoryEncoder,
                 safe=False,
             )
         except IntegrityError:
             return JsonResponse(
-                {"message": "Activity ID already exists"},
+                {"message": "Category ID already exists"},
                 status=400,
             )
 
@@ -201,6 +144,30 @@ def api_show_categories(request, pk):
     else:
         count, _ = Category.objects.filter(id=pk).delete()
         return JsonResponse({"deleted": count > 0})
+
+
+@require_http_methods(["GET", "POST"])
+def api_list_ratings(request):
+    if request.method == "GET":
+        ratings = Rating.objects.all().order_by("value")
+        return JsonResponse(
+            {"ratings": ratings},
+            encoder=RatingEncoder
+        )
+    else:
+        content = json.loads(request.body)
+        try:
+            rating = Rating.objects.create(**content)
+            return JsonResponse(
+                rating,
+                encoder=RatingEncoder,
+                safe=False,
+            )
+        except IntegrityError:
+            return JsonResponse(
+                {"message": "Rating ID already exists"},
+                status=400,
+            )
 
 
 @require_http_methods(["GET", "PUT", "DELETE"])
