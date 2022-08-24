@@ -11,7 +11,7 @@ function ActivityCardBody(column, col_idx) {
               <div className="card-body">
                 <h5 className="card-title">{activity.name}</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
-                    Rating: {activity.rating} | Price: {activity.price}
+                    Rating: {activity.rating} • Price: {activity.price}
                 </h6>
                 <span className="card-text">                  
                     {activity.location.display_address.join(" ")}
