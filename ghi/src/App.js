@@ -2,6 +2,7 @@ import logo from './logo.svg';
 // import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ActivityList from './ActivityList';
+// import ActivityDetail from './ActivityCardBody';
 
 // // @mui material components
 // import { ThemeProvider } from "@mui/material/styles";
@@ -17,6 +18,7 @@ function App() {
         <header className="App-header">
           <Routes>
             <Route path="activities" element={<ActivityList />} />
+            {/* <Route path="activities/detail" element={<ActivityDetail />} /> */}
           </Routes>
           {/* <img src={logo} className="App-logo" alt="logo" />
           <p>
