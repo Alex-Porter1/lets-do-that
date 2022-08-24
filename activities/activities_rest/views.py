@@ -15,7 +15,6 @@ class CategoryEncoder(ModelEncoder):
         "description"
     ]
 
-
 class ActivityListEncoder(ModelEncoder):
     model = Activity
     properties = [
@@ -29,7 +28,6 @@ class ActivityListEncoder(ModelEncoder):
         "category": CategoryEncoder(),
     }
 
-
 class RatingEncoder(ModelEncoder):
     model = Rating
     properties = [
@@ -40,9 +38,6 @@ class RatingEncoder(ModelEncoder):
     encoders = {
         "activity": ActivityListEncoder(),
     }
-
-
-
 
 
 @require_http_methods(["GET", "POST"])
