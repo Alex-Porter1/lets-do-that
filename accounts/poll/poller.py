@@ -6,17 +6,18 @@ import json
 import requests
 
 sys.path.append("")
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "sales_project.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "accounts.settings")
 django.setup()
 
 from accounts_rest.models import ActivityVO
 
 def get_activities():
-    response = requests.get("http://localhost:8090/api/activities/")
+    response = requests.get("http://activities:8000/api/activities/")
     content = json.loads(response.content)
     print("ACTIVITIES POLLER DATA: ", content)
     for activity in content["activities"]:
         ActivityVO.objects.update_or_create(
+            id = activity["id"],
             defaults={
                 "name": activity["name"],
                 "description": activity["description"],
@@ -28,12 +29,13 @@ def get_activities():
 
 def poll():
     while True:
-        print('Sales poller polling for data')
+        print('Account poller polling for data')
         try:
             # Write your polling logic, here
             get_activities()
         except Exception as e:
             print(e, file=sys.stderr)
+            # print("TEST")
         time.sleep(60)
 
 

@@ -18,6 +18,7 @@ class CategoryEncoder(ModelEncoder):
 class RatingEncoder(ModelEncoder):
     model = Rating
     properties = [
+        "id",
         "value",
         "description"
     ]
@@ -26,6 +27,7 @@ class RatingEncoder(ModelEncoder):
 class ActivityListEncoder(ModelEncoder):
     model = Activity
     properties = [
+        "id",
         "name",
         "description",
         "picture_url",
