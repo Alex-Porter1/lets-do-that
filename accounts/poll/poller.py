@@ -35,7 +35,6 @@ def poll():
             get_activities()
         except Exception as e:
             print(e, file=sys.stderr)
-            # print("TEST")
         time.sleep(60)
 
 
