@@ -18,9 +18,8 @@ def api_accounts(request):
             encoder=AccountEncoder,
         )
     else:
+        content = json.loads(request.body)
         try:
-            content = json.loads(request.body)
-
             activity_data = content["activity"]
             activity = ActivityVO.objects.get(id=activity_data)
             content["activity"] = activity

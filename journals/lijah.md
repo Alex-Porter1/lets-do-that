@@ -1,8 +1,13 @@
 # Lijah's Journal
 
+## August 24, 2022
+
+
+
 ## August 23, 2022
 
-
+* Created delete and get individual account view and got poller up and running to get activity data from activities microservice.
+* Paired with Alex to work through some errors I was having in the poller. Through that I learned more about how the yaml file is setup and where the names for microservices can be used, how to make sure I have the correct port setup and where to us directory navigation for the volumes in the poller.
 
 ## August 22, 2022
 

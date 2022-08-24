@@ -31,7 +31,6 @@ def poll():
     while True:
         print('Account poller polling for data')
         try:
-            # Write your polling logic, here
             get_activities()
         except Exception as e:
             print(e, file=sys.stderr)

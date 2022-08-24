@@ -5,6 +5,7 @@ from common.json import ModelEncoder
 from django.views.decorators.http import require_http_methods
 from django.http import JsonResponse
 from sqlite3 import IntegrityError
+
 # Create your views here.
 
 class CategoryEncoder(ModelEncoder):
