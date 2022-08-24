@@ -23,7 +23,6 @@ def get_activities():
                 "description": activity["description"],
                 "picture_url": activity["picture_url"],
                 "category": activity["category"],
-                "rating": activity["rating"],
             }
         )
 
