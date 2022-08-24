@@ -16,27 +16,33 @@ class CategoryEncoder(ModelEncoder):
     ]
 
 
-class RatingEncoder(ModelEncoder):
-    model = Rating
-    properties = [
-        "value",
-        "description"
-    ]
-
-
 class ActivityListEncoder(ModelEncoder):
     model = Activity
     properties = [
+        "id",
         "name",
         "description",
         "picture_url",
         "category",
-        "rating",
     ]
     encoders = {
         "category": CategoryEncoder(),
-        "rating": RatingEncoder()
     }
+
+
+class RatingEncoder(ModelEncoder):
+    model = Rating
+    properties = [
+        "value",
+        "description",
+        "activity",
+    ]
+    encoders = {
+        "activity": ActivityListEncoder(),
+    }
+
+
+
 
 
 @require_http_methods(["GET", "POST"])
@@ -57,11 +63,7 @@ def api_list_activities(request):
                 {"message": "Category does not exist"},
                 status=400
             )
-        if content["rating"]:
-            rating = Rating.objects.get(id=content["rating"])
-            content["rating"] = rating
-        else:
-            content["rating"] = "No rating given"
+       
         try:
             activity = Activity.objects.create(**content)
             return JsonResponse(
@@ -157,9 +159,18 @@ def api_list_ratings(request):
     else:
         content = json.loads(request.body)
         try:
-            rating = Rating.objects.create(**content)
+            activity = Activity.objects.get(id=content["activity"])
+            content["activity"] = activity
+        except Activity.DoesNotExist:
             return JsonResponse(
-                rating,
+                {"message": "Activity does not exist"},
+                status=400
+            )
+       
+        try:
+            ratings = Rating.objects.create(**content)
+            return JsonResponse(
+                ratings,
                 encoder=RatingEncoder,
                 safe=False,
             )
@@ -168,6 +179,7 @@ def api_list_ratings(request):
                 {"message": "Rating ID already exists"},
                 status=400,
             )
+       
 
 
 @require_http_methods(["GET", "PUT", "DELETE"])
