@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import SignUpForm from './SignUpForm';
+import MainPage from './MainPage';
 // // @mui material components
 // import { ThemeProvider } from "@mui/material/styles";
 // import CssBaseline from "@mui/material/CssBaseline";
@@ -14,10 +15,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path= "/signup">
-          <Route path="new" element={<SignUpForm />} />
-        </Route>
+          <Route path="signup" element={<SignUpForm />} />
+          <Route path="/" element={<MainPage />} />
+          <Route path="">
+          </Route>
       </Routes>
+
 
     </BrowserRouter>
   
