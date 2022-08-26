@@ -5,6 +5,12 @@ Format for each entry:
 - Reflection of any design converstations
 - At least one ah-ha! moment, however small
 
+## August 24th, 2022
+
+Today I Worked On:
+
+* I continued work on the API after showing the team my progress for the React front end page. I have the list view populating with the API call, but right now the category and location are hard-coded. Still need to work to make those dynamic based on the user's input.
+
 ## August 23rd, 2022
 
 Today I Worked On:
