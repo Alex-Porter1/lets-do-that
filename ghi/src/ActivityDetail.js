@@ -3,10 +3,11 @@ import { useParams } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Carousel from 'react-bootstrap/Carousel';
 import Badge from 'react-bootstrap/Badge';
+import './ActivityDetail.css'
 
 const apiKey = process.env.REACT_APP_YELP_API_KEY
 const yelpURL = process.env.REACT_APP_YELP_URL
-const yelpID = "WavvLdfdP6g8aZTtbBQHTw"
+const yelpID = "ryvBsB9FrBBZDak87iGS1w"
 
 function ActivityDetail() {
     const [activity, setActivity] = useState({})
@@ -14,6 +15,7 @@ function ActivityDetail() {
     const [images, setImages] = useState([])
     const [days, setDays] = useState([])
     const address = useRef()
+    const categories = useRef()
 
     const handleSelect = (selectedIndex, e) => {
         setIndex(selectedIndex);
@@ -31,9 +33,15 @@ function ActivityDetail() {
             const activityData = await activityResponse.json()
             setActivity(activityData)
             setImages(activityData.photos)
-            console.log("activity data:", activityData.hours[0].open)
-            setDays(activityData.hours[0].open)
+            if (activityData.hours == undefined) {
+                setDays(["No Hours Listed"])
+            } else {
+                console.log("activity data:", activityData.hours[0].open)
+                setDays(activityData.hours[0].open)
+            }
             address.current = activityData.location.display_address.join(", ")
+            categories.current = activityData.categories
+            console.log("catcur", categories.current)
         }
     }
 
@@ -44,38 +52,103 @@ function ActivityDetail() {
 
     const findDays = (days) => {
         const daysOfWeek = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
-        // console.log("days:", days)
         const results = []
-        for (let i = 0; i < daysOfWeek.length; i++) {
-            let dayExists = false
-            let dayIndex = 0
-            for (let day of days) {
-                if (day.day === i) {
-                    dayExists = true
-                    dayIndex = days.indexOf(day)
-                }
-            }
-            if (dayExists) {
-                results.push([daysOfWeek[i], `${days[dayIndex].start}-${days[dayIndex].end}`])
-            } else {
-                results.push([daysOfWeek[i], `CLOSED`])
-            }
-        
-        }
-        
-        return (results.map(result => {
+        if (days[0] == "No Hours Listed") {
             return (
                 <tr>
-                    <th scope="row">{result[0]}:</th>
-                    <td>{result[1]}</td>
+                    <th scope="row">No Hours Listed</th>
                 </tr>
             )
-        })
-        )
+        } else {
+            for (let i = 0; i < daysOfWeek.length; i++) {
+                let dayExists = false
+                let dayIndex = 0
+                for (let day of days) {
+                    if (day.day === i) {
+                        dayExists = true
+                        dayIndex = days.indexOf(day)
+                    }
+                }
+                if (dayExists) {
+                    let start = days[dayIndex].start
+                    
+                    let startHour = start.substring(0,2)
+                    let startMinute = start.substring(2)
+                    let startType = "AM"
+    
+                    let intStart = parseInt(start)
+                    console.log("intStart", intStart)
+                    console.log("startHour", startHour)
+    
+                    if (intStart >= 1200 && intStart <= 1299) {
+                        startType = "PM"
+                    } else if (intStart >= 1300) {
+                        let updatedIntStart = intStart - 1200
+                        let updatedstartHour = updatedIntStart.toString()
+                        if (updatedIntStart < 1000) {
+                            let leadZero = "0"
+                            let updatedstartSmall = updatedIntStart.toString()
+                            updatedstartHour = leadZero + updatedstartSmall
+                        } 
+    
+                        console.log("updatedIntStart", updatedIntStart)
+                        console.log("updatedstartHour", updatedstartHour)
+                        startHour = updatedstartHour.substring(0,2)
+                        console.log("new startHour", startHour)
+                        startType = "PM"
+                    }
+    
+                    let end = days[dayIndex].end
+                    
+                    let endHour = end.substring(0,2)
+                    let endMinute = end.substring(2)
+                    let endType = "AM"
+    
+                    let intEnd = parseInt(end)
+                    console.log("intEnd", intEnd)
+                    console.log("endHour", endHour)
+    
+                    if (intEnd >= 1200 && intEnd <= 1299) {
+                        startType = "PM"
+                    } else if (intEnd >= 1300) {
+                        let updatedIntEnd = intEnd - 1200
+                        let updatedendHour = updatedIntEnd.toString()
+                        if (updatedIntEnd < 1000) {
+                            let leadZero = "0"
+                            let updatedendSmall = updatedIntEnd.toString()
+                            updatedendHour = leadZero + updatedendSmall
+                        } 
+    
+                        console.log("updatedIntEnd", updatedIntEnd)
+                        console.log("updatedendHour", updatedendHour)
+                        endHour = updatedendHour.substring(0,2)
+                        console.log("new startHour", endHour)
+                        endType = "PM"
+                    }
+    
+                    results.push([daysOfWeek[i], `${startHour}:${startMinute} ${startType} - ${endHour}:${endMinute} ${endType}`])
+                    // results.push([daysOfWeek[i], `${days[dayIndex].start}-${days[dayIndex].end}`])
+                } else {
+                    results.push([daysOfWeek[i], `CLOSED`])
+                }
+            
+            }
+            return (results.map(result => {
+                return (
+                    <tr>
+                        <th scope="row">{result[0]}:</th>
+                        <td>{result[1]}</td>
+                    </tr>
+                )
+            })
+            )
+        }
+        
     }
 
     return (
-        <div className="container" width="500">
+        <>
+        <div className="container bg-color-div">
             <Carousel activeIndex={index} onSelect={handleSelect}>
                 {images.map(image => {
                     return (
@@ -83,19 +156,24 @@ function ActivityDetail() {
                             <img
                             className="d-block w-100"
                             src={image}
-                            width="800px"
-                            height="400px"
+                            width="700px"
+                            height="500px"
                             />
                             <Carousel.Caption>
-                            <h3>{activity.name}</h3>
-                            <p>Rating: {activity.rating} • Price: {activity.price ? activity.price : "N/A"}</p>
+                            <h1><Badge bg="dark">{activity.name}</Badge></h1>
+                            <p><Badge bg="primary">Rating: {activity.rating}</Badge> <Badge bg="success">Price: {activity.price ? activity.price : "N/A"}</Badge></p>
+                            <p>{categories.current.map(category => {
+                                return (<span><Badge bg="danger">{category.title}</Badge>{' '}</span>)
+                            })}</p>
                             </Carousel.Caption>
                     </Carousel.Item> 
                     )
                 })}
             </Carousel>
+        </div>
+        <div className="container">
             <div className="row">                
-                <div className="col-6">
+                <div className="col-4">
                     <h2>Contact & Location</h2>
                     <div>
                         <dl className="dl-horizontal">
@@ -106,7 +184,7 @@ function ActivityDetail() {
                         </dl>
                     </div>
                 </div>
-                <div className="col-6">
+                <div className="col-8">
                     <h2>Hours of Operation</h2>
                     <table className="table">
                         <tbody>
@@ -116,42 +194,8 @@ function ActivityDetail() {
                 </div>
             </div>
         </div>
-    )
-
-
-    // for (let day of days) {
-            //     if (day.day === i) {
-            //         console.log(`${daysOfWeek[i]}: ${day.start}-${day.end}`)
-            //         break;
-            //     } else {
-            //         console.log(`${daysOfWeek[i]}: CLOSE`)
-            //     }           
-            // } 
-
-    // return (
-    //     <>
-    //     <div className="container text-center">              
-    //         <img src={activity.image_url} height="400" width="auto" />
-    //         <h1>{ activity.name }</h1>
-    //         {/* <h5 className="card-text">
-    //             {activity.location.display_address.join(", ")}
-    //         </h5> */}
-    //         <h6 className="card-subtitle mb-2 text-muted">
-    //             Phone: {activity.display_phone} • Rating: {activity.rating} • Price: {activity.price ? activity.price : "N/A"}
-    //         </h6>
-    //         <div className="container bcontent">
-    //             <dl className="dl-horizontal">
-    //                 <dt className="col-sm-3">MON</dt>
-    //                 <dd className="col-sm-9">8:00 - 5:00</dd>
-    //                 <dt className="col-sm-3">TUE</dt>
-    //                 <dd className="col-sm-9">8:00 - 5:00</dd>
-    //                 <dt className="col-sm-3">WED</dt>
-    //                 <dd className="col-sm-9">8:00 - 5:00</dd>
-    //             </dl>
-    //         </div>      
-    //     </div>
-    //     </>
-    // )
+        </>
+    )    
 }
 
 
