@@ -1,6 +1,10 @@
 volumes:
   postgres-data:
       external: true
+  activities:
+      external: true
+  accounts:
+      external: true
 services:
   postgres:
     build:
@@ -22,7 +26,7 @@ services:
     volumes:
         - ./accounts:/app
     environment:
-        DATABASE_URL: postgresql://user-name:password@postgres/db-name
+        DATABASE_URL: postgresql://accounts:password@postgres/accounts
         WAIT_HOSTS: postgres:5432
   activities:
     build:
@@ -33,8 +37,23 @@ services:
     volumes:
         - ./activities:/app
     environment:
-        DATABASE_URL: postgresql://user-name:password@postgres/db-name
+        DATABASE_URL: postgresql://activities:password@postgres/activities
         WAIT_HOSTS: postgres:5432
+  accounts-poller:
+    build:
+      context: ./accounts/poll
+      dockerfile: ./Dockerfile.dev
+    volumes:
+      - ./accounts/poll:/app
+      - ./accounts/accounts:/app/accounts
+      - ./accounts/accounts_rest:/app/accounts_rest
+    depends_on:
+      - postgres
+      - accounts
+    environment:
+      DATABASE_URL: postgres://accounts:password@postgres:5432/accounts
+      WAIT_HOSTS: postgres:5432,accounts:8000
+      WAIT_TIMEOUT: 240
   ghi:
     image: node:lts-bullseye
     command: /bin/bash run.sh
@@ -47,5 +66,7 @@ services:
         HOST_OS: ${OS}
         NODE_ENV: development
         HOST: "0.0.0.0"
-        REACT_APP_ACCOUNTS_REST: http://localhost:8000
-        REACT_APP_ACTIVITIES_REST: http://localhost:8000
+        REACT_APP_ACCOUNTS: http://localhost:8000
+        REACT_APP_ACTIVITIES: http://localhost:8000
+        REACT_APP_YELP_API_KEY: ${REACT_APP_YELP_API_KEY}
+        REACT_APP_YELP_URL: https://api.yelp.com/v3/businesses/
