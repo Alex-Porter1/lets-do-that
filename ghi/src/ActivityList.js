@@ -23,7 +23,6 @@ function ActivityList() {
             const activitiesResponse = await fetch(`${corsAnywhere}${url}`, config)
             if (activitiesResponse.ok) {
                 const activitiesData = await activitiesResponse.json()
-                // console.log("count:", activitiesData.businesses.length)
                 setActivities(activitiesData.businesses)
             }
         })()
