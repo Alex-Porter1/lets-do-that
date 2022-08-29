@@ -1,3 +1,19 @@
+
+## August 23, 2022
+
+Today I worked on:
+
+* Still working on CSS and bootstrap. Tried a few pre-made templates that gave me lots of trouble. 
+
+
+## August 24, 2022
+
+* The template I picked would not load and couldn't figure out the bugs. Consulted a SEIR and they informed me I picked a template that was html based. So back to the drawing board with the template. 
+
+## August 25, 2022
+
+
+
 ## August 22, 2022
 
 Today I worked on:
