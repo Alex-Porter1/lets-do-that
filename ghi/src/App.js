@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ActivityList from './ActivityList';
 import ActivityDetail from './ActivityDetail';
+import MainPage from './pages/MainPage';
 // import ActivityDetail from './ActivityCardBody';
 
 // // @mui material components
@@ -18,6 +19,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <Routes>
+            <Route path='/' element={<MainPage />} />
             <Route path="activities">
               <Route path="" element={<ActivityList />} />
               <Route path="detail" element={<ActivityDetail />} />
