@@ -10,7 +10,6 @@ class ActivityVOEncoder(ModelEncoder):
         "description",
         "picture_url",
         "category",
-        "rating",
     ]
 
 class AccountEncoder(ModelEncoder):

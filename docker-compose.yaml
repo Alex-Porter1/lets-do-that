@@ -66,5 +66,7 @@ services:
         HOST_OS: ${OS}
         NODE_ENV: development
         HOST: "0.0.0.0"
-        REACT_APP_ACCOUNTS_REST: http://localhost:8000
-        REACT_APP_ACTIVITIES_REST: http://localhost:8000
+        REACT_APP_ACCOUNTS: http://localhost:8000
+        REACT_APP_ACTIVITIES: http://localhost:8000
+        REACT_APP_YELP_API_KEY: ${REACT_APP_YELP_API_KEY}
+        REACT_APP_YELP_URL: https://api.yelp.com/v3/businesses/

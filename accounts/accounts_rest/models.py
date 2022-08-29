@@ -8,7 +8,6 @@ class ActivityVO(models.Model):
     description = models.TextField(max_length=200)
     picture_url = models.CharField(max_length=200)
     category = models.CharField(max_length=200)
-    rating = models.CharField(max_length=200)
 
 
 class Account(models.Model):
