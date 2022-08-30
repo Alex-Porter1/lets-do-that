@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react';
 function App() {
 
   return (
+  
     <BrowserRouter>
     <Nav />
       
@@ -28,6 +29,7 @@ function App() {
     
 
     </BrowserRouter>
+    
     
   );
 }
