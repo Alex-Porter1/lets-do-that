@@ -7,7 +7,7 @@ import './ActivityDetail.css'
 
 const apiKey = process.env.REACT_APP_YELP_API_KEY
 const yelpURL = process.env.REACT_APP_YELP_URL
-const yelpID = "ryvBsB9FrBBZDak87iGS1w"
+// const yelpID = "ryvBsB9FrBBZDak87iGS1w"
 
 function ActivityDetail() {
     const [activity, setActivity] = useState({})
@@ -16,6 +16,7 @@ function ActivityDetail() {
     const [days, setDays] = useState([])
     const address = useRef()
     const categories = useRef()
+    const { yelpID } = useParams()
 
     const handleSelect = (selectedIndex, e) => {
         setIndex(selectedIndex);
@@ -71,63 +72,21 @@ function ActivityDetail() {
                 }
                 if (dayExists) {
                     let start = days[dayIndex].start
-                    
                     let startHour = start.substring(0,2)
                     let startMinute = start.substring(2)
-                    let startType = "AM"
-    
-                    let intStart = parseInt(start)
-                    console.log("intStart", intStart)
-                    console.log("startHour", startHour)
-    
-                    if (intStart >= 1200 && intStart <= 1299) {
-                        startType = "PM"
-                    } else if (intStart >= 1300) {
-                        let updatedIntStart = intStart - 1200
-                        let updatedstartHour = updatedIntStart.toString()
-                        if (updatedIntStart < 1000) {
-                            let leadZero = "0"
-                            let updatedstartSmall = updatedIntStart.toString()
-                            updatedstartHour = leadZero + updatedstartSmall
-                        } 
-    
-                        console.log("updatedIntStart", updatedIntStart)
-                        console.log("updatedstartHour", updatedstartHour)
-                        startHour = updatedstartHour.substring(0,2)
-                        console.log("new startHour", startHour)
-                        startType = "PM"
-                    }
-    
+
+                    let formatStart = startHour + ":" + startMinute
+                    let startDateFormat = new Date(`August 19, 1975 ${formatStart}:00`).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'})
+
                     let end = days[dayIndex].end
                     
                     let endHour = end.substring(0,2)
                     let endMinute = end.substring(2)
-                    let endType = "AM"
+                    let formatEnd = endHour + ":" + endMinute
+
+                    let endDateFormat = new Date(`August 19, 1975 ${formatEnd}:00`).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'})
     
-                    let intEnd = parseInt(end)
-                    console.log("intEnd", intEnd)
-                    console.log("endHour", endHour)
-    
-                    if (intEnd >= 1200 && intEnd <= 1299) {
-                        startType = "PM"
-                    } else if (intEnd >= 1300) {
-                        let updatedIntEnd = intEnd - 1200
-                        let updatedendHour = updatedIntEnd.toString()
-                        if (updatedIntEnd < 1000) {
-                            let leadZero = "0"
-                            let updatedendSmall = updatedIntEnd.toString()
-                            updatedendHour = leadZero + updatedendSmall
-                        } 
-    
-                        console.log("updatedIntEnd", updatedIntEnd)
-                        console.log("updatedendHour", updatedendHour)
-                        endHour = updatedendHour.substring(0,2)
-                        console.log("new startHour", endHour)
-                        endType = "PM"
-                    }
-    
-                    results.push([daysOfWeek[i], `${startHour}:${startMinute} ${startType} - ${endHour}:${endMinute} ${endType}`])
-                    // results.push([daysOfWeek[i], `${days[dayIndex].start}-${days[dayIndex].end}`])
+                    results.push([daysOfWeek[i], `${startDateFormat} - ${endDateFormat}`])
                 } else {
                     results.push([daysOfWeek[i], `CLOSED`])
                 }

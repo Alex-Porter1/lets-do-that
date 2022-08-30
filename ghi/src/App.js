@@ -20,7 +20,7 @@ function App() {
           <Routes>
             <Route path="activities">
               <Route path="" element={<ActivityList />} />
-              <Route path="detail" element={<ActivityDetail />} />
+              <Route path=":activityName/:yelpID" element={<ActivityDetail />} />
             </Route>
           </Routes>
           {/* <img src={logo} className="App-logo" alt="logo" />
