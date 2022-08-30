@@ -4,16 +4,22 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ActivityList from './ActivityList';
 import ActivityDetail from './ActivityDetail';
 import MainPage from './pages/MainPage';
+import { useEffect, useState } from 'react';
 // import ActivityDetail from './ActivityCardBody';
 
-// // @mui material components
-// import { ThemeProvider } from "@mui/material/styles";
-// import CssBaseline from "@mui/material/CssBaseline";
 
-// // Material Kit 2 React themes
-// import theme from "assets/theme";
 
 function App() {
+  const [activities, setActivities] = useState({});
+
+  useEffect ( 
+    
+  )
+
+
+
+
+
   return (
     <BrowserRouter>
       <div className="App">
