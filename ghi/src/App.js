@@ -10,11 +10,11 @@ import { useEffect, useState } from 'react';
 
 
 function App() {
-  const [activities, setActivities] = useState({});
+  // const [activities, setActivities] = useState({});
 
-  useEffect ( 
-    
-  )
+  // useEffect ( 
+
+  // )
 
 
 
