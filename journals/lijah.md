@@ -1,8 +1,20 @@
 # Lijah's Journal
 
+## August 29, 2022
+
+
+
+## August 25, 2022
+
+Auth stuff and errors, will build react component to test auth
+
+today I learned option d adds the date
+
 ## August 24, 2022
 
-
+* Changes to accounts poller, model and encoder to reflect update to rating in activities.
+* Worked on how to authenticate sign in and sign up for for our app.
+* Today I learned a lot about django authentication and the different built in tools that can be used to verify a user.
 
 ## August 23, 2022
 

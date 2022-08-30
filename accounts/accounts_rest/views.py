@@ -9,6 +9,15 @@ from .models import Account, ActivityVO
 
 # Create your views here.
 
+@require_http_methods(["GET"])
+def api_user_token(request):
+    if "jwt_access_token" in request.COOKIES:
+        token = request.COOKIES["jwt_access_token"]
+        if token:
+            return JsonResponse({"token": token})
+    response = JsonResponse({"token": None})
+    return response
+
 @require_http_methods(["GET", "POST"])
 def api_accounts(request):
     if request.method == "GET":
@@ -19,16 +28,16 @@ def api_accounts(request):
         )
     else:
         content = json.loads(request.body)
-        try:
-            activity_data = content["activity"]
-            activity = ActivityVO.objects.get(id=activity_data)
-            content["activity"] = activity
-        except ActivityVO.DoesNotExist:
-            response = JsonResponse(
-                {"message": "Activity doesn't exist"}
-            )
-            response.status_code = 400
-            return response
+        # try:
+        #     activity_data = content["activity"]
+        #     activity = ActivityVO.objects.get(id=activity_data)
+        #     content["activity"] = activity
+        # except ActivityVO.DoesNotExist:
+        #     response = JsonResponse(
+        #         {"message": "Activity doesn't exist"}
+        #     )
+        #     response.status_code = 400
+        #     return response
 
         account = Account.objects.create(**content)
         return JsonResponse(

@@ -27,6 +27,9 @@ SECRET_KEY = 'django-insecure-irrphzq=+(x7t^6f607bsr8cjv7+@9_x39=6&i+(-o4971&t+z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+LOGIN_URL = "login"
+LOGIN_REDIRECT_URL = "api_list_activities"
+
 # Application definition
 
 INSTALLED_APPS = [

@@ -22,9 +22,4 @@ class AccountEncoder(ModelEncoder):
         "birthday",
         "first_name",
         "last_name",
-        "activity",
     ]
-
-    encoders = {
-        "activity": ActivityVOEncoder()
-    }
