@@ -1,32 +1,38 @@
 import { useEffect, useState } from "react";
+import image from './img/Sand.jpg';
 
 function MainPage() {
-    let [ activities, setActivities] = useState([])
-
-    useEffect(() => {
-        async function getActivities() {
-            const url = //"activities URL HERE"
-            const response = await fetch(url);
-            if (response.ok) {
-                const data = await response.json();
-                setActivities(data);
-            }
-
-        }
-        getActivities();
-    }, [])
+   
 
     return (
-        <div className="px-4 py-5 my-5 text-center">
-        <div className="col-lg-10 mx-auto">
-          <h1 className="display-5 fw-bold">Let's go..</h1>
+        <div style={{ backgroundImage: `url(${image})` }}>
+        Let's go..
+        
+         
             <p className="lead mb-4">
               What do you want to do today?
             </p> 
             </div>
-      </div>
+    
   );
-}
-
-
+    }
 export default MainPage;
+
+ // let [ activities, setActivities] = useState([])
+    // const apiKey = process.env.REACT_APP_YELP_API_KEY
+    // const yelpURL = process.env.REACT_APP_YELP_URL
+    // const yelpID = "ryvBsB9FrBBZDak87iGS1w"
+
+
+    // useEffect(() => {
+    //     async function getActivities() {
+            // const url = `${yelpURL}${yelpID}`
+            // const response = await fetch(url);
+            // if (response.ok) {
+            //     const data = await response.json();
+            //     setActivities(data);
+        //     }
+
+        // }
+        // getActivities();
+    // }, [])
