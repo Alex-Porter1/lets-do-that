@@ -40,7 +40,7 @@ services:
     environment:
         DATABASE_URL: postgresql://activities:password@postgres/activities
         WAIT_HOSTS: postgres:5432
-        # DJWTO_SIGNING_KEY: 8cbeb7f3585d8283b8865d4d61a18ce3cd819cf2f546eb74221a47e508cdff19
+        DJWTO_SIGNING_KEY: 8cbeb7f3585d8283b8865d4d61a18ce3cd819cf2f546eb74221a47e508cdff19
   accounts-poller:
     build:
       context: ./accounts/poll
@@ -73,4 +73,4 @@ services:
         REACT_APP_ACTIVITIES: http://localhost:8000
         REACT_APP_YELP_API_KEY: ${REACT_APP_YELP_API_KEY}
         REACT_APP_YELP_URL: https://api.yelp.com/v3/businesses/
-        # DJWTO_SIGNING_KEY: 8cbeb7f3585d8283b8865d4d61a18ce3cd819cf2f546eb74221a47e508cdff19
+        DJWTO_SIGNING_KEY: 8cbeb7f3585d8283b8865d4d61a18ce3cd819cf2f546eb74221a47e508cdff19

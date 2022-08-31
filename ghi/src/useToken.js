@@ -107,7 +107,7 @@ export function useToken() {
     return handleErrorMessage(error);
   }
 
-  async function signup(username, password, email, birthday, firstName, lastName) {
+  async function signup(username, password, email, firstName, lastName) {
     // const url = `${process.env.REACT_APP_ACCOUNTS}/api/accounts/`;
     const url = `http://localhost:8080/api/accounts/`;
     const response = await fetch(url, {
@@ -116,7 +116,6 @@ export function useToken() {
         username,
         password,
         email,
-        birthday,
         first_name: firstName,
         last_name: lastName,
       }),

@@ -79,18 +79,18 @@ function ActivityDetail() {
                     let startDateFormat = new Date(`August 19, 1975 ${formatStart}:00`).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'})
 
                     let end = days[dayIndex].end
-                    
+
                     let endHour = end.substring(0,2)
                     let endMinute = end.substring(2)
                     let formatEnd = endHour + ":" + endMinute
 
                     let endDateFormat = new Date(`August 19, 1975 ${formatEnd}:00`).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'})
-    
+
                     results.push([daysOfWeek[i], `${startDateFormat} - ${endDateFormat}`])
                 } else {
                     results.push([daysOfWeek[i], `CLOSED`])
                 }
-            
+
             }
             return (results.map(result => {
                 return (
@@ -102,7 +102,7 @@ function ActivityDetail() {
             })
             )
         }
-        
+
     }
 
     return (
@@ -125,13 +125,13 @@ function ActivityDetail() {
                                 return (<span><Badge bg="danger">{category.title}</Badge>{' '}</span>)
                             })}</p>
                             </Carousel.Caption>
-                    </Carousel.Item> 
+                    </Carousel.Item>
                     )
                 })}
             </Carousel>
         </div>
         <div className="container">
-            <div className="row">                
+            <div className="row">
                 <div className="col-4">
                     <h2>Contact & Location</h2>
                     <div>
@@ -154,7 +154,7 @@ function ActivityDetail() {
             </div>
         </div>
         </>
-    )    
+    )
 }
 
 
@@ -217,7 +217,7 @@ export default ActivityDetail
 //                     )
 //                 })}
 //                 </>
-//             )        
+//             )
 //         }
 //     }
 
@@ -246,7 +246,7 @@ export default ActivityDetail
 //                             </span>
 //                             )
 //                         })}
-//                     </div>    
+//                     </div>
                     // <table className="table">
                     //     <tbody>
                     //         <tr>
@@ -258,23 +258,23 @@ export default ActivityDetail
                     //         </tr>
                     //         <tr>
                     //             <th scope="row">Language</th>
-                    //             <td>{ movie.Language }</td> 
+                    //             <td>{ movie.Language }</td>
                     //         </tr>
                     //         <tr>
                     //             <th scope="row">Country</th>
-                    //             <td>{ movie.Country }</td> 
+                    //             <td>{ movie.Country }</td>
                     //         </tr>
                     //         <tr>
                     //             <th scope="row">Director(s)</th>
-                    //             <td>{ movie.Director }</td> 
+                    //             <td>{ movie.Director }</td>
                     //         </tr>
                     //         <tr>
                     //             <th scope="row">Writer(s)</th>
-                    //             <td>{ movie.Writer }</td> 
+                    //             <td>{ movie.Writer }</td>
                     //         </tr>
                     //         <tr>
                     //             <th scope="row">Main Casts</th>
-                    //             <td>{ movie.Actors }</td> 
+                    //             <td>{ movie.Actors }</td>
                     //         </tr>
                     //     </tbody>
                     // </table>
