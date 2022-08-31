@@ -2,6 +2,7 @@ import logo from './logo.svg';
 // import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ActivityList from './ActivityList';
+import ActivityDetail from './ActivityDetail';
 // import ActivityDetail from './ActivityCardBody';
 import LoginForm from './LoginForm';
 import SignupForm from './SignupForm';
@@ -23,11 +24,13 @@ function App() {
         <div className="App">
           <header className="App-header">
             <Routes>
-              <Route path="activities" element={<ActivityList />} />
+            <Route path="activities">
+              <Route path="" element={<ActivityList />} />
+              <Route path=":activityName/:yelpID" element={<ActivityDetail />} />
+            </Route>
               <Route path="login" element={<LoginForm />} />
               <Route path="logout" />
               <Route path="signup" element={<SignupForm />} />
-              {/* <Route path="activities/detail" element={<ActivityDetail />} /> */}
             </Routes>
             {/* <img src={logo} className="App-logo" alt="logo" />
             <p>
@@ -45,7 +48,6 @@ function App() {
         </div>
       </BrowserRouter>
     </AuthProvider>
-
   );
 }
 
