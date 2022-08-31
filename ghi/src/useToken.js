@@ -15,6 +15,7 @@ export async function getTokenInternal() {
     });
     if (response.ok) {
       const data = await response.json();
+      console.log("data:", data)
       internalToken = data.token;
       return internalToken;
     }
@@ -88,6 +89,7 @@ export function useToken() {
 
   async function login(username, password) {
     // const url = `${process.env.REACT_APP_ACCOUNTS}/login/`;
+    console.log("within login from useToken")
     const url = `http://localhost:8080/login/`;
     const form = new FormData();
     form.append("username", username);
@@ -107,7 +109,7 @@ export function useToken() {
     return handleErrorMessage(error);
   }
 
-  async function signup(username, password, email, birthday, firstName, lastName) {
+  async function signup(username, password, email, firstName, lastName) {
     // const url = `${process.env.REACT_APP_ACCOUNTS}/api/accounts/`;
     const url = `http://localhost:8080/api/accounts/`;
     const response = await fetch(url, {
@@ -116,7 +118,6 @@ export function useToken() {
         username,
         password,
         email,
-        birthday,
         first_name: firstName,
         last_name: lastName,
       }),

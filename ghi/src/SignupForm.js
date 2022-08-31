@@ -19,11 +19,11 @@ function SignupForm(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [userName, setUserName] = useState('');
-  const [birthday, setBirthday] = useState('');
+  // const [birthday, setBirthday] = useState('');
   const [first, setFirst] = useState('');
   const [last, setLast] = useState('');
   const { token } = useAuthContext();
-  const [signup] = useToken();
+  const [token_, login_, logout_, signup] = useToken();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -36,7 +36,7 @@ function SignupForm(props) {
 
   async function handleSubmit (e) {
     e.preventDefault()
-    await signup(userName, password, email, birthday, first, last)
+    await signup(userName, password, email, first, last)
   }
 
   const signupPhrase = `Already have an account? Login here.`
@@ -63,14 +63,14 @@ function SignupForm(props) {
             type="last"
             placeholder="Last name"
           />
-          <BootstrapInputFields
+          {/* <BootstrapInputFields
             id="birthday"
             label="Enter Birthday"
             value={birthday}
             onChange={e => setBirthday(e.target.value)}
             type="date"
             placeholder="birthday"
-          />
+          /> */}
           <BootstrapInputFields
             id="email"
             label="Enter Email Address"
