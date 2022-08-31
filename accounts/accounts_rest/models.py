@@ -21,3 +21,7 @@ class Account(AbstractUser):
     #     blank=True,
     #     null=True,
     # )
+
+    def save(self, *args, **kwargs):
+        self.set_password(self.password)
+        super().save(*args, **kwargs)

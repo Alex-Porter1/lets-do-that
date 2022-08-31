@@ -15,6 +15,7 @@ export async function getTokenInternal() {
     });
     if (response.ok) {
       const data = await response.json();
+      console.log("data:", data)
       internalToken = data.token;
       return internalToken;
     }
@@ -88,6 +89,7 @@ export function useToken() {
 
   async function login(username, password) {
     // const url = `${process.env.REACT_APP_ACCOUNTS}/login/`;
+    console.log("within login from useToken")
     const url = `http://localhost:8080/login/`;
     const form = new FormData();
     form.append("username", username);

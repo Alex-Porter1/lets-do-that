@@ -32,6 +32,7 @@ function LoginForm(props) {
   async function handleSubmit (e) {
     e.preventDefault()
     await login(username, password)
+    console.log("test login")
   }
 
   return (
