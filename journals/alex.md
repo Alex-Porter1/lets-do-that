@@ -45,3 +45,7 @@ After working through different attempts at making a foreign key optional, I rea
 Learned that a button at the top of vs code, closes all folders in vs code, cleaning up my workspace quickly.
 
 08/29/2022
+-Worked with Lijah to create the LoginForm and SignupForm through react.
+-Were able to get the format the way we wanted and the forms laid out correctly.
+
+Learned more about how to adjust layouts on forms. I didn't know that mb abbreviation stood for margin-bottom. It clicked in my brain what all of those abbreviations stand for in css now.
