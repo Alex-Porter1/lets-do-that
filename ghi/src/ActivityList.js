@@ -12,30 +12,29 @@ function ActivityList() {
 
     let category = "bowling"
 
-    let theCity = "sanantonio"
-    let theState = "tx"
-
     const handleSubmit = (event) => {
         event.preventDefault()
-        theCity = event.target.location.value.replaceAll(" ", "").toLowerCase()
-        theState = event.target.state.value.toLowerCase()
+        let theCity = event.target.location.value.replaceAll(" ", "").toLowerCase()
+        let theState = event.target.state.value.toLowerCase()
         let combined = theCity + "," + theState
         setLocation(combined)
     }
 
     useEffect(() => {
         (async () => {
-            const corsAnywhere = "https://thingproxy.freeboard.io/fetch/"
-            const url = `${yelpURL}search?location=${location}&categories=${category}`
-            const config = {
-                headers: {
-                    Authorization: `Bearer ${apiKey}`
-            }}
-    
-            const activitiesResponse = await fetch(`${corsAnywhere}${url}`, config)
-            if (activitiesResponse.ok) {
-                const activitiesData = await activitiesResponse.json()
-                setActivities(activitiesData.businesses)
+            if (location) {
+                const corsAnywhere = "https://thingproxy.freeboard.io/fetch/"
+                const url = `${yelpURL}search?location=${location}&categories=${category}`
+                const config = {
+                    headers: {
+                        Authorization: `Bearer ${apiKey}`
+                }}
+        
+                const activitiesResponse = await fetch(`${corsAnywhere}${url}`, config)
+                if (activitiesResponse.ok) {
+                    const activitiesData = await activitiesResponse.json()
+                    setActivities(activitiesData.businesses)
+                }
             }
         })()
     }, [location])
@@ -76,14 +75,19 @@ function ActivityList() {
                 </div>
                 <button className="btn btn-outline-success">Submit</button>
             </form>
-            <h2>Make a selection!</h2>
-            <div className="row mt-5">
-                {activityColumns.map((column, col_idx) => {
-                    return (
-                        ActivityCardBody(column, col_idx)
-                    );
-                })}
-            </div>
+            {location
+            ?   <>
+                <h2>Make a selection!</h2>
+                <div className="row mt-5">
+                    {activityColumns.map((column, col_idx) => {
+                        return (
+                            ActivityCardBody(column, col_idx)
+                        );
+                    })}
+                </div>
+                </>
+            : <h2>Choose a location and state, then press Submit!</h2>}
+            
         </div>
     )
 }
