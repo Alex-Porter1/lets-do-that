@@ -23,6 +23,7 @@ function App() {
             <Routes>
               <Route path="activities" element={<ActivityList />} />
               <Route path="login" element={<LoginForm />} />
+              <Route path="logout" />
               <Route path="signup" element={<SignupForm />} />
               {/* <Route path="activities/detail" element={<ActivityDetail />} /> */}
             </Routes>

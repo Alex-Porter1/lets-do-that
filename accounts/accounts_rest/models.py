@@ -13,7 +13,7 @@ class ActivityVO(models.Model):
 
 class Account(AbstractUser):
     email = models.EmailField(unique=True)
-    birthday = models.DateField()
+    # birthday = models.DateField()
     # activity = models.ForeignKey(
     #     ActivityVO,
     #     related_name="activity",

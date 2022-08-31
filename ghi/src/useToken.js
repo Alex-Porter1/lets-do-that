@@ -76,7 +76,8 @@ export function useToken() {
 
   async function logout() {
     if (token) {
-      const url = `${process.env.REACT_APP_ACCOUNTS}/api/token/refresh/logout/`;
+      // const url = `${process.env.REACT_APP_ACCOUNTS}/api/token/refresh/logout/`;
+      const url = `http://localhost:8080/api/token/refresh/logout/`;
       await fetch(url, { method: "delete", credentials: "include" });
       internalToken = null;
       setToken(null);
