@@ -6,6 +6,7 @@ import ActivityList from './ActivityList';
 import LoginForm from './LoginForm';
 import SignupForm from './SignupForm';
 import { AuthProvider } from "./useToken";
+import Nav from './Nav';
 
 // // @mui material components
 // import { ThemeProvider } from "@mui/material/styles";
@@ -18,6 +19,7 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+      <Nav />
         <div className="App">
           <header className="App-header">
             <Routes>
