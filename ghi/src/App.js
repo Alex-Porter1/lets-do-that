@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 // import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ActivityList from './ActivityList';
@@ -8,6 +8,7 @@ import LoginForm from './LoginForm';
 import SignupForm from './SignupForm';
 import { AuthProvider } from "./useToken";
 import Nav from './Nav';
+import LogoutForm from './LogoutForm'
 
 // // @mui material components
 // import { ThemeProvider } from "@mui/material/styles";
@@ -29,7 +30,7 @@ function App() {
               <Route path=":activityName/:yelpID" element={<ActivityDetail />} />
             </Route>
               <Route path="login" element={<LoginForm />} />
-              <Route path="logout" />
+              <Route path="logout" element={<LogoutForm />} />
               <Route path="signup" element={<SignupForm />} />
             </Routes>
             {/* <img src={logo} className="App-logo" alt="logo" />

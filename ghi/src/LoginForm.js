@@ -1,4 +1,4 @@
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react'
 import { useToken, useAuthContext } from './useToken'
 
@@ -27,7 +27,7 @@ function LoginForm(props) {
         navigate(`/activities`)
         // redirect
     }
-  }, [token])
+  }, [navigate, token])
 
   async function handleSubmit (e) {
     e.preventDefault()

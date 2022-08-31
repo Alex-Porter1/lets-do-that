@@ -1,4 +1,4 @@
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react'
 import { useToken, useAuthContext } from './useToken'
 
@@ -23,7 +23,7 @@ function SignupForm(props) {
   const [first, setFirst] = useState('');
   const [last, setLast] = useState('');
   const { token } = useAuthContext();
-  const [token_, login, logout, signup] = useToken();
+  const [signup] = useToken();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -32,7 +32,7 @@ function SignupForm(props) {
         navigate(`/activities`)
         // redirect
     }
-  }, [token])
+  }, [navigate, token])
 
   async function handleSubmit (e) {
     e.preventDefault()
