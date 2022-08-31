@@ -5,6 +5,7 @@ from common.json import ModelEncoder
 from django.views.decorators.http import require_http_methods
 from django.http import JsonResponse
 from sqlite3 import IntegrityError
+import djwto.authentication as auth
 
 
 class CategoryEncoder(ModelEncoder):
@@ -39,7 +40,7 @@ class RatingEncoder(ModelEncoder):
         "activity": ActivityListEncoder(),
     }
 
-
+@auth.jwt_login_required
 @require_http_methods(["GET", "POST"])
 def api_list_activities(request):
     if request.method == "GET":
@@ -58,7 +59,7 @@ def api_list_activities(request):
                 {"message": "Category does not exist"},
                 status=400
             )
-       
+
         try:
             activity = Activity.objects.create(**content)
             return JsonResponse(
@@ -161,7 +162,7 @@ def api_list_ratings(request):
                 {"message": "Activity does not exist"},
                 status=400
             )
-       
+
         try:
             ratings = Rating.objects.create(**content)
             return JsonResponse(
@@ -174,7 +175,7 @@ def api_list_ratings(request):
                 {"message": "Rating ID already exists"},
                 status=400,
             )
-       
+
 
 
 @require_http_methods(["GET", "PUT", "DELETE"])
