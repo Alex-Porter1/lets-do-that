@@ -23,7 +23,11 @@ function SignupForm(props) {
   const [first, setFirst] = useState('');
   const [last, setLast] = useState('');
   const { token } = useAuthContext();
+<<<<<<< HEAD
   const [token_, login_, logout_, signup] = useToken();
+=======
+  const [token_, login, logout, signup] = useToken();
+>>>>>>> alex
   const navigate = useNavigate();
 
   useEffect(() => {
