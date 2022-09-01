@@ -1,7 +1,6 @@
 // import logo from './logo.svg';
 // import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Nav from './Nav';
 import ActivityList from './ActivityList';
 import ActivityDetail from './ActivityDetail';
 import MainPage from './MainPage';
