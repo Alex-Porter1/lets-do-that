@@ -3,6 +3,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ActivityList from './ActivityList';
 import ActivityDetail from './ActivityDetail';
+import MainPage from './MainPage';
+import { useEffect, useState } from 'react';
 // import ActivityDetail from './ActivityCardBody';
 import LoginForm from './LoginForm';
 import SignupForm from './SignupForm';
@@ -10,14 +12,10 @@ import { AuthProvider } from "./useToken";
 import Nav from './Nav';
 import LogoutForm from './LogoutForm'
 
-// // @mui material components
-// import { ThemeProvider } from "@mui/material/styles";
-// import CssBaseline from "@mui/material/CssBaseline";
 
-// // Material Kit 2 React themes
-// import theme from "assets/theme";
 
 function App() {
+
   return (
     <AuthProvider>
       <BrowserRouter>

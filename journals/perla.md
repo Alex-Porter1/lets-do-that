@@ -1,3 +1,36 @@
+
+## August 30, 2022
+
+Today I worked on:
+
+* Getting the main page to show up as well as the nav link bar. However I had trouble getting the pictures to load for the background even though I tried several things. I will be consulting my team members on this. 
+
+## August 29, 2022
+
+Today I worked on:
+
+* I started everything fresh. I was really struggling over the weekend so I consulted my team members and had them help me start a new git branch and copy from a team members working branch. 
+
+## August 25, 2022
+
+Today I worked on:
+
+* I am still struggling to figure out the css and bootstrap and all the bugs that come with it when things are missing. 
+
+
+## August 24, 2022
+
+Today I worked on:
+
+* The template I picked would not load and couldn't figure out the bugs. Consulted a SEIR and they informed me I picked a template that was html based. So back to the drawing board with the template. 
+
+## August 23, 2022
+
+Today I worked on:
+
+* Still working on CSS and bootstrap. Tried a few pre-made templates that gave me lots of trouble. 
+
+
 ## August 22, 2022
 
 Today I worked on:
