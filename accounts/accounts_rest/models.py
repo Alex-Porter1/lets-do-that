@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
@@ -10,15 +11,17 @@ class ActivityVO(models.Model):
     category = models.CharField(max_length=200)
 
 
-class Account(models.Model):
-    username = models.CharField(max_length=200, unique=True)
+class Account(AbstractUser):
     email = models.EmailField(unique=True)
-    password = models.CharField(max_length=200)
-    birthday = models.DateField()
-    first_name = models.CharField(max_length=200)
-    last_name = models.CharField(max_length=200)
-    activity = models.ForeignKey(
-        ActivityVO,
-        related_name="activity",
-        on_delete=models.CASCADE,
-    )
+    # birthday = models.DateField()
+    # activity = models.ForeignKey(
+    #     ActivityVO,
+    #     related_name="activity",
+    #     on_delete=models.CASCADE,
+    #     blank=True,
+    #     null=True,
+    # )
+
+    def save(self, *args, **kwargs):
+        self.set_password(self.password)
+        super().save(*args, **kwargs)

@@ -6,12 +6,13 @@ function ActivityCardBody(column, col_idx) {
     return (
       <div key={col_idx} className="col">
         {column.map(activity => {
-            
+            const name = activity.name.toLowerCase().split(/[-:\s,]+/).join("-")
+            console.log("id", activity.id)
             return (
                 <div key={activity.id} className="card mb-3 shadow">
                 <img src={activity.image_url} className="card-img-top" />
                 <div className="card-body">
-                    <Link to="detail">
+                    <Link to={`/activities/${name}/${activity.id}`}>
                         <h5 className="card-title">{activity.name}</h5>
                     </Link>
                     {/* <h5 className="card-title">{activity.name}</h5> */}
@@ -22,7 +23,9 @@ function ActivityCardBody(column, col_idx) {
                         {activity.location.display_address.join(", ")}
                     </span>
                     <div className="card-footer text-center">
-                        <button className="btn btn-primary">Select</button>
+                        <Link to={`/activities/${name}/${activity.id}`}>
+                            <button className="btn btn-primary">Select</button>
+                        </Link>
                     </div>
                 </div>
                 </div>
