@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react"
 import ActivityCardBody from "./ActivityCardBody"
 import stateList from "./states"
+import { useAuthContext } from "./useToken"
+import { useNavigate } from "react-router-dom";
+
 
 
 function ActivityList() {
@@ -9,6 +12,16 @@ function ActivityList() {
     const [location, setLocation] = useState("")
     const apiKey = process.env.REACT_APP_YELP_API_KEY
     const yelpURL = process.env.REACT_APP_YELP_URL
+
+    const navigate = useNavigate();
+    const { token } = useAuthContext();
+
+    useEffect(() => {
+        if (!token) {
+            console.log('user not logged in, redirect to login page')
+            navigate(`/login`)
+        }
+    }, [navigate, token])
 
     let category = "bowling"
 
