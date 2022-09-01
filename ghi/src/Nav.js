@@ -1,6 +1,11 @@
 import { NavLink } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react'
+import { useToken, useAuthContext } from './useToken'
 
 function Nav() {
+  const { token } = useAuthContext();
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-success">
       <div className="container-fluid">
@@ -11,7 +16,9 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
+              {!token && (
               <NavLink className="nav-link" to="/login">Login</NavLink>
+              )}
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/logout">Logout</NavLink>
