@@ -62,3 +62,8 @@ Got a better understanding of the authentication tokens
 
 Learned that the authentication was only hashing the superuser password and not the regular user password. Had to create a function in our model to save the password so that django would has the standard user password as well.
 
+09/01/2022
+-Worked with Lijah to adjust the navbar to only show certain items when logged in and certain items when logged out. 
+-Also adjusted the layout of the navbar the way we wanted.
+
+Got a better understanding of how to adjust the layout of the navbar. Worked through a lot of trial and error, but gained a lot of knowledge because of it.
