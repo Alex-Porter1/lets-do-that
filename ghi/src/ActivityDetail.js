@@ -107,13 +107,13 @@ function ActivityDetail() {
 
     return (
         <>
-        <div className="container bg-color-div">
+        <div className="container" style={{backgroundImage: `url(${images[0]})`}}>
             <Carousel activeIndex={index} onSelect={handleSelect}>
                 {images.map(image => {
                     return (
                         <Carousel.Item>
                             <img
-                            className="d-block w-100"
+                            className="d-block responsive"
                             src={image}
                             width="700px"
                             height="500px"

@@ -42,6 +42,10 @@ function SignupForm(props) {
   const signupPhrase = `Already have an account? Login here.`
 
   return (
+    <>
+    <div className="text-center">
+          <img src="/LDT_GRAF_2.png" alt="logo" width="500" height="auto" />
+    </div>
     <div className="card shadow p-4 mt-4 offset-3 col-6">
       <div className="card-header mb-3">
         <h2>Signup</h2>
@@ -101,6 +105,7 @@ function SignupForm(props) {
           </Link>
         </form>
       </div>
+      </>
   )
 }
 

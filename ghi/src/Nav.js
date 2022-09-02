@@ -6,9 +6,11 @@ function Nav() {
   const [token_, login, logout] = useToken();
 
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
       <div className="container-fluid">
-        <NavLink className="navbar-brand" to="/login">Lets Do That</NavLink>
+        <NavLink className="navbar-brand" to="/login">
+          <img className="d-inline-block align-top" width="150" height="auto" src="/LDT_GRAF_2.png" alt="logo"/>
+        </NavLink>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>

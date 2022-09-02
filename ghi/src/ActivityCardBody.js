@@ -12,8 +12,8 @@ function ActivityCardBody(column, col_idx) {
                 <div key={activity.id} className="card mb-3 shadow">
                 <img src={activity.image_url} className="card-img-top" />
                 <div className="card-body">
-                    <Link to={`/activities/${name}/${activity.id}`}>
-                        <h5 className="card-title">{activity.name}</h5>
+                    <Link style={{textDecoration: "none"}} to={`/activities/${name}/${activity.id}`}>
+                        <h5 className="card-title text-dark">{activity.name}</h5>
                     </Link>
                     {/* <h5 className="card-title">{activity.name}</h5> */}
                     <h6 className="card-subtitle mb-2 text-muted">
@@ -24,7 +24,7 @@ function ActivityCardBody(column, col_idx) {
                     </span>
                     <div className="card-footer text-center">
                         <Link to={`/activities/${name}/${activity.id}`}>
-                            <button className="btn btn-primary">Select</button>
+                            <button className="btn btn-outline-dark">Select</button>
                         </Link>
                     </div>
                 </div>
