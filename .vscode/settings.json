@@ -4,5 +4,6 @@
     "microservices",
     "SEIR",
     "signup"
-  ]
+  ],
+  "git.mergeEditor": false
 }

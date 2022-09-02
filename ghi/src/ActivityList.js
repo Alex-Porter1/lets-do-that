@@ -23,7 +23,7 @@ function ActivityList() {
         }
     }, [navigate, token])
 
-    let category = "bowling"
+    let category = "bars"
 
     const handleSubmit = (event) => {
         event.preventDefault()
