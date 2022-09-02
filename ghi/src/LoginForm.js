@@ -58,7 +58,7 @@ function LoginForm(props) {
             placeholder="Password"
           />
           <button type="submit" className="btn btn-primary">Submit</button>
-          <Link to="/signup" className="float-end" variant = "body2">
+          <Link to="/signup" className="float-end" variant="body2">
             {signupPhrase}
           </Link>
         </form>

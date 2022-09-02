@@ -1,8 +1,12 @@
 import { NavLink } from 'react-router-dom';
+import { useToken, useAuthContext } from './useToken'
 
 function Nav() {
+  const { token } = useAuthContext();
+  const [token_, login, logout] = useToken();
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-success">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/login">Lets Do That</NavLink>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,16 +15,23 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
+              {!token && (
               <NavLink className="nav-link" to="/login">Login</NavLink>
+              )}
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/logout">Logout</NavLink>
+              {token && (
+                <NavLink className="nav-link" to="/activities">Activities</NavLink>
+                )}
             </li>
+          </ul>
+          <ul className='navbar-nav ms-auto'>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/signup">Signup</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/activities">Activities</NavLink>
+              {token && (
+                <NavLink onClick={logout} to="/logout" className="nav-link text-white">
+                  Logout
+                </NavLink>
+              )}
             </li>
           </ul>
         </div>

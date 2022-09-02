@@ -1,5 +1,8 @@
 # Lijah's Journal
 
+## August 31, 2022
+
+* Today I learned that when using a custom user model
 ## August 30, 2022
 
 * Paired with Joel and Alex to today to work through the last of the authentication.

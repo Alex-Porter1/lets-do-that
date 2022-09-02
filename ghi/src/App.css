@@ -1,3 +1,12 @@
+body {
+  background-image: url("/public/assets/images/sand.jpg");
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
 .App {
   text-align: center;
 }
@@ -36,3 +45,5 @@
     transform: rotate(360deg);
   }
 }
+
+

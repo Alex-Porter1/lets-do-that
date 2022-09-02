@@ -49,3 +49,16 @@ Learned that a button at the top of vs code, closes all folders in vs code, clea
 -Were able to get the format the way we wanted and the forms laid out correctly.
 
 Learned more about how to adjust layouts on forms. I didn't know that mb abbreviation stood for margin-bottom. It clicked in my brain what all of those abbreviations stand for in css now.
+
+08/30/2022
+-Worked with Lijah and Joel to get authentication running correctly. 
+-Had to work through a lot of bugs and errors. By the end of the day we were able to get authentication working for superusers but not users that we created form out signup form.
+
+Got a better understanding of the authentication tokens
+
+08/31/2022
+-Worked with Lijah and Joel again to get authentication working for all users.
+-Were able to get all authentication working correctly, as well as got out different pages to be hidden if the user wasn't logged in. So it would redirect the user back to the login screen
+
+Learned that the authentication was only hashing the superuser password and not the regular user password. Had to create a function in our model to save the password so that django would has the standard user password as well.
+
