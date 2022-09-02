@@ -1,3 +1,9 @@
+## September 1, 2022
+
+Today I worked on:
+
+* Was stuck on a merge error all day yesterday. Andrew walked me through how to clear it and I was able to finish merging it. 
+
 
 ## August 30, 2022
 
