@@ -1,3 +1,11 @@
+## September 2, 2022
+
+Today I worked on:
+
+*
+
+
+
 ## September 1, 2022
 
 Today I worked on:
