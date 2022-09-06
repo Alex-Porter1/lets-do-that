@@ -23,7 +23,7 @@ function ActivityList() {
         }
     }, [navigate, token])
 
-    let category = "bowling"
+    let category = "bars"
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -67,8 +67,13 @@ function ActivityList() {
     }, [activities])
 
     return (
-        <div className="container">
-            <h2>Choose a location!</h2>
+        <div className="container my-3">
+            <div className="text-center">
+                <img src="/LDT_GRAF_2.png" alt="logo" width="500" height="auto" />
+            </div>
+            <div className="mt-3">
+                <h2>Choose a location!</h2>
+            </div>
             <form onSubmit={handleSubmit}>
                 <div className="form-floating mb-3">
                     <input placeholder="Type in a city or location" required type="text" name="location" id="location" className="form-control"/>
@@ -86,8 +91,9 @@ function ActivityList() {
                     })}
                     </select>
                 </div>
-                <button className="btn btn-outline-success">Submit</button>
+                <button className="btn btn-outline-dark">Submit</button>
             </form>
+            <div className="mt-3">
             {location
             ?   <>
                 <h2>Make a selection!</h2>
@@ -100,7 +106,7 @@ function ActivityList() {
                 </div>
                 </>
             : <h2>Choose a location and state, then press Submit!</h2>}
-            
+            </div>
         </div>
     )
 }
