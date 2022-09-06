@@ -3,7 +3,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ActivityList from './ActivityList';
 import ActivityDetail from './ActivityDetail';
-// import MainPage from './MainPage';
+import MainPage from './MainPage';
 import { useEffect, useState } from 'react';
 // import ActivityDetail from './ActivityCardBody';
 import LoginForm from './LoginForm';
