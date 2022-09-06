@@ -15,7 +15,7 @@ function MainPage() {
         
           <Stack gap={2} className="col-md-5 mx-auto">
           <div className='mt-5'> </div>
-          <Button variant="outline-primary" >Aestheticians</Button>{' '}
+          <Button variant="outline-primary" >Aestheticians{}</Button>{' '}
           <Button variant="outline-secondary">Absinthe Bars</Button>{' '}
           <Button variant="outline-success">Amusement Parks</Button>{' '}
           <Button variant="outline-warning">Aquariums</Button>{' '}
