@@ -1,8 +1,15 @@
+## September 6, 2022
+
+Today I worked on:
+
+* Finished the Main Page and will have Joel take over to pass in the API data. I will be working on my unit tests today. 
+
+
 ## September 2, 2022
 
 Today I worked on:
 
-*
+* Starting fresh with everything and put the css and pretty stuff on hold. I will be focusing on the Main Page today. 
 
 
 
