@@ -19,6 +19,9 @@ class FeatureTests(TestCase):
         except ModuleNotFoundError:
             self.fail("Could not find 'accounts_rest.models.ActivityVO'")
 
+
+#Perla Tests #
+
     def test_account_registered_with_admin(self):
         try:
             from accounts_rest.models import Account
