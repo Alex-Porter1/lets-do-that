@@ -67,3 +67,8 @@ Learned that the authentication was only hashing the superuser password and not 
 -Also adjusted the layout of the navbar the way we wanted.
 
 Got a better understanding of how to adjust the layout of the navbar. Worked through a lot of trial and error, but gained a lot of knowledge because of it.
+
+09/07/2022
+-Worked with Lijah to create unit tests for our app. Got the unit tests working correctly.
+
+Big ah ha moment was realizing that we needed to run the unit tests inside of the docker container instead of inside django terminal.
