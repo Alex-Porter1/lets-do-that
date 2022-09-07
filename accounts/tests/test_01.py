@@ -1,6 +1,6 @@
 from unittest import TestCase
 from django.db import models
-import django
+from django.contrib import admin
 import os
 from django.test import SimpleTestCase
 
@@ -18,3 +18,16 @@ class FeatureTests(TestCase):
             from accounts_rest.models import ActivityVO
         except ModuleNotFoundError:
             self.fail("Could not find 'accounts_rest.models.ActivityVO'")
+
+    def test_account_registered_with_admin(self):
+        try:
+            from accounts_rest.models import Account
+
+            self.assertTrue(
+                admin.site.is_registered(Account),
+                msg="Account.models.Account is not registered with the admin",
+            )
+        except ModuleNotFoundError:
+            self.fail("Could not find 'accounts_rest.models'")
+        except ImportError:
+            self.fail("Could not find 'accounts_rest.models.Account'")
