@@ -13,7 +13,7 @@ class FeatureTests(TestCase):
         except ModuleNotFoundError:
             self.fail("Could not find 'accounts_rest.models.Accounts'")
 
-    def test_activityvo_model_exists(self):
+    def test_activity_vo_model_exists(self):
         try:
             from accounts_rest.models import ActivityVO
         except ModuleNotFoundError:
