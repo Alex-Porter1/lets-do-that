@@ -3,6 +3,7 @@ import ActivityCardBody from "./ActivityCardBody"
 import stateList from "./states"
 import { useAuthContext } from "./useToken"
 import { useNavigate } from "react-router-dom";
+import Badge from 'react-bootstrap/Badge';
 
 
 
@@ -10,6 +11,7 @@ function ActivityList() {
     const [activityColumns, setActivityColumns] = useState([[],[],[]])
     const [activities, setActivities] = useState([])
     const [location, setLocation] = useState("")
+    const [category, setCategory] = useState("bars")
     const apiKey = process.env.REACT_APP_YELP_API_KEY
     const yelpURL = process.env.REACT_APP_YELP_URL
 
@@ -22,8 +24,6 @@ function ActivityList() {
             navigate(`/login`)
         }
     }, [navigate, token])
-
-    let category = "bars"
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -70,6 +70,9 @@ function ActivityList() {
         <div className="container my-3">
             <div className="text-center">
                 <img src="/LDT_GRAF_2.png" alt="logo" width="500" height="auto" />
+            </div>
+            <div className="mt-3">
+                <h2>Current Category: <Badge bg="success">{category}</Badge></h2>
             </div>
             <div className="mt-3">
                 <h2>Choose a location!</h2>

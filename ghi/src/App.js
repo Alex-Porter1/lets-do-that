@@ -28,7 +28,7 @@ function App() {
         <div className="App">
           <header className="App-header">
             <Routes>
-            <Route path="MainPage" element={<MainPage />} />
+            <Route path="" element={<MainPage />} />
             <Route path="activities">
               <Route path="" element={<ActivityList />} />
               <Route path=":activityName/:yelpID" element={<ActivityDetail />} />
