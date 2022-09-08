@@ -34,3 +34,10 @@ class FeatureTests(TestCase):
             self.fail("Could not find 'accounts_rest.models'")
         except ImportError:
             self.fail("Could not find 'accounts_rest.models.Account'")
+
+    def test_accounts_rest_app_created(self):
+        try:
+            from accounts.settings import INSTALLED_APPS
+        except ModuleNotFoundError:
+            self.fail("Could not find the Django project 'accounts_rest'")
+    
