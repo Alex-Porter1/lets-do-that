@@ -77,3 +77,27 @@ class FeatureTests(TestCase):
             self.fail("Could not find 'Activity.models.Activity'")
         except AttributeError:
             self.fail("Could not find 'Activity.members'")
+
+    def test_category_model_exists(self):
+        try:
+            from activities_rest.models import Category
+        except ModuleNotFoundError:
+            self.fail("Could not find 'activities_rest.models.Category'")
+
+    def test_category_model_has_char_name_field(self):
+        try:
+            from activities_rest.models import Category
+
+            name = Category.name
+            self.assertIsInstance(
+                name.field,
+                models.CharField,
+                msg="Category.name should be a character field",
+            )
+        except ModuleNotFoundError:
+            self.fail("Could not find 'activities_rest.models'")
+        except ImportError:
+            self.fail("Could not find 'activities_rest.models.Category'")
+        except AttributeError:
+            self.fail("Could not find 'Activity.name'")
+
