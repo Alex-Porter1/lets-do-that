@@ -1,9 +1,21 @@
-Format for each entry:
+## September 7th, 2022
 
-- Date of entry
-- List of features/issues that you worked on and who you worked with, if applicable
-- Reflection of any design converstations
-- At least one ah-ha! moment, however small
+Today I Worked On:
+
+* Updated main page component to display category list and connected it to the list page using props. Updated list page to show selected category. Added result quantity to show once user selects a location.
+
+
+## September 6th, 2022
+
+Today I Worked On:
+
+* Worked on the main page react component, adding in category list and some text animation. Updated the logo link to go to the main page.
+
+## September 2nd, 2022
+
+Today I Worked On:
+
+* Improved code readability and made some changes to update the CSS and styles to match up together among the various pages.
 
 ## September 1st, 2022
 

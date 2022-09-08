@@ -28,30 +28,20 @@ function App() {
         <div className="App">
           <header className="App-header">
             <Routes>
-            <Route path="" element={<MainPage />} />
-            <Route path="activities">
-              <Route path="" element={<ActivityList />} />
-              <Route path=":activityName/:yelpID" element={<ActivityDetail />} />
-            </Route>
+              <Route path="" element={<MainPage />} />
+              <Route path="activities">
+                <Route path="" element={<ActivityList />} />
+                <Route path=":activityName/:yelpID" element={<ActivityDetail />} />
+              </Route>
               <Route path="login" element={<LoginForm />} />
               <Route path="logout" element={<LogoutForm />} />
               <Route path="signup" element={<SignupForm />} />
             </Routes>
-            {/* <StyledParent>
-              <GlobalStyle></GlobalStyle>
-              <PopUpsGallery></PopUpsGallery>
- </StyledParent> */}
-          
-  
-            </header>
-            </div>
-            </BrowserRouter>
+          </header>
+        </div>
+      </BrowserRouter>
     </AuthProvider>
-        
-         
-      
-        
-);
-          }
+       );
+  }
 
 export default App;
