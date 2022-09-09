@@ -12,7 +12,11 @@ function ActivityList() {
     const [activities, setActivities] = useState([])
     const [location, setLocation] = useState("")
     const loc = useLocation()
-    const { category } = loc.state
+    let category = {category: "bars"}
+    if (loc.state) {
+        category = loc.state
+        console.log("category:", category)
+    } 
     // const [category, setCategory] = useState("bars")
     const apiKey = process.env.REACT_APP_YELP_API_KEY
     const yelpURL = process.env.REACT_APP_YELP_URL
@@ -39,7 +43,7 @@ function ActivityList() {
         (async () => {
             if (location) {
                 const corsAnywhere = "https://thingproxy.freeboard.io/fetch/"
-                const url = `${yelpURL}search?location=${location}&categories=${category}`
+                const url = `${yelpURL}search?location=${location}&categories=${category.category}`
                 const config = {
                     headers: {
                         Authorization: `Bearer ${apiKey}`
@@ -74,7 +78,7 @@ function ActivityList() {
                 <img src="/LDT_GRAF_2.png" alt="logo" width="500" height="auto" />
             </div>
             <div className="mt-3">
-                <h2>Current Category: <Badge bg="success">{category.toUpperCase()}</Badge></h2>
+                <h2>Current Category: <Badge bg="success">{category.category.toUpperCase()}</Badge></h2>
             </div>
             <div className="mt-3">
                 <h2>Choose a location!</h2>
