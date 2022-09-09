@@ -6,7 +6,7 @@ function Nav() {
   const [token_, login, logout] = useToken();
 
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/login">
           <img className="d-inline-block align-top" width="150" height="auto" src="/LDT_GRAF_2.png" alt="logo"/>
@@ -35,11 +35,13 @@ function Nav() {
                 </NavLink>
               )}
             </li>
-          
+      
           </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+        </nav>
+      
+    
   )
 }
 
