@@ -1,0 +1,22 @@
+.animated {
+ color: black;
+ text-align: center; 
+ font-family: "arial";
+ margin: 10px 0 0 10px;
+ white-space: nowrap;
+ overflow: hidden;
+ width: 100%;
+ animation: animtext 5s; 
+  /* transition: all cubic-bezier(0.1, 0.7, 1.0, 0.1); */
+  transition: margin-right 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes animtext { 
+ from {
+     width: 0;
+    /* transition: all 2s ease-in-out; */
+    /* transition-delay: 15s; */
+    transition: margin-right 2s;
+    transition-timing-function: ease-in-out;
+ } 
+}

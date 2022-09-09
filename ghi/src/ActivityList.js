@@ -3,13 +3,21 @@ import ActivityCardBody from "./ActivityCardBody"
 import stateList from "./states"
 import { useAuthContext } from "./useToken"
 import { useNavigate } from "react-router-dom";
-
+import Badge from 'react-bootstrap/Badge';
+import { useLocation } from 'react-router-dom'
 
 
 function ActivityList() {
     const [activityColumns, setActivityColumns] = useState([[],[],[]])
     const [activities, setActivities] = useState([])
     const [location, setLocation] = useState("")
+    const loc = useLocation()
+    let category = {category: "bars"}
+    if (loc.state) {
+        category = loc.state
+        console.log("category:", category)
+    } 
+    // const [category, setCategory] = useState("bars")
     const apiKey = process.env.REACT_APP_YELP_API_KEY
     const yelpURL = process.env.REACT_APP_YELP_URL
 
@@ -23,8 +31,6 @@ function ActivityList() {
         }
     }, [navigate, token])
 
-    let category = "bars"
-
     const handleSubmit = (event) => {
         event.preventDefault()
         let theCity = event.target.location.value.replaceAll(" ", "").toLowerCase()
@@ -37,7 +43,7 @@ function ActivityList() {
         (async () => {
             if (location) {
                 const corsAnywhere = "https://thingproxy.freeboard.io/fetch/"
-                const url = `${yelpURL}search?location=${location}&categories=${category}`
+                const url = `${yelpURL}search?location=${location}&categories=${category.category}`
                 const config = {
                     headers: {
                         Authorization: `Bearer ${apiKey}`
@@ -72,6 +78,9 @@ function ActivityList() {
                 <img src="/LDT_GRAF_2.png" alt="logo" width="500" height="auto" />
             </div>
             <div className="mt-3">
+                <h2>Current Category: <Badge bg="success">{category.category.toUpperCase()}</Badge></h2>
+            </div>
+            <div className="mt-3">
                 <h2>Choose a location!</h2>
             </div>
             <form onSubmit={handleSubmit}>
@@ -94,9 +103,10 @@ function ActivityList() {
                 <button className="btn btn-outline-dark">Submit</button>
             </form>
             <div className="mt-3">
-            {location
-            ?   <>
-                <h2>Make a selection!</h2>
+                {location
+                ?   
+                <>
+                <h2>{activities.length} Results. Make a selection or try a different location!</h2>
                 <div className="row mt-5">
                     {activityColumns.map((column, col_idx) => {
                         return (
@@ -104,8 +114,8 @@ function ActivityList() {
                         );
                     })}
                 </div>
-                </>
-            : <h2>Choose a location and state, then press Submit!</h2>}
+                </>                
+                : <h2>Choose a location and state, then press Submit!</h2>}                
             </div>
         </div>
     )
