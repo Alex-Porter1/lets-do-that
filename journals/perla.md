@@ -1,3 +1,9 @@
+## September 9, 2022
+
+Today I worked on:
+
+* We will be working on deploying our app. 
+
 
 ## September 8, 2022
 
