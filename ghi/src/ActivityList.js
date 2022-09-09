@@ -17,7 +17,6 @@ function ActivityList() {
         category = loc.state
         console.log("category:", category)
     } 
-    // const [category, setCategory] = useState("bars")
     const apiKey = process.env.REACT_APP_YELP_API_KEY
     const yelpURL = process.env.REACT_APP_YELP_URL
 

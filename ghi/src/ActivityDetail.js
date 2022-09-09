@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useRef } from "react"
 import { useParams } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
 import Carousel from 'react-bootstrap/Carousel';
 import Badge from 'react-bootstrap/Badge';
 import './ActivityDetail.css'
 
 const apiKey = process.env.REACT_APP_YELP_API_KEY
 const yelpURL = process.env.REACT_APP_YELP_URL
-// const yelpID = "ryvBsB9FrBBZDak87iGS1w"
 
 function ActivityDetail() {
     const [activity, setActivity] = useState({})
