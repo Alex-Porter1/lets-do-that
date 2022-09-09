@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -6,10 +6,21 @@ import Stack from 'react-bootstrap/Stack';
 import "./MainPage.css"
 import category_list from './categories'
 import { Link } from "react-router-dom"
+import { useAuthContext } from "./useToken"
+import { useNavigate } from "react-router-dom";
 
 function MainPage() {
 
-  // console.log("cat list:", category_list)
+  const navigate = useNavigate();
+  const { token } = useAuthContext();
+
+  useEffect(() => {
+      if (!token) {
+          console.log('user not logged in, redirect to login page')
+          navigate(`/login`)
+      }
+  }, [navigate, token])
+
   const shuffled = category_list.sort(() => 0.5 - Math.random())
   let selected = shuffled.slice(0, 15)
 

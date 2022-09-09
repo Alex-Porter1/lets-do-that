@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { Link } from "react-router-dom"
 
 
@@ -15,7 +15,6 @@ function ActivityCardBody(column, col_idx) {
                     <Link style={{textDecoration: "none"}} to={`/activities/${name}/${activity.id}`}>
                         <h5 className="card-title text-dark">{activity.name}</h5>
                     </Link>
-                    {/* <h5 className="card-title">{activity.name}</h5> */}
                     <h6 className="card-subtitle mb-2 text-muted">
                         Rating: {activity.rating} • Price: {activity.price ? activity.price : "N/A"}
                     </h6>
