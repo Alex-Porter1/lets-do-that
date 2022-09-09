@@ -1,3 +1,26 @@
+## September 9, 2022
+
+Today I worked on:
+
+* We will be working on deploying our app. 
+
+
+## September 8, 2022
+
+Today I worked on:
+
+* Made more unit tests and made sure everything was working. I also merged my stuff to main and pulled the new stuff. One of my team mates was having a merge error and he walked me through what I needed to do so I wouldn't get that. 
+
+
+
+
+## September 7, 2022
+
+Today I worked on:
+
+* Made some unit tests, but when I went to run them they were not working. I kept getting an error. Then I realized I should be running the tests in the container. After that I was still having problems and I reached out to my team mates. Apparently I had been using the incorrect command to try to run them and I got some working by the end of the day. 
+
+
 ## September 6, 2022
 
 Today I worked on:

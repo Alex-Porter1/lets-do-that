@@ -35,11 +35,13 @@ function Nav() {
                 </NavLink>
               )}
             </li>
-          
+      
           </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+        </nav>
+      
+    
   )
 }
 
