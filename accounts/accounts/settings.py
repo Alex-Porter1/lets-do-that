@@ -14,6 +14,8 @@ from pathlib import Path
 
 import dj_database_url
 
+import os
+
 from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wkz%)zogai%)%6ps!u-d^08wz4a#yqq1bxt#n$9n0auff!qxvg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = not os.environ.get("DEBUG")
 
 # Application definition
 
@@ -64,8 +66,10 @@ MIDDLEWARE = [
 ]
 
 ALLOWED_HOSTS = [
-    "localhost",
-    "activities",
+  ".localhost",
+  "127.0.0.1",
+  "[::1]",
+  os.environ.get("DEPLOYED_HOST", "localhost"),
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -78,6 +82,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8080",
     "http://localhost:8090",
+    os.environ.get("CORS_HOST", "http://localhost:3001"),
 ]
 CORS_ALLOW_CREDENTIALS = True
 

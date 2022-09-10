@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -21,7 +21,6 @@ function MainPage() {
       }
   }, [navigate, token])
 
-  // console.log("cat list:", category_list)
   const shuffled = category_list.sort(() => 0.5 - Math.random())
   let selected = shuffled.slice(0, 15)
 

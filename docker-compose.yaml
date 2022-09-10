@@ -57,6 +57,7 @@ services:
       WAIT_HOSTS: postgres:5432,accounts:8000
       WAIT_TIMEOUT: 240
       DJWTO_SIGNING_KEY: 8cbeb7f3585d8283b8865d4d61a18ce3cd819cf2f546eb74221a47e508cdff19
+      POLLERS_API: http://activities:8000
   ghi:
     image: node:lts-bullseye
     command: /bin/bash run.sh
@@ -69,8 +70,8 @@ services:
         HOST_OS: ${OS}
         NODE_ENV: development
         HOST: "0.0.0.0"
-        REACT_APP_ACCOUNTS: http://localhost:8000
-        REACT_APP_ACTIVITIES: http://localhost:8000
+        REACT_APP_ACCOUNTS: http://localhost:8080
+        REACT_APP_ACTIVITIES: http://localhost:8090
         REACT_APP_YELP_API_KEY: ${REACT_APP_YELP_API_KEY}
         REACT_APP_YELP_URL: https://api.yelp.com/v3/businesses/
         DJWTO_SIGNING_KEY: 8cbeb7f3585d8283b8865d4d61a18ce3cd819cf2f546eb74221a47e508cdff19
