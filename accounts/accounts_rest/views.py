@@ -1,13 +1,13 @@
-from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 import json
 
 from .encoders import AccountEncoder
 
-from .models import Account, ActivityVO
+from .models import Account
 
 # Create your views here.
+
 
 @require_http_methods(["GET"])
 def api_user_token(request):
@@ -17,6 +17,7 @@ def api_user_token(request):
             return JsonResponse({"token": token})
     response = JsonResponse({"token": None})
     return response
+
 
 @require_http_methods(["GET", "POST"])
 def api_accounts(request):
@@ -41,9 +42,9 @@ def api_accounts(request):
 
         account = Account.objects.create(**content)
         return JsonResponse(
-          account,
-          encoder=AccountEncoder,
-          safe=False,
+            account,
+            encoder=AccountEncoder,
+            safe=False,
         )
 
 
@@ -59,3 +60,4 @@ def api_show_accounts(request, pk):
     else:
         count, _ = Account.objects.filter(id=pk).delete()
         return JsonResponse({"deleted": count > 0})
+

@@ -14,6 +14,7 @@ POLLERS_API = os.environ["POLLERS_API"]
 
 from accounts_rest.models import ActivityVO
 
+
 def get_activities():
     # response = requests.get("http://activities:8000/api/activities/")
     response = requests.get(f"{POLLERS_API}/api/activities/")
@@ -21,7 +22,7 @@ def get_activities():
     print("ACTIVITIES POLLER DATA: ", content)
     for activity in content["activities"]:
         ActivityVO.objects.update_or_create(
-            id = activity["id"],
+            id=activity["id"],
             defaults={
                 "name": activity["name"],
                 "description": activity["description"],
@@ -29,6 +30,7 @@ def get_activities():
                 "category": activity["category"],
             }
         )
+
 
 def poll():
     while True:
@@ -42,3 +44,4 @@ def poll():
 
 if __name__ == "__main__":
     poll()
+

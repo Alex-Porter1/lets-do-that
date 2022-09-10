@@ -2,6 +2,7 @@ from .common.json import ModelEncoder
 
 from .models import Account, ActivityVO
 
+
 class ActivityVOEncoder(ModelEncoder):
     model = ActivityVO
     properties = [
@@ -11,6 +12,7 @@ class ActivityVOEncoder(ModelEncoder):
         "picture_url",
         "category",
     ]
+
 
 class AccountEncoder(ModelEncoder):
     model = Account
@@ -22,3 +24,4 @@ class AccountEncoder(ModelEncoder):
         "first_name",
         "last_name",
     ]
+    

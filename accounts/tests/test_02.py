@@ -1,5 +1,6 @@
 from django.test import SimpleTestCase
 
+
 class FeatureTests(SimpleTestCase):
     def test_accounts_project_created(self):
         try:

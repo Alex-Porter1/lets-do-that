@@ -8,7 +8,7 @@ class FeatureTests(TestCase):
         try:
             from activities_rest.models import Activity  # noqa: F401
         except ModuleNotFoundError:
-            self.fail("Could not find 'projects.models.Project'")
+            self.fail("Could not find 'activities.models.Activity'")
 
     def test_activity_model_has_char_name_field(self):
         try:

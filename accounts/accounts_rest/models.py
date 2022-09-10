@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
+
 class ActivityVO(models.Model):
     import_href = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
@@ -25,3 +26,4 @@ class Account(AbstractUser):
     def save(self, *args, **kwargs):
         self.set_password(self.password)
         super().save(*args, **kwargs)
+    
