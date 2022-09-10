@@ -72,3 +72,11 @@ Got a better understanding of how to adjust the layout of the navbar. Worked thr
 -Worked with Lijah to create unit tests for our app. Got the unit tests working correctly.
 
 Big ah ha moment was realizing that we needed to run the unit tests inside of the docker container instead of inside django terminal.
+
+09/08/2022
+-Worked with Lijah to create more unit tests, also edited a few things with our home page to make it function properly.
+
+09/09/2022
+-Worked together as a team to get the ci/cd/deployment up and running. I believe we are close to having it deployed, but still a few bugs to fix.
+
+I didn't realize how extensive it would be to deploy it, and all the different Config Variables and settings that would be needed.
