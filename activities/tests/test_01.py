@@ -68,8 +68,7 @@ class FeatureTests(TestCase):
             self.assertEqual(
                 category.field.related_query_name(),
                 "categories",
-                msg=\
-                "Activity.category should have a related name 'categories'",
+                msg="Activity.category should have related name 'categories'"
             )
         except ModuleNotFoundError:
             self.fail("Could not find 'Activity.models'")
