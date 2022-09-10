@@ -1,10 +1,5 @@
 from unittest import TestCase
-from django.db import models
 from django.contrib import admin
-import os
-from django.test import SimpleTestCase
-
-# os.environ["DJANGO_SETTINGS_MODULE"] = "accounts.settings"
 
 
 class FeatureTests(TestCase):

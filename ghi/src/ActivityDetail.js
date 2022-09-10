@@ -32,7 +32,7 @@ function ActivityDetail() {
             const activityData = await activityResponse.json()
             setActivity(activityData)
             setImages(activityData.photos)
-            if (activityData.hours == undefined) {
+            if (activityData.hours === undefined) {
                 setDays(["No Hours Listed"])
             } else {
                 console.log("activity data:", activityData.hours[0].open)

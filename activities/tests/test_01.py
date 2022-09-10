@@ -1,6 +1,5 @@
-from django.test import TestCase
+from unittest import TestCase
 from django.db import models
-
 
 class FeatureTests(TestCase):
     def test_activity_model_exists(self):
