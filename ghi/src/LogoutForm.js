@@ -3,8 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect } from "react";
 
 function LogoutForm(props) {
-
+  /* eslint-disable */
   const [token_, login, logout] = useToken();
+  /* eslint-enable */
   const navigate = useNavigate();
   const { token } = useAuthContext();
 

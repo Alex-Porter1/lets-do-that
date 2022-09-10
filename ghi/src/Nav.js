@@ -3,7 +3,9 @@ import { useToken, useAuthContext } from './useToken'
 
 function Nav() {
   const { token } = useAuthContext();
+  /* eslint-disable */
   const [token_, login, logout] = useToken();
+  /* eslint-enable */
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark" >

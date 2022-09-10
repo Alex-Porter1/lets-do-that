@@ -19,11 +19,12 @@ function SignupForm(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [userName, setUserName] = useState('');
-  // const [birthday, setBirthday] = useState('');
   const [first, setFirst] = useState('');
   const [last, setLast] = useState('');
   const { token } = useAuthContext();
+  /* eslint-disable */
   const [token_, login_, logout_, signup] = useToken();
+  /* eslint-enable */
   const navigate = useNavigate();
 
   useEffect(() => {
