@@ -1,6 +1,7 @@
 from unittest import TestCase
 from django.db import models
 
+
 class FeatureTests(TestCase):
     def test_activity_model_exists(self):
         try:
@@ -78,7 +79,7 @@ class FeatureTests(TestCase):
 
     def test_category_model_exists(self):
         try:
-            from activities_rest.models import Category
+            from activities_rest.models import Category # noqa: F401
         except ModuleNotFoundError:
             self.fail("Could not find 'activities_rest.models.Category'")
 
