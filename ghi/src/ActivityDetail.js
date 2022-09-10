@@ -46,13 +46,13 @@ function ActivityDetail() {
 
     useEffect(() => {
         getActivityData()
-    }, [])
+    }, [getActivityData])  // made change
 
 
     const findDays = (days) => {
         const daysOfWeek = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
         const results = []
-        if (days[0] == "No Hours Listed") {
+        if (days[0] === "No Hours Listed") {  // made change
             return (
                 <tr>
                     <th scope="row">No Hours Listed</th>
