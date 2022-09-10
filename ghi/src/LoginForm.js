@@ -16,7 +16,7 @@ function BootstrapInputFields(props) {
 function LoginForm(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [token_, login] = useToken();
+  const [token_, login] = useToken();  // eslint-disable-line no-use-before-define
   const navigate = useNavigate();
   const { token } = useAuthContext();
   const signupPhrase = `Don't have an account? \n Sign up here`;
