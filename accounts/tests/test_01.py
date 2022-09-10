@@ -1,10 +1,10 @@
-import imp
 from unittest import TestCase
+from django.db import models
 from django.contrib import admin
+import os
+from django.test import SimpleTestCase
 
-
-
-#os.environ["DJANGO_SETTINGS_MODULE"] = "accounts.settings"
+# os.environ["DJANGO_SETTINGS_MODULE"] = "accounts.settings"
 
 
 class FeatureTests(TestCase):
@@ -42,5 +42,4 @@ class FeatureTests(TestCase):
             from accounts.settings import INSTALLED_APPS
         except ModuleNotFoundError:
             self.fail("Could not find the Django project 'accounts_rest'")
-
     
