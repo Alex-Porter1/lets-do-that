@@ -7,4 +7,3 @@ class FeatureTests(SimpleTestCase):
             from accounts.settings import INSTALLED_APPS  # noqa: F401
         except ModuleNotFoundError:
             self.fail("Could not find the Django project 'accounts'")
-

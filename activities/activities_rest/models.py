@@ -13,9 +13,10 @@ class Activity(models.Model):
     picture_url = models.CharField(max_length=256)
     category = models.ForeignKey(
         Category,
-        related_name = "categories",
+        related_name="categories",
         on_delete=models.PROTECT
     )
+
 
 class Rating(models.Model):
     value = models.PositiveSmallIntegerField(
@@ -30,4 +31,3 @@ class Rating(models.Model):
         related_name="ratings",
         on_delete=models.CASCADE,
     )
-

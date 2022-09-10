@@ -21,9 +21,7 @@ class FeatureTests(TestCase):
             self.fail("Could not find 'accounts_rest.models.ActivityVO'")
 
 
-#Perla Tests #
-
-
+# Perla Tests #
     def test_account_registered_with_admin(self):
         try:
             from accounts_rest.models import Account
@@ -42,4 +40,3 @@ class FeatureTests(TestCase):
             from accounts.settings import INSTALLED_APPS
         except ModuleNotFoundError:
             self.fail("Could not find the Django project 'accounts_rest'")
-    

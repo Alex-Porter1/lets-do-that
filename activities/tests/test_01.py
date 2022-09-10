@@ -100,5 +100,3 @@ class FeatureTests(TestCase):
             self.fail("Could not find 'activities_rest.models.Category'")
         except AttributeError:
             self.fail("Could not find 'Activity.name'")
-            
-

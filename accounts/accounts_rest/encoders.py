@@ -24,4 +24,3 @@ class AccountEncoder(ModelEncoder):
         "first_name",
         "last_name",
     ]
-    
