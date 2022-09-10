@@ -29,7 +29,7 @@ function SignupForm(props) {
   useEffect(() => {
     if (token) {
         console.log('user has logged in')
-        navigate(`/activities`)
+        navigate(`/`)
         // redirect
     }
   }, [navigate, token])
