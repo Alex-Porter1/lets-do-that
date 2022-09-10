@@ -79,7 +79,7 @@ class FeatureTests(TestCase):
 
     def test_category_model_exists(self):
         try:
-            from activities_rest.models import Category # noqa: F401
+            from activities_rest.models import Category  # noqa: F401
         except ModuleNotFoundError:
             self.fail("Could not find 'activities_rest.models.Category'")
 
