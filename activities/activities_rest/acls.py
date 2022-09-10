@@ -8,6 +8,7 @@ YELP_API_KEY = os.environ["YELP_API_KEY"]
 ICON_API_KEY = os.environ["ICON_API_KEY"]
 ICON_SECRET = os.environ["ICON_SECRET"]
 
+
 def get_icon(term):
 
     auth = OAuth1(ICON_API_KEY, ICON_SECRET)

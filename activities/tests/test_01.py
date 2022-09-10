@@ -25,7 +25,7 @@ class FeatureTests(TestCase):
             self.fail("Could not find 'activities_rest.models.Activity'")
         except AttributeError:
             self.fail("Could not find 'Activity.name'")
-    
+
     def test_activity_model_has_text_description_field(self):
         try:
             from activities_rest.models import Activity
@@ -68,7 +68,8 @@ class FeatureTests(TestCase):
             self.assertEqual(
                 category.field.related_query_name(),
                 "categories",
-                msg="Activity.category should have a related name of 'categories'",
+                msg=
+                "Activity.category should have a related name of 'categories'",
             )
         except ModuleNotFoundError:
             self.fail("Could not find 'Activity.models'")
