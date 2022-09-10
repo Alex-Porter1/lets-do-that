@@ -46,7 +46,7 @@ function ActivityDetail() {
 
     useEffect(() => {
         getActivityData()
-    }, [getActivityData])  // made change
+    }, [])
 
 
     const findDays = (days) => {
@@ -115,6 +115,7 @@ function ActivityDetail() {
                             src={image}
                             width="700px"
                             height="500px"
+                            alt=""
                             />
                             <Carousel.Caption>
                             <h1><Badge bg="dark">{activity.name}</Badge></h1>

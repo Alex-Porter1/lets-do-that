@@ -10,7 +10,7 @@ function ActivityCardBody(column, col_idx) {
             console.log("id", activity.id)
             return (
                 <div key={activity.id} className="card mb-3 shadow">
-                <img src={activity.image_url} className="card-img-top" />
+                <img src={activity.image_url} className="card-img-top" alt=""/>
                 <div className="card-body">
                     <Link style={{textDecoration: "none"}} to={`/activities/${name}/${activity.id}`}>
                         <h5 className="card-title text-dark">{activity.name}</h5>
