@@ -46,7 +46,7 @@ function ActivityDetail() {
 
     useEffect(() => {
         getActivityData()
-    }, [])
+    }, )
 
 
     const findDays = (days) => {
