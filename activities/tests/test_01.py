@@ -1,4 +1,3 @@
-from unicodedata import category
 from django.test import TestCase
 from django.db import models
 
@@ -43,7 +42,7 @@ class FeatureTests(TestCase):
             self.fail("Could not find 'activities_rest.models.Activity'")
         except AttributeError:
             self.fail("Could not find 'Activity.description'")
-    
+
     def test_activity_model_has_char_picture_url_field(self):
         try:
             from activities_rest.models import Activity
@@ -60,7 +59,7 @@ class FeatureTests(TestCase):
             self.fail("Could not find 'activities_rest.models.Activity'")
         except AttributeError:
             self.fail("Could not find 'Activity.name'")
-    
+
     def test_project_model_has_category_related_name_of_projects(self):
         try:
             from activities_rest.models import Activity
@@ -100,4 +99,5 @@ class FeatureTests(TestCase):
             self.fail("Could not find 'activities_rest.models.Category'")
         except AttributeError:
             self.fail("Could not find 'Activity.name'")
+            
 
