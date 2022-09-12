@@ -44,10 +44,10 @@ function ActivityList() {
                 const corsAnywhere = "https://thingproxy.freeboard.io/fetch/"
                 const url = `${yelpURL}search?location=${location}&categories=${category.category}`
                 const config = {
-                    headers: {
-                        Authorization: `Bearer ${apiKey}`
-                }}
-        
+                    headers: {Authorization: `Bearer ${apiKey}`},
+                    mode: 'no-cors',                    
+            }
+                console.log("url", `${corsAnywhere}${url}`)
                 const activitiesResponse = await fetch(`${corsAnywhere}${url}`, config)
                 if (activitiesResponse.ok) {
                     const activitiesData = await activitiesResponse.json()

@@ -45,7 +45,7 @@ function SignupForm(props) {
   return (
     <>
     <div className="text-center">
-          <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
+      <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
     </div>
     <div className="card shadow p-4 mt-4 offset-3 col-6">
       <div className="card-header mb-3">
