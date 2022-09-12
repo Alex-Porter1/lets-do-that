@@ -47,6 +47,23 @@ build-front-end-job:
     paths:
       - ghi/build/  # Save all of the files in the build path
 
+pages:  # THIS STEP MUST BE NAME PAGES
+  stage: deploy
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  dependencies:
+    - build-front-end-job
+  needs:
+    - build-front-end-job
+  script:
+     # THE FIRST PART OF THIS COMMAND MUST BE THE DIRECTORY
+     # THAT YOU cd INTO TO BUILD IT PLUS THE build/ AT THE
+     # END
+    - mv ghi/build/ public
+  artifacts:
+    paths:
+      - public
+
 build-accounts-image-job:  # RENAME THIS
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
