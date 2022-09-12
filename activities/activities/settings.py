@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-irrphzq=+(x7t^6f607bsr8cjv7+@9_x39=6&i+(-o4971&t+z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True # not os.environ.get("DEBUG")
+DEBUG = os.environ.get("DEBUG", False) == "True"
 
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "api_list_activities"

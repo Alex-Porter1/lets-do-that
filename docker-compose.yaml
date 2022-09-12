@@ -29,6 +29,7 @@ services:
         DATABASE_URL: postgresql://accounts:password@postgres/accounts
         WAIT_HOSTS: postgres:5432
         DJWTO_SIGNING_KEY: 8cbeb7f3585d8283b8865d4d61a18ce3cd819cf2f546eb74221a47e508cdff19
+        DEBUG: "True"
   activities:
     build:
         context: ./activities
@@ -41,6 +42,7 @@ services:
         DATABASE_URL: postgresql://activities:password@postgres/activities
         WAIT_HOSTS: postgres:5432
         DJWTO_SIGNING_KEY: 8cbeb7f3585d8283b8865d4d61a18ce3cd819cf2f546eb74221a47e508cdff19
+        DEBUG: "True"
   accounts-poller:
     build:
       context: ./accounts/poll
