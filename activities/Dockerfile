@@ -12,7 +12,7 @@ COPY manage.py manage.py
 COPY activities activities
 COPY activities_rest activities_rest
 COPY common common
-COPY tests tests
+# COPY tests tests
 
 RUN pip install -r requirements.txt
 CMD python manage.py migrate && gunicorn activities.wsgi --bind 0.0.0.0:$PORT --log-file -
