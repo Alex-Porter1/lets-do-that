@@ -48,7 +48,8 @@ function ActivityList() {
                     mode: 'cors',                    
             }
                 console.log("url", `${corsAnywhere}${url}`)
-                const activitiesResponse = await fetch(`${corsAnywhere}${url}`, config)
+                // const activitiesResponse = await fetch(`${corsAnywhere}${url}`, config)
+                const activitiesResponse = await fetch(`${url}`, config)
                 if (activitiesResponse.ok) {
                     const activitiesData = await activitiesResponse.json()
                     setActivities(activitiesData.businesses)
