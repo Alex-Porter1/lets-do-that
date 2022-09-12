@@ -45,7 +45,7 @@ function ActivityList() {
                 const url = `${yelpURL}search?location=${location}&categories=${category.category}`
                 const config = {
                     headers: {Authorization: `Bearer ${apiKey}`},
-                    mode: 'no-cors',                    
+                    mode: 'cors',                    
             }
                 console.log("url", `${corsAnywhere}${url}`)
                 const activitiesResponse = await fetch(`${corsAnywhere}${url}`, config)
