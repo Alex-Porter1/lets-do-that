@@ -74,7 +74,7 @@ function ActivityList() {
     return (
         <div className="container my-3">
             <div className="text-center">
-                <img src="/LDT_GRAF_2.png" alt="logo" width="500" height="auto" />
+                <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
             </div>
             <div className="mt-3">
                 <h2>Current Category: <Badge bg="success">{category.category.toUpperCase()}</Badge></h2>
