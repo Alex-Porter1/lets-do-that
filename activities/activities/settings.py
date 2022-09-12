@@ -76,6 +76,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8080",
     "http://localhost:8090",
+    'https://pillow-case.gitlab.io/',
     os.environ.get("CORS_HOST", "http://localhost:3001"),
 ]
 CORS_ALLOW_CREDENTIALS = True
