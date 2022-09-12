@@ -15,4 +15,4 @@ COPY common common
 COPY tests tests
 
 RUN pip install -r requirements.txt
-CMD python manage.py migrate && gunicorn accounts_project.wsgi --bind 0.0.0.0:$PORT --log-file -
+CMD python manage.py migrate && gunicorn activities.wsgi --bind 0.0.0.0:$PORT --log-file -
