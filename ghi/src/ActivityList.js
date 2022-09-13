@@ -61,7 +61,7 @@ function ActivityList() {
                 }
             }
         })()
-    }, [location, apiKey, category.category, yelpURL])  // made change
+    }, [location, category.category])  // made change
 
 
     useEffect(() => {
