@@ -46,13 +46,9 @@ function ActivityList() {
                 const url = `${yelpURL}search?location=${location}&categories=${category.category}`
                 const config = {
                     headers: {
-                        Authorization: `Bearer ${apiKey}`,
-                        "accept": "application/json",
-                        "x-requested-with": "xmlhttprequest",
-                        "Access-Control-Allow-Origin": "*",               
+                        Authorization: `Bearer ${apiKey}`,             
                 },               
             }
-                // console.log("url", `${corsAnywhere}${url}`)
                 const activitiesResponse = await fetch(`${corsAnywhere}${url}`, config)
                 // const activitiesResponse = await fetch(`${url}`, config)
                 if (activitiesResponse.ok) {
