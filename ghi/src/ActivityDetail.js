@@ -22,6 +22,7 @@ function ActivityDetail() {
 
     const getActivityData = async () => {
         const corsAnywhere = "https://thingproxy.freeboard.io/fetch/"
+        // const corsAnywhere = "https://cors-anywhere.herokuapp.com/"
         const url = `${yelpURL}${yelpID}`
         const config = {
             headers: {
@@ -44,10 +45,11 @@ function ActivityDetail() {
         }
     }
 
+    /* eslint-disable */
     useEffect(() => {
         getActivityData()
-    }, [] )
-
+    }, [])
+    /* eslint-enable */
 
     const findDays = (days) => {
         const daysOfWeek = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]

@@ -22,6 +22,7 @@ function SignupForm(props) {
   const [first, setFirst] = useState('');
   const [last, setLast] = useState('');
   const { token } = useAuthContext();
+  const [ErrorMessage, setErrorMessage] = useState(false);
   /* eslint-disable */
   const [token_, login_, logout_, signup] = useToken();
   /* eslint-enable */
@@ -31,6 +32,7 @@ function SignupForm(props) {
     if (token) {
         console.log('user has logged in')
         navigate(`/`)
+        
         // redirect
     }
   }, [navigate, token])
@@ -38,6 +40,12 @@ function SignupForm(props) {
   async function handleSubmit (e) {
     e.preventDefault()
     await signup(userName, password, email, first, last)
+    if (token) {
+      setErrorMessage(false)
+    }
+    else {
+      setErrorMessage(true)
+    }
   }
 
   const signupPhrase = `Already have an account? Login here.`
@@ -45,7 +53,7 @@ function SignupForm(props) {
   return (
     <>
     <div className="text-center">
-          <img src="/LDT_GRAF_2.png" alt="logo" width="500" height="auto" />
+      <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
     </div>
     <div className="card shadow p-4 mt-4 offset-3 col-6">
       <div className="card-header mb-3">
@@ -105,6 +113,9 @@ function SignupForm(props) {
             {signupPhrase}
           </Link>
         </form>
+      </div>
+      <div className='text-center mt-4' style={{ color: 'red'}} >
+      {ErrorMessage ? <h5>Email or Username already exists</h5> : ''}
       </div>
       </>
   )

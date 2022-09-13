@@ -12,7 +12,7 @@ COPY manage.py manage.py
 COPY accounts accounts
 COPY accounts_rest accounts_rest
 COPY poll poll
-COPY tests tests
+# COPY tests tests
 
 RUN pip install -r requirements.txt
-CMD python manage.py migrate && gunicorn accounts_project.wsgi --bind 0.0.0.0:$PORT --log-file -
+CMD python manage.py migrate && gunicorn accounts.wsgi --bind 0.0.0.0:$PORT --log-file -
