@@ -1,8 +1,16 @@
+## September 12, 2022
+
+Today I worked on:
+
+* We got together as a team to see if our app was up in running. We forgot to add one section of it, and Joel led us in trying to figure out how to work through some bugs.
+
+
+
 ## September 9, 2022
 
 Today I worked on:
 
-* We will be working on deploying our app. Joel walked through the deployment guide and we worked together as a team to get it working. 
+* We will be working on deploying our app. Joel walked through the deployment guide and we worked together as a team to get it working. I also worked on fixing linting errors to help get the app to pass the tests for pipeline.
 
 
 ## September 8, 2022
