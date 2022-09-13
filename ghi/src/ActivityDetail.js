@@ -44,10 +44,11 @@ function ActivityDetail() {
         }
     }
 
+    /* eslint-disable */
     useEffect(() => {
         getActivityData()
     }, [])
-
+    /* eslint-enable */
 
     const findDays = (days) => {
         const daysOfWeek = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
