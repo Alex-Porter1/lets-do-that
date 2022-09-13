@@ -13,7 +13,7 @@ YELP_URL = os.environ["YELP_URL"]
 
 def get_yelp_list (category, location):
     yelp_api = YelpAPI(YELP_API_KEY)
-    response = yelp_api.search_query(category=category, location=location)
+    response = yelp_api.search_query(categories=category, location=location)
     # print("response", response)
     # content = json.loads(response.content)
     # print("content:", content)
