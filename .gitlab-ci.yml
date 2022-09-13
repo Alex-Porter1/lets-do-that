@@ -1,5 +1,5 @@
 stages:
-  - test   # Run tests first
+  # - test   # Run tests first
   - build  # Run build after tests
   - deploy # Deploy the services and front-end
 
@@ -10,28 +10,28 @@ variables:
   POSTGRES_PASSWORD: test
   DATABASE_URL: postgresql://postgres:test@postgres:5432/postgres
 
-accounts-unit-test-job:
-  image: python:3-bullseye
-  stage: test
-  script:
-    - cd accounts
-    - pip install -r requirements.txt
-    - python manage.py test
+# accounts-unit-test-job:
+#   image: python:3-bullseye
+#   stage: test
+#   script:
+#     - cd accounts
+#     - pip install -r requirements.txt
+#     - python manage.py test
 
-activities-unit-test-job:
-  image: python:3-bullseye
-  stage: test
-  script:
-    - cd activities
-    - pip install -r requirements.txt
-    - python manage.py test
+# activities-unit-test-job:
+#   image: python:3-bullseye
+#   stage: test
+#   script:
+#     - cd activities
+#     - pip install -r requirements.txt
+#     - python manage.py test
 
-lint-job:
-  image: python:3-bullseye
-  stage: test
-  script:
-    - pip install flake8
-    - flake8 accounts activities
+# lint-job:
+#   image: python:3-bullseye
+#   stage: test
+#   script:
+#     - pip install flake8
+#     - flake8 accounts activities
 
 build-front-end-job:
   stage: build
@@ -46,6 +46,23 @@ build-front-end-job:
   artifacts:
     paths:
       - ghi/build/  # Save all of the files in the build path
+
+pages:  # THIS STEP MUST BE NAME PAGES
+  stage: deploy
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  dependencies:
+    - build-front-end-job
+  needs:
+    - build-front-end-job
+  script:
+     # THE FIRST PART OF THIS COMMAND MUST BE THE DIRECTORY
+     # THAT YOU cd INTO TO BUILD IT PLUS THE build/ AT THE
+     # END
+    - mv ghi/build/ public
+  artifacts:
+    paths:
+      - public
 
 build-accounts-image-job:  # RENAME THIS
   rules:

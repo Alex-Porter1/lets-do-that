@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wkz%)zogai%)%6ps!u-d^08wz4a#yqq1bxt#n$9n0auff!qxvg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = not os.environ.get("DEBUG")
+DEBUG = os.environ.get("DEBUG", False) == "True"
 
 # Application definition
 
@@ -65,12 +65,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ALLOWED_HOSTS = [
-  ".localhost",
-  "127.0.0.1",
-  "[::1]",
-  os.environ.get("DEPLOYED_HOST", "localhost"),
-]
+# ALLOWED_HOSTS = [
+#   ".localhost",
+#   "127.0.0.1",
+#   "[::1]",
+#   os.environ.get("DEPLOYED_HOST", "localhost"),
+# ]
+ALLOWED_HOSTS = ["*"]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
@@ -82,7 +83,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8080",
     "http://localhost:8090",
-    os.environ.get("CORS_HOST", "http://localhost:3001"),
+    'https://pillow-case.gitlab.io',
+    os.environ.get("CORS_HOST", "http://localhost:3001"),  
 ]
 CORS_ALLOW_CREDENTIALS = True
 
