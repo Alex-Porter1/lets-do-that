@@ -22,19 +22,33 @@ function LoginForm(props) {
   const navigate = useNavigate();
   const { token } = useAuthContext();
   const signupPhrase = `Don't have an account? \n Sign up here`;
+  const [ErrorMessage, setErrorMessage] = useState(false);
+
 
   useEffect(() => {
-    if (token) {
+      if(token) {
         console.log('user has logged in')
         navigate(`/`)
         // redirect
     }
+    else {
+      console.log("Invalid Username")
+    }
+    
+    
   }, [navigate, token])
 
   async function handleSubmit (e) {
     e.preventDefault()
-    await login(username, password)
-    console.log("test login")
+    await login(username, password) 
+    if (token) {
+      setErrorMessage(false)
+    }
+    else{
+      console.log("INVALID USERNAME")
+      setErrorMessage(true)
+      console.log(ErrorMessage)
+    }
   }
 
   return (
@@ -42,6 +56,7 @@ function LoginForm(props) {
     <div className="text-center">
         <img src="/LDT_GRAF_2.png" alt="logo" width="500" height="auto" />
     </div>
+    
     <div className="card shadow p-4 mt-4 offset-3 col-6">
       <div className="card-header mb-3">
         <h2>Login</h2>
@@ -68,6 +83,10 @@ function LoginForm(props) {
             {signupPhrase}
           </Link>
         </form>
+        
+      </div>
+      <div className='text-center mt-4' style={{ color: 'red'}} >
+      {ErrorMessage ? <h5>Invalid Username or Password</h5> : ''}
       </div>
       </>
   )
