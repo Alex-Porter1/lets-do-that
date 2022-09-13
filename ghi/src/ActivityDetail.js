@@ -4,8 +4,8 @@ import Carousel from 'react-bootstrap/Carousel';
 import Badge from 'react-bootstrap/Badge';
 import './ActivityDetail.css'
 
-const apiKey = process.env.REACT_APP_YELP_API_KEY
-const yelpURL = process.env.REACT_APP_YELP_URL
+// const apiKey = process.env.REACT_APP_YELP_API_KEY
+// const yelpURL = process.env.REACT_APP_YELP_URL
 
 function ActivityDetail() {
     const [activity, setActivity] = useState({})
