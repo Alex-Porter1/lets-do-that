@@ -16,8 +16,8 @@ def get_yelp_list (category, location):
     headers = {
         "Authorization": f"Bearer {YELP_API_KEY}",
     }
-    # final_url = f"{cors}{url}"
-    final_url = url
+    final_url = f"{cors}{url}"
+    # final_url = url
     response = requests.get(final_url, headers=headers)
     content = json.loads(response.content)
 
