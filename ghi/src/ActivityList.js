@@ -41,8 +41,8 @@ function ActivityList() {
     useEffect(() => {
         (async () => {
             if (location) {
-                const corsAnywhere = "https://thingproxy.freeboard.io/fetch/"
-                // const corsAnywhere = "https://cors-anywhere.herokuapp.com/"
+                // const corsAnywhere = "https://thingproxy.freeboard.io/fetch/"
+                const corsAnywhere = "https://cors-anywhere.herokuapp.com/"
                 const url = `${yelpURL}search?location=${location}&categories=${category.category}`
                 const config = {
                     headers: {
