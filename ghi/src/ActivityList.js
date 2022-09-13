@@ -42,13 +42,17 @@ function ActivityList() {
         (async () => {
             if (location) {
                 const corsAnywhere = "https://thingproxy.freeboard.io/fetch/"
-                // const corsAnywhere = "http://alloworigin.com/get?url="
+                // const corsAnywhere = "https://cors-anywhere.herokuapp.com/"
                 const url = `${yelpURL}search?location=${location}&categories=${category.category}`
                 const config = {
-                    headers: {Authorization: `Bearer ${apiKey}`},
-                    mode: 'cors',                    
+                    headers: {
+                        Authorization: `Bearer ${apiKey}`,
+                        "accept": "application/json",
+                        "x-requested-with": "xmlhttprequest",
+                        "Access-Control-Allow-Origin": "*",               
+                },               
             }
-                console.log("url", `${corsAnywhere}${url}`)
+                // console.log("url", `${corsAnywhere}${url}`)
                 const activitiesResponse = await fetch(`${corsAnywhere}${url}`, config)
                 // const activitiesResponse = await fetch(`${url}`, config)
                 if (activitiesResponse.ok) {
