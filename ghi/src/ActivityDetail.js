@@ -21,8 +21,8 @@ function ActivityDetail() {
       };
 
     const getActivityData = async () => {
-        // const corsAnywhere = "https://thingproxy.freeboard.io/fetch/"
-        const corsAnywhere = "https://cors-anywhere.herokuapp.com/"
+        const corsAnywhere = "https://thingproxy.freeboard.io/fetch/"
+        // const corsAnywhere = "https://cors-anywhere.herokuapp.com/"
         const url = `${yelpURL}${yelpID}`
         const config = {
             headers: {
