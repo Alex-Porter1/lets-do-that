@@ -21,14 +21,20 @@ function ActivityDetail() {
       };
 
     const getActivityData = async () => {
-        const corsAnywhere = "https://thingproxy.freeboard.io/fetch/"
-        // const corsAnywhere = "https://cors-anywhere.herokuapp.com/"
-        const url = `${yelpURL}${yelpID}`
+
+        const data = {
+            "id": yelpID,
+        }
+        console.log("data:", data)
+        const url = `${process.env.REACT_APP_ACTIVITIES}/api/yelp/get/id`
         const config = {
+            method: "post",
+            body: JSON.stringify(data),
             headers: {
-                Authorization: `Bearer ${apiKey}`
-        }}
-        const activityResponse = await fetch(`${corsAnywhere}${url}`, config)
+                'Content-Type': 'application/json',
+            },             
+        }
+        const activityResponse = await fetch(url, config)
         if (activityResponse.ok) {
             const activityData = await activityResponse.json()
             setActivity(activityData)
@@ -44,6 +50,31 @@ function ActivityDetail() {
             console.log("catcur", categories.current)
         }
     }
+
+    // const getActivityData = async () => {
+    //     const corsAnywhere = "https://thingproxy.freeboard.io/fetch/"
+    //     // const corsAnywhere = "https://cors-anywhere.herokuapp.com/"
+    //     const url = `${yelpURL}${yelpID}`
+    //     const config = {
+    //         headers: {
+    //             Authorization: `Bearer ${apiKey}`
+    //     }}
+    //     const activityResponse = await fetch(`${corsAnywhere}${url}`, config)
+    //     if (activityResponse.ok) {
+    //         const activityData = await activityResponse.json()
+    //         setActivity(activityData)
+    //         setImages(activityData.photos)
+    //         if (activityData.hours === undefined) {
+    //             setDays(["No Hours Listed"])
+    //         } else {
+    //             console.log("activity data:", activityData.hours[0].open)
+    //             setDays(activityData.hours[0].open)
+    //         }
+    //         address.current = activityData.location.display_address.join(", ")
+    //         categories.current = activityData.categories
+    //         console.log("catcur", categories.current)
+    //     }
+    // }
 
     /* eslint-disable */
     useEffect(() => {
