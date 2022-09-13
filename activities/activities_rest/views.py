@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from .models import Activity, Category, Rating
 import json
 from common.json import ModelEncoder
@@ -16,6 +15,7 @@ class CategoryEncoder(ModelEncoder):
         "description"
     ]
 
+
 class ActivityListEncoder(ModelEncoder):
     model = Activity
     properties = [
@@ -29,6 +29,7 @@ class ActivityListEncoder(ModelEncoder):
         "category": CategoryEncoder(),
     }
 
+
 class RatingEncoder(ModelEncoder):
     model = Rating
     properties = [
@@ -39,6 +40,7 @@ class RatingEncoder(ModelEncoder):
     encoders = {
         "activity": ActivityListEncoder(),
     }
+
 
 @auth.jwt_login_required
 @require_http_methods(["GET", "POST"])
@@ -175,7 +177,6 @@ def api_list_ratings(request):
                 {"message": "Rating ID already exists"},
                 status=400,
             )
-
 
 
 @require_http_methods(["GET", "PUT", "DELETE"])

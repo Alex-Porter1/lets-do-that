@@ -19,11 +19,12 @@ function SignupForm(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [userName, setUserName] = useState('');
-  // const [birthday, setBirthday] = useState('');
   const [first, setFirst] = useState('');
   const [last, setLast] = useState('');
   const { token } = useAuthContext();
+  /* eslint-disable */
   const [token_, login_, logout_, signup] = useToken();
+  /* eslint-enable */
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -44,7 +45,7 @@ function SignupForm(props) {
   return (
     <>
     <div className="text-center">
-          <img src="/LDT_GRAF_2.png" alt="logo" width="500" height="auto" />
+      <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
     </div>
     <div className="card shadow p-4 mt-4 offset-3 col-6">
       <div className="card-header mb-3">

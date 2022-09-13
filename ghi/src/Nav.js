@@ -3,13 +3,15 @@ import { useToken, useAuthContext } from './useToken'
 
 function Nav() {
   const { token } = useAuthContext();
+  /* eslint-disable */
   const [token_, login, logout] = useToken();
+  /* eslint-enable */
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark" >
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="">
-          <img className="d-inline-block align-top" width="150" height="auto" src="/LDT_GRAF_2.png" alt="logo"/>
+          <img className="d-inline-block align-top" width="150" height="auto" src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo"/>
         </NavLink>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>

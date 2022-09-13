@@ -2,7 +2,7 @@
 
 Today I worked on:
 
-* We will be working on deploying our app. 
+* We will be working on deploying our app. Joel walked through the deployment guide and we worked together as a team to get it working. 
 
 
 ## September 8, 2022

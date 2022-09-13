@@ -1,5 +1,4 @@
-from unicodedata import category
-from django.test import TestCase
+from unittest import TestCase
 from django.db import models
 
 
@@ -8,7 +7,7 @@ class FeatureTests(TestCase):
         try:
             from activities_rest.models import Activity  # noqa: F401
         except ModuleNotFoundError:
-            self.fail("Could not find 'projects.models.Project'")
+            self.fail("Could not find 'activities.models.Activity'")
 
     def test_activity_model_has_char_name_field(self):
         try:
@@ -26,7 +25,7 @@ class FeatureTests(TestCase):
             self.fail("Could not find 'activities_rest.models.Activity'")
         except AttributeError:
             self.fail("Could not find 'Activity.name'")
-    
+
     def test_activity_model_has_text_description_field(self):
         try:
             from activities_rest.models import Activity
@@ -43,7 +42,7 @@ class FeatureTests(TestCase):
             self.fail("Could not find 'activities_rest.models.Activity'")
         except AttributeError:
             self.fail("Could not find 'Activity.description'")
-    
+
     def test_activity_model_has_char_picture_url_field(self):
         try:
             from activities_rest.models import Activity
@@ -60,7 +59,7 @@ class FeatureTests(TestCase):
             self.fail("Could not find 'activities_rest.models.Activity'")
         except AttributeError:
             self.fail("Could not find 'Activity.name'")
-    
+
     def test_project_model_has_category_related_name_of_projects(self):
         try:
             from activities_rest.models import Activity
@@ -69,7 +68,7 @@ class FeatureTests(TestCase):
             self.assertEqual(
                 category.field.related_query_name(),
                 "categories",
-                msg="Activity.category should have a related name of 'categories'",
+                msg="Activity.category should have related name 'categories'"
             )
         except ModuleNotFoundError:
             self.fail("Could not find 'Activity.models'")
@@ -80,7 +79,7 @@ class FeatureTests(TestCase):
 
     def test_category_model_exists(self):
         try:
-            from activities_rest.models import Category
+            from activities_rest.models import Category  # noqa: F401
         except ModuleNotFoundError:
             self.fail("Could not find 'activities_rest.models.Category'")
 
@@ -100,4 +99,3 @@ class FeatureTests(TestCase):
             self.fail("Could not find 'activities_rest.models.Category'")
         except AttributeError:
             self.fail("Could not find 'Activity.name'")
-

@@ -1,26 +1,21 @@
 from unittest import TestCase
-from django.db import models
 from django.contrib import admin
-import os
-from django.test import SimpleTestCase
 
-# os.environ["DJANGO_SETTINGS_MODULE"] = "accounts.settings"
 
 class FeatureTests(TestCase):
     def test_accounts_model_exists(self):
         try:
-            from accounts_rest.models import Account
+            from accounts_rest.models import Account  # noqa: F401
         except ModuleNotFoundError:
             self.fail("Could not find 'accounts_rest.models.Accounts'")
 
+    # Perla Tests #
+
     def test_activity_vo_model_exists(self):
         try:
-            from accounts_rest.models import ActivityVO
+            from accounts_rest.models import ActivityVO  # noqa: F401
         except ModuleNotFoundError:
             self.fail("Could not find 'accounts_rest.models.ActivityVO'")
-
-
-#Perla Tests #
 
     def test_account_registered_with_admin(self):
         try:
@@ -34,10 +29,3 @@ class FeatureTests(TestCase):
             self.fail("Could not find 'accounts_rest.models'")
         except ImportError:
             self.fail("Could not find 'accounts_rest.models.Account'")
-
-    def test_accounts_rest_app_created(self):
-        try:
-            from accounts.settings import INSTALLED_APPS
-        except ModuleNotFoundError:
-            self.fail("Could not find the Django project 'accounts_rest'")
-    

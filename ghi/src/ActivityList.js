@@ -17,7 +17,6 @@ function ActivityList() {
         category = loc.state
         console.log("category:", category)
     } 
-    // const [category, setCategory] = useState("bars")
     const apiKey = process.env.REACT_APP_YELP_API_KEY
     const yelpURL = process.env.REACT_APP_YELP_URL
 
@@ -43,20 +42,22 @@ function ActivityList() {
         (async () => {
             if (location) {
                 const corsAnywhere = "https://thingproxy.freeboard.io/fetch/"
+                // const corsAnywhere = "http://alloworigin.com/get?url="
                 const url = `${yelpURL}search?location=${location}&categories=${category.category}`
                 const config = {
-                    headers: {
-                        Authorization: `Bearer ${apiKey}`
-                }}
-        
+                    headers: {Authorization: `Bearer ${apiKey}`},
+                    mode: 'cors',                    
+            }
+                console.log("url", `${corsAnywhere}${url}`)
                 const activitiesResponse = await fetch(`${corsAnywhere}${url}`, config)
+                // const activitiesResponse = await fetch(`${url}`, config)
                 if (activitiesResponse.ok) {
                     const activitiesData = await activitiesResponse.json()
                     setActivities(activitiesData.businesses)
                 }
             }
         })()
-    }, [location])
+    }, [location, apiKey, category.category, yelpURL])  // made change
 
 
     useEffect(() => {
@@ -75,7 +76,7 @@ function ActivityList() {
     return (
         <div className="container my-3">
             <div className="text-center">
-                <img src="/LDT_GRAF_2.png" alt="logo" width="500" height="auto" />
+                <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
             </div>
             <div className="mt-3">
                 <h2>Current Category: <Badge bg="success">{category.category.toUpperCase()}</Badge></h2>

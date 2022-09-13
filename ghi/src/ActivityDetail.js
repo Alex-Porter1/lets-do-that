@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useRef } from "react"
 import { useParams } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
 import Carousel from 'react-bootstrap/Carousel';
 import Badge from 'react-bootstrap/Badge';
 import './ActivityDetail.css'
 
 const apiKey = process.env.REACT_APP_YELP_API_KEY
 const yelpURL = process.env.REACT_APP_YELP_URL
-// const yelpID = "ryvBsB9FrBBZDak87iGS1w"
 
 function ActivityDetail() {
     const [activity, setActivity] = useState({})
@@ -34,7 +32,7 @@ function ActivityDetail() {
             const activityData = await activityResponse.json()
             setActivity(activityData)
             setImages(activityData.photos)
-            if (activityData.hours == undefined) {
+            if (activityData.hours === undefined) {
                 setDays(["No Hours Listed"])
             } else {
                 console.log("activity data:", activityData.hours[0].open)
@@ -48,13 +46,13 @@ function ActivityDetail() {
 
     useEffect(() => {
         getActivityData()
-    }, [])
+    }, )
 
 
     const findDays = (days) => {
         const daysOfWeek = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
         const results = []
-        if (days[0] == "No Hours Listed") {
+        if (days[0] === "No Hours Listed") {  // made change
             return (
                 <tr>
                     <th scope="row">No Hours Listed</th>
@@ -117,6 +115,7 @@ function ActivityDetail() {
                             src={image}
                             width="700px"
                             height="500px"
+                            alt=""
                             />
                             <Carousel.Caption>
                             <h1><Badge bg="dark">{activity.name}</Badge></h1>

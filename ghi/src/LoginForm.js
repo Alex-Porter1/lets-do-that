@@ -16,7 +16,9 @@ function BootstrapInputFields(props) {
 function LoginForm(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  /* eslint-disable */
   const [token_, login] = useToken();
+  /* eslint-enable */
   const navigate = useNavigate();
   const { token } = useAuthContext();
   const signupPhrase = `Don't have an account? \n Sign up here`;
@@ -38,7 +40,7 @@ function LoginForm(props) {
   return (
     <>
     <div className="text-center">
-        <img src="/LDT_GRAF_2.png" alt="logo" width="500" height="auto" />
+        <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
     </div>
     <div className="card shadow p-4 mt-4 offset-3 col-6">
       <div className="card-header mb-3">
