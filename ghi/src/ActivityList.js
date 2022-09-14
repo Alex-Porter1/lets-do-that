@@ -41,50 +41,21 @@ function ActivityList() {
     useEffect(() => {
         (async () => {
             if (location) {
-                const data = {
-                    "location": location,
-                    "category": category.category,
-                }
-                console.log("data:", data)
-                const url = `${process.env.REACT_APP_ACTIVITIES}/api/yelp/get/`
+                const corsAnywhere = "https://thingproxy.freeboard.io/fetch/"
+                const url = `${yelpURL}search?location=${location}&categories=${category.category}`
                 const config = {
-                    method: "post",
-                    body: JSON.stringify(data),
                     headers: {
-                        'Content-Type': 'application/json',
-                    },             
-            }
-                const activitiesResponse = await fetch(url, config)
-                // const activitiesResponse = await fetch(`${url}`, config)
+                        Authorization: `Bearer ${apiKey}`
+                }}
+        
+                const activitiesResponse = await fetch(`${corsAnywhere}${url}`, config)
                 if (activitiesResponse.ok) {
                     const activitiesData = await activitiesResponse.json()
                     setActivities(activitiesData.businesses)
                 }
             }
         })()
-    }, [location, category.category, yelpURL, apiKey])  // made change
-
-
-    // useEffect(() => {
-    //     (async () => {
-    //         if (location) {
-    //             const corsAnywhere = "https://thingproxy.freeboard.io/fetch/"
-    //             // const corsAnywhere = "https://cors-anywhere.herokuapp.com/"
-    //             const url = `${yelpURL}search?location=${location}&categories=${category.category}`
-    //             const config = {
-    //                 headers: {
-    //                     Authorization: `Bearer ${apiKey}`,             
-    //             },               
-    //         }
-    //             const activitiesResponse = await fetch(`${corsAnywhere}${url}`, config)
-    //             // const activitiesResponse = await fetch(`${url}`, config)
-    //             if (activitiesResponse.ok) {
-    //                 const activitiesData = await activitiesResponse.json()
-    //                 setActivities(activitiesData.businesses)
-    //             }
-    //         }
-    //     })()
-    // }, [location, category.category, yelpURL, apiKey])  // made change
+    }, [location, apiKey, category.category, yelpURL])  // made change
 
 
     useEffect(() => {
@@ -103,7 +74,7 @@ function ActivityList() {
     return (
         <div className="container my-3">
             <div className="text-center">
-                <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
+                <img src="/LDT_GRAF_2.png" alt="logo" width="500" height="auto" />
             </div>
             <div className="mt-3">
                 <h2>Current Category: <Badge bg="success">{category.category.toUpperCase()}</Badge></h2>

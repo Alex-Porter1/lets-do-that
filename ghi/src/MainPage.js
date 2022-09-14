@@ -8,8 +8,12 @@ import category_list from './categories'
 import { Link } from "react-router-dom"
 import { useAuthContext } from "./useToken"
 import { useNavigate } from "react-router-dom";
+import Button from "react-bootstrap/esm/Button";
+import Modal from 'react-bootstrap/Modal';
 
-function MainPage() {
+
+
+function MainPage(props) {
 
   const navigate = useNavigate();
   const { token } = useAuthContext();
@@ -26,11 +30,35 @@ function MainPage() {
 
   
   return (
-      <>
+    //   <>
+    //   <Modal
+    //    {...props}
+    //    size="lg"
+    //    aria-labelledby="contained-modal-title-vcenter"
+    //    centered
+    //  >
+    //    <Modal.Header closeButton>
+    //      <Modal.Title id="contained-modal-title-vcenter">
+    //        Click Me
+    //      </Modal.Title>
+    //    </Modal.Header>
+    //    <Modal.Body>
+    //      <h4>Centered Modal</h4>
+    //      <p>
+    //        Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+    //        dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+    //        consectetur ac, vestibulum at eros.
+    //      </p>
+    //    </Modal.Body>
+    //    <Modal.Footer>
+    //      <Button onClick={props.onHide}>Close</Button>
+    //    </Modal.Footer>
+    //  </Modal>
+
       <div className="container mx-auto mt-3">
         <div className="mb-5 text-center">
-          <h2>What are you interested in doing?</h2>
-          <h2>Choose a category and</h2>
+          {/* <h2>What are you interested in doing?</h2>
+          <h2>Choose a category and</h2> */}
           <h2 className="animated"><b>Let's Do That!</b></h2>
         </div>
         <Container fluid="true">
@@ -98,7 +126,7 @@ function MainPage() {
           <button className="btn btn-outline-dark">Refresh List</button>
         </div> */}
       </div>        
-      </>
+    
     );
   }
 
