@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react'
-import { useToken, useAuthContext } from './useToken'
+import { useEffect, useState } from 'react';
+import { useToken, useAuthContext } from './useToken';
 
 function BootstrapInputFields(props) {
   const { id, label, value, onChange, type, placeholder } = props;

@@ -7,6 +7,7 @@ import SignupForm from './SignupForm';
 import { AuthProvider } from "./useToken";
 import Nav from './Nav';
 import LogoutForm from './LogoutForm'
+import UserProfile from "./UserProfile";
 
 
 
@@ -17,7 +18,7 @@ function App() {
   const basename = process.env.PUBLIC_URL.replace(domain, '');
 
   return (
-    
+
     <AuthProvider>
       <BrowserRouter basename={basename}>
       <Nav />
@@ -29,6 +30,7 @@ function App() {
                 <Route path="" element={<ActivityList />} />
                 <Route path=":activityName/:yelpID" element={<ActivityDetail />} />
               </Route>
+              <Route path="accounts" element={<UserProfile />} />
               <Route path="login" element={<LoginForm />} />
               <Route path="logout" element={<LogoutForm />} />
               <Route path="signup" element={<SignupForm />} />

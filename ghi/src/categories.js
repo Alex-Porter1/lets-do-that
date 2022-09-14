@@ -1,43 +1,4 @@
 const category_list = [
-    'localservices',
-    'italian',
-    'bars',
-    'food',
-    'beautysvc',
-    'health',
-    'shopping',
-    'education',
-    'nightlife',
-    'fitness',
-    'tours',
-    'medicalspa',
-    'restaurants',
-    'hotels',
-    'transport',
-    'hotelstravel',
-    'airports',
-    'active',
-    'portuguese',
-    'french',
-    'arabian',
-    'arts',
-    'spanish',
-    'museums',
-    'artsandcrafts',
-    'psychic_astrology',
-    'farms',
-    'german',
-    'eventservices',
-    'bicycles',
-    'japanese',
-    'hair',
-    'media',
-    'photographers',
-    'brazilian',
-    'martialarts',
-    'breweries',
-    'gourmet',
-    'cannabis_clinics',
     'chinese',
     'turkish',
     'tastingclasses',
@@ -70,6 +31,60 @@ const category_list = [
     'cafes',
     'social_clubs',
     'wineries',
+]
+
+const food = [
+    'italian',
+    'portuguese',
+    'restaurants',
+    'french',
+    'arabian',
+    'spanish',
+    'german',
+    'japanese',
+    'brazilian',
+    'gourmet',
+]
+
+const random = [
+    'localservices',
+    'food',
+    'health',
+    'education',
+    'nightlife',
+    'hotelstravel',
+    'active',
+    'arts',
+    'artsandcrafts',
+    'psychic_astrology',
+    'eventservices',
+    'media',
+    'cannabis_clinics',
+]
+
+const inside = [
+    'bars',
+    'beautysvc',
+    'shopping',
+    'fitness',
+    'medicalspa',
+    'museums',
+    'hair',
+    'martialarts',
+    'breweries',
+]
+
+const outside = [
+    'tours',
+    'farms',
+    'bicycles',
+    'photographers',
+]
+
+const travel = [
+    'airports',
+    'transport',
+    'hotels',
 ]
 
 export default category_list
