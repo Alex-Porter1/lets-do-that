@@ -7,8 +7,8 @@ import SignupForm from './SignupForm';
 import { AuthProvider } from "./useToken";
 import Nav from './Nav';
 import LogoutForm from './LogoutForm'
-import QuestionsModal from "./Components/QuestionsModal";
 import React, { useState } from "react";
+import "./MainPage.css"
 
 
 
@@ -18,7 +18,6 @@ function App() {
 
   const domain = /https:\/\/[^/]+/;
   const basename = process.env.PUBLIC_URL.replace(domain, '');
-  const [modalShow, setModalShow] = React.useState(false);
 
   return (
     
@@ -29,10 +28,6 @@ function App() {
         <div className="App">
 
           <header className="App-header">
-      <QuestionsModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
             <Routes>
               <Route path="" element={<MainPage />} />
               <Route path="activities">
