@@ -79,7 +79,10 @@ function chooseOutdoor() {
   
   return (
     <>
+  
+    
       <div className="text-center">
+      
         <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
       </div>
       <div className="container mx-auto mt-3">
@@ -87,12 +90,14 @@ function chooseOutdoor() {
         <div className="mb-5 text-center">
           <h2 className="animated"><b>Let's Do That!</b></h2>
         </div>
+        
         {buttons ? 
         <>
         <Container fluid="true">
           
           <Row>
-            <BackgroundImagePage />
+            
+           
           <Col>
             <Stack gap={1} className="col-md-5 mx-auto">
               <Link state={{ category: `${selected[0]}` }} to="/activities/">
@@ -182,7 +187,9 @@ function chooseOutdoor() {
         </Modal>
         </>}
       </div>
-      </>   
+      
+      </> 
+      
     
     );
   }
