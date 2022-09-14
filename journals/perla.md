@@ -1,3 +1,17 @@
+## September 14, 2022
+
+Today I worked on:
+
+* Finishing the modal. I was able to get something to show up and started playing with the buttons and different types of modals. I was able to check in with my team and ensure everyone liked the way it looked and brainstormed different ways we could use it. 
+
+
+
+## September 13, 2022
+
+Today I worked on:
+
+* We were getting a CORS issue and spent most of the day trying to figure it out. Joel saved the day and got our app working. For the rest of the day I looked up ways to add a modal to the app and combed through documentation and sites. 
+
 ## September 12, 2022
 
 Today I worked on:
