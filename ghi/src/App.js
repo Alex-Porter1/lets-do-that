@@ -22,6 +22,7 @@ function App() {
 
   return (
     
+    
     <AuthProvider>
       <BrowserRouter basename={basename}>
       <Nav />
@@ -46,6 +47,7 @@ function App() {
           </div>
       </BrowserRouter>
     </AuthProvider>
+    
        );
 
   }

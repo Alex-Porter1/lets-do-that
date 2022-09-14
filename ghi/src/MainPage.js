@@ -13,6 +13,7 @@ import Modal from 'react-bootstrap/Modal';
 
 
 
+
 function MainPage(props) {
 
   const navigate = useNavigate();
@@ -30,31 +31,7 @@ function MainPage(props) {
 
   
   return (
-    //   <>
-    //   <Modal
-    //    {...props}
-    //    size="lg"
-    //    aria-labelledby="contained-modal-title-vcenter"
-    //    centered
-    //  >
-    //    <Modal.Header closeButton>
-    //      <Modal.Title id="contained-modal-title-vcenter">
-    //        Click Me
-    //      </Modal.Title>
-    //    </Modal.Header>
-    //    <Modal.Body>
-    //      <h4>Centered Modal</h4>
-    //      <p>
-    //        Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-    //        dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-    //        consectetur ac, vestibulum at eros.
-    //      </p>
-    //    </Modal.Body>
-    //    <Modal.Footer>
-    //      <Button onClick={props.onHide}>Close</Button>
-    //    </Modal.Footer>
-    //  </Modal>
-
+    
       <div className="container mx-auto mt-3">
         <div className="mb-5 text-center">
           {/* <h2>What are you interested in doing?</h2>
