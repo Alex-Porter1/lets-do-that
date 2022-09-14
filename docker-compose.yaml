@@ -30,6 +30,8 @@ services:
         WAIT_HOSTS: postgres:5432
         DJWTO_SIGNING_KEY: 8cbeb7f3585d8283b8865d4d61a18ce3cd819cf2f546eb74221a47e508cdff19
         DEBUG: "True"
+        YELP_API_KEY: ${REACT_APP_YELP_API_KEY}
+        YELP_URL: https://api.yelp.com/v3/businesses/
   activities:
     build:
         context: ./activities
@@ -43,6 +45,8 @@ services:
         WAIT_HOSTS: postgres:5432
         DJWTO_SIGNING_KEY: 8cbeb7f3585d8283b8865d4d61a18ce3cd819cf2f546eb74221a47e508cdff19
         DEBUG: "True"
+        YELP_API_KEY: ${REACT_APP_YELP_API_KEY}
+        YELP_URL: https://api.yelp.com/v3/businesses/
   accounts-poller:
     build:
       context: ./accounts/poll

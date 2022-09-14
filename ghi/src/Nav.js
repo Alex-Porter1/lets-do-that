@@ -25,7 +25,7 @@ function Nav() {
             </li>
             <li className="nav-item">
               {token && (
-                <NavLink className="nav-link" to="/activities/">Activities</NavLink>
+                <NavLink className="nav-link" to="">Category List</NavLink>
                 )}
             </li>
             <li className="nav-item">

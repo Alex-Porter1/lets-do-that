@@ -99,12 +99,15 @@ export function useToken() {
       credentials: "include",
       body: form,
     });
+
     if (response.ok) {
       const token = await getTokenInternal();
       setToken(token);
       console.log("token: ", token)
       return;
     }
+
+    // console.log("Invalid username or password")
     let error = await response.json();
     return handleErrorMessage(error);
   }
