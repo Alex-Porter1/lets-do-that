@@ -5,6 +5,7 @@ from django.views.decorators.http import require_http_methods
 from django.http import JsonResponse
 from sqlite3 import IntegrityError
 import djwto.authentication as auth
+from .acls import get_yelp_list, get_yelp_id
 
 
 class CategoryEncoder(ModelEncoder):
@@ -200,3 +201,18 @@ def api_show_ratings(request, pk):
     else:
         count, _ = Rating.objects.filter(id=pk).delete()
         return JsonResponse({"deleted": count > 0})
+
+@require_http_methods(["POST"])
+def api_yelp_query(request):
+    req_content = json.loads(request.body)
+    location = req_content["location"]
+    category = req_content["category"]
+    content = get_yelp_list(category, location)
+    return JsonResponse(content, safe=False)
+
+@require_http_methods(["POST"])
+def api_yelp_query_by_id(request):
+    req_content = json.loads(request.body)
+    id = req_content["id"]
+    content = get_yelp_id(id)
+    return JsonResponse(content, safe=False)
