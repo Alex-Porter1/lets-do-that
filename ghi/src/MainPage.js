@@ -10,7 +10,8 @@ import { useAuthContext } from "./useToken"
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 import Modal from 'react-bootstrap/Modal';
-
+import ClassicFormPage from "./Components/BackgroundImagePage";
+import BackgroundImagePage from "./Components/BackgroundImagePage";
 
 
 
@@ -33,13 +34,16 @@ function MainPage(props) {
   return (
     
       <div className="container mx-auto mt-3">
+       
         <div className="mb-5 text-center">
           {/* <h2>What are you interested in doing?</h2>
           <h2>Choose a category and</h2> */}
           <h2 className="animated"><b>Let's Do That!</b></h2>
         </div>
         <Container fluid="true">
+        
           <Row>
+            <BackgroundImagePage />
           <Col>
             <Stack gap={1} className="col-md-5 mx-auto">
               <Link state={{ category: `${selected[0]}` }} to="/activities/">

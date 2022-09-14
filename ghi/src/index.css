@@ -12,6 +12,24 @@ code {
     monospace;
 }
 
+body, html {
+  height: 100%;
+}
+
+
+.bg {
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).webp");
+  height: 100vh;
+  opacity: 0.75;
+  background-position: relative;
+  width: 115%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 /* .space {
   display: 'flex';
   alignItems: 'flex-end',
