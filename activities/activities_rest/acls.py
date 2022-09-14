@@ -5,19 +5,17 @@ from yelpapi import YelpAPI
 
 YELP_API_KEY = os.environ["YELP_API_KEY"]
 YELP_URL = os.environ["YELP_URL"]
-# cors = "https://thingproxy.freeboard.io/fetch/"
-# cors = "https://cors-anywhere.herokuapp.com/"
 
-
-# client = Client(YELP_API_KEY)
 
 def get_yelp_list (category, location):
     yelp_api = YelpAPI(YELP_API_KEY)
-    response = yelp_api.search_query(category=category, location=location)
-    # print("response", response)
-    # content = json.loads(response.content)
-    # print("content:", content)
+    response = yelp_api.search_query(categories=category, location=location)
 
+    return response
+
+def get_yelp_id (id):
+    yelp_api = YelpAPI(YELP_API_KEY)
+    response = yelp_api.business_query(id=id)
     return response
 
 # def get_yelp_list (category, location):

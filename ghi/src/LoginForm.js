@@ -35,9 +35,9 @@ function LoginForm(props) {
       console.log("Invalid Username")
     }
     
-    
   }, [navigate, token])
 
+  
   async function handleSubmit (e) {
     e.preventDefault()
     await login(username, password) 
