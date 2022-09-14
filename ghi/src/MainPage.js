@@ -10,8 +10,8 @@ import { useAuthContext } from "./useToken"
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 import Modal from 'react-bootstrap/Modal';
-
-
+import image from "./img/sand.jpg"
+import "./index.css"
 
 function MainPage(props) {
 
@@ -78,6 +78,7 @@ function chooseOutdoor() {
   
   return (
     <>
+      <div className="container-fluid homepage-bgimage">
       <div className="text-center">
         <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
       </div>
@@ -178,6 +179,7 @@ function chooseOutdoor() {
           <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseFood} className="btn btn-outline-info">Food</button></div></Modal.Body>
         </Modal>
         </>}
+      </div>
       </div>
       </>   
     
