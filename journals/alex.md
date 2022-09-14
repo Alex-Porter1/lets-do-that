@@ -80,3 +80,20 @@ Big ah ha moment was realizing that we needed to run the unit tests inside of th
 -Worked together as a team to get the ci/cd/deployment up and running. I believe we are close to having it deployed, but still a few bugs to fix.
 
 I didn't realize how extensive it would be to deploy it, and all the different Config Variables and settings that would be needed.
+
+09/10/2022
+-Worked through linting errors with our deployment, also some dependency errors.
+
+I learned that you can disable linting for specific lines or areas of code. We needed specific code to be written a certain way, but it would cause linting issues. Glad I was able to figure that out.
+
+09/12/2022
+-Worked as a team to fix deployment issues, were able to get the pipeline to pass all tests, but were having a few issues without the website functioning differently.
+
+Learned that we had to include all environment variables that we were using for specific services.
+
+09/13/2022
+-Worked as a team to fix a CORS issue we were having with our API, also added a feature that let the username know if a username or email already existed, or if the username and password were invalid.
+
+Were able to get our MVP functioning properly!
+Learned that the APIKEY needs to be done from the backend strictly, with nothing on the front end.
+
