@@ -12,20 +12,10 @@ code {
     monospace;
 }
 
-body, html {
-  height: 100%;
-}
-
-
-.bg {
-  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).webp");
+.homepage-bgimage {
+  background: url("https://images.unsplash.com/photo-1560359614-870d1a7ea91d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2glMjBwYXJ0eXxlbnwwfHwwfHw%3D&w=1000&q=80");
   height: 100vh;
-  opacity: 0.75;
-  background-position: relative;
-  width: 115%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }

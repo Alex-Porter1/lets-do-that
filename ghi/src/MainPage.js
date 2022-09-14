@@ -10,9 +10,8 @@ import { useAuthContext } from "./useToken"
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 import Modal from 'react-bootstrap/Modal';
-import ClassicFormPage from "./Components/BackgroundImagePage";
-import BackgroundImagePage from "./Components/BackgroundImagePage";
-
+import image from "./img/sand.jpg"
+import "./index.css"
 
 function MainPage(props) {
 
@@ -79,8 +78,7 @@ function chooseOutdoor() {
   
   return (
     <>
-  
-    
+      <div className="container-fluid homepage-bgimage">
       <div className="text-center">
       
         <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
@@ -187,9 +185,8 @@ function chooseOutdoor() {
         </Modal>
         </>}
       </div>
-      
-      </> 
-      
+      </div>
+      </>   
     
     );
   }
