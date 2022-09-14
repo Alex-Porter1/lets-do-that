@@ -1,16 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Stack from 'react-bootstrap/Stack';
 import "./MainPage.css"
-import category_list from './categories'
+import {active_life, night_life, shopping, food, outdoor, indoor} from './categories'
 import { Link } from "react-router-dom"
 import { useAuthContext } from "./useToken"
 import { useNavigate } from "react-router-dom";
 
 function MainPage() {
 
+  const [category_list, setCategory] = useState('');
   const navigate = useNavigate();
   const { token } = useAuthContext();
 
@@ -21,9 +22,9 @@ function MainPage() {
       }
   }, [navigate, token])
 
-  const shuffled = category_list.sort(() => 0.5 - Math.random())
-  let selected = shuffled.slice(0, 15)
-
+  // const shuffled = active_life.sort(() => 0.5 - Math.random())
+  let selected = active_life  // shuffled.slice(0, 10)
+  console.log(active_life)
   
   return (
       <>
@@ -78,7 +79,7 @@ function MainPage() {
               <Link state={{ category: `${selected[10]}` }} to="/activities/">
                 <button className="btn btn-outline-primary"><b>{selected[10].toUpperCase()}</b></button>
               </Link>
-              <Link state={{ category: `${selected[11]}` }} to="/activities/">
+              {/* <Link state={{ category: `${selected[11]}` }} to="/activities/">
                 <button className="btn btn-outline-success"><b>{selected[11].toUpperCase()}</b></button>
               </Link>
               <Link state={{ category: `${selected[12]}` }} to="/activities/">
@@ -89,7 +90,7 @@ function MainPage() {
               </Link>
               <Link state={{ category: `${selected[14]}` }} to="/activities/">
                 <button className="btn btn-outline-info"><b>{selected[14].toUpperCase()}</b></button>
-              </Link>
+              </Link> */}
             </Stack>
           </Col>
           </Row>
