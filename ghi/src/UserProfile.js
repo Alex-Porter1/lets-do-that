@@ -59,7 +59,7 @@ function UserProfile() {
     return (
       <>
         <div className="container-fluid profilepage-bgimage">
-        <div className="card page-center bg-for-text text-center text-dark bg-warning mb-3">
+        <div className="card page-center opacity-75 text-center text-dark bg-warning mb-3 rounded-corners">
           <div className="card-header">
             <h4>Welcome Back {firstName} {lastName}!</h4>
           </div>

@@ -77,13 +77,22 @@ code {
 		1px 1px 0 white;
 }
 
-.black-text-white-outline {
+.white-text-black-outline {
   color: white;
   text-shadow:
 		-1px -1px 0 black,
 		1px -1px 0 black,
 		-1px 1px 0 black,
 		1px 1px 0 black;
+}
+
+.black-text-white-outline {
+  color: rgb(0, 0, 0);
+  text-shadow:
+		-1px -1px 0 rgb(255, 255, 255),
+		1px -1px 0 rgb(255, 255, 255),
+		-1px 1px 0 rgb(255, 255, 255),
+		1px 1px 0 rgb(255, 255, 255);
 }
 
 .reg-white {
@@ -95,4 +104,12 @@ code {
   background-color: rgba(255, 255, 255, 0.9);
   border-style: solid;
   border-radius: 30px;
+}
+
+.rounded-corners {
+  border-radius: 30px;
+}
+
+.border-radius-2 div {
+  border-radius: 30px !important;
 }

@@ -57,7 +57,7 @@ function SignupForm(props) {
     <div className="text-center">
       <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
     </div>
-    <div className="card shadow p-4 mt-4 offset-3 col-6">
+    <div className="card shadow p-4 mt-4 offset-3 col-6 bg-for-text">
       <div className="card-header mb-3">
         <h2>Signup</h2>
       </div>
