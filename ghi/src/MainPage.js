@@ -10,7 +10,6 @@ import { useAuthContext } from "./useToken"
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 import Modal from 'react-bootstrap/Modal';
-import image from "./img/sand.jpg"
 import "./index.css"
 
 function MainPage(props) {

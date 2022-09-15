@@ -20,6 +20,13 @@ code {
   background-size: cover;
 }
 
+.loginpage-bgimage {
+  background: url("https://images.pexels.com/photos/326058/pexels-photo-326058.jpeg?auto=compress&cs=tinysrgb&w=1600");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 /* .space {
   display: 'flex';
   alignItems: 'flex-end',
