@@ -8,7 +8,7 @@ body {
 }
 
 .homepage-bgimage {
-  background: url("./img/—Pngtree—colorful cheering crowd advertising background_970640.jpg");
+  background: url("./img/—Pngtree—colorful cheering crowd advertising background_970640.avif");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -16,7 +16,7 @@ body {
 }
 
 .second-bgimage {
-  background: url(./img/activity_background.jpg);
+  background: url(./img/activity_background.avif);
   height: 100vh;
   background-position: center;
   background-repeat: repeat;
@@ -25,7 +25,7 @@ body {
 }
 
 .third-bgimage {
-  background: url(./img/activity_background2.jpg);
+  background: url(./img/activity_background2.avif);
   height: 100vh;
   background-position: center;
   background-repeat: repeat;
@@ -52,7 +52,7 @@ body {
 }
 
 .loginpage-bgimage {
-  background: url("./img/—Pngtree—dancing youth campus dance competition_1097214.jpg");
+  background: url("./img/—Pngtree—dancing youth campus dance competition_1097214.avif");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
