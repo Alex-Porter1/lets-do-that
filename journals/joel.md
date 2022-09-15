@@ -1,15 +1,44 @@
+## September 12th, 2022
+
+Today I Worked On:
+
+* Bug fixing continuing for CORS issues. Have found that it works locally, but not in deployed state. Tried several work-arounds but ultimately they were not successful. Per advice of Andrew, switched to making the API call from the front-end to the back-end and found a Yelp API github that allows us to bypass the CORS issues. So that issue is fixed.
+* Also changed up the navbar so it now links to the homepage rather than the activity list to enhance user experience by not showing a default category if they happen to navigate to that page without selecting one from the homepage.
+
+## September 12th, 2022
+
+Today I Worked On:
+
+* Continued working through deployment - got it to a state where it shows up on gitlab.
+* Currently working to fix some CORS issues for the Yelp API calls.
+
+## September 9th, 2022
+
+Today I Worked On:
+
+* Started deployment yaml file. Ran through this with the team, building the file from the ground up. Tested deployment but had some errors.
+
+## September 8th, 2022
+
+Today I Worked On:
+
+* Worked on finishing up the main page and testing out it's functionality.
+* Also started researching deployment and what needs to be done to build out our yaml file.
+
 ## September 7th, 2022
 
 Today I Worked On:
 
-* Updated main page component to display category list and connected it to the list page using props. Updated list page to show selected category. Added result quantity to show once user selects a location.
+* Updated main page component to display category list and connected it to the list page using props.
+* Updated list page to show selected category. Added result quantity to show once user selects a location.
 
 
 ## September 6th, 2022
 
 Today I Worked On:
 
-* Worked on the main page react component, adding in category list and some text animation. Updated the logo link to go to the main page.
+* Worked on the main page react component, adding in category list and some text animation.
+* Updated the logo link to go to the main page.
 
 ## September 2nd, 2022
 
@@ -21,7 +50,9 @@ Today I Worked On:
 
 Today I Worked On:
 
-* Added the logo to the list, login, signup pages. Assisted with bugfixes for merge conflicts. Made some CSS changes to make the navbar and some buttons darker.
+* Added the logo to the list, login, signup pages.
+* Assisted with bugfixes for merge conflicts.
+* Made some CSS changes to make the navbar and some buttons darker.
 
 ## August 31st, 2022
 
@@ -33,7 +64,8 @@ Today I Worked On:
 
 Today I Worked On:
 
-* Worked with the team on the authentication functionality for some bugfixes, as well as continued updating the detail page on React.
+* Worked with the team on the authentication functionality for some bugfixes.
+* Continued updating the detail page on React.
 
 ## August 29th, 2022
 
