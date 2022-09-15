@@ -90,3 +90,9 @@ code {
   color: white;
   text-shadow: none;
 }
+
+.bg-for-text {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-style: solid;
+  border-radius: 30px;
+}
