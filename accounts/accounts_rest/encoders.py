@@ -23,4 +23,5 @@ class AccountEncoder(ModelEncoder):
         "password",
         "first_name",
         "last_name",
+        "date_joined",
     ]

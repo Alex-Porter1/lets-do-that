@@ -11,20 +11,17 @@ import UserProfile from "./UserProfile";
 
 
 
-
 function App() {
 
   const domain = /https:\/\/[^/]+/;
   const basename = process.env.PUBLIC_URL.replace(domain, '');
 
+  // use context hook here
+    // define var that holds value and func that changes value
+    // may need to wrap everything in a component similiar to AuthPrrovider
+    // all compponents need to be in the usecontext wrapper
+    // define which hooks and states will be passed down
   return (
-
-    // use context hook here
-      // define var that holds value and func that changes value
-      // may need to wrap everything in a component similiar to AuthPrrovider
-      // all compponents need to be in the usecontext wrapper
-      // define which hooks and states will be passed down
-
     <AuthProvider>
       <BrowserRouter basename={basename}>
       <Nav />
@@ -45,7 +42,7 @@ function App() {
         </div>
       </BrowserRouter>
     </AuthProvider>
-       );
-  }
+  );
+}
 
 export default App;

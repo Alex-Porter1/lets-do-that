@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect, useRef} from "react"
 import { useNavigate } from "react-router-dom";
 import Carousel from 'react-bootstrap/Carousel';
 import { useParams } from "react-router-dom";
@@ -10,7 +10,7 @@ import './ActivityDetail.css'
 // const yelpURL = process.env.REACT_APP_YELP_URL
 
 function ActivityDetail() {
-    const [activity, setActivity] = useState({})
+    const [activity, setActivity] = useState({});
     const [index, setIndex] = useState(0);
     const [images, setImages] = useState([])
     const [days, setDays] = useState([])
