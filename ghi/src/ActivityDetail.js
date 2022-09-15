@@ -110,7 +110,7 @@ function ActivityDetail() {
             }
             return (results.map(result => {
                 return (
-                    <tr>
+                    <tr className="black-text-white-outline-2">
                         <th scope="row">{result[0]}:</th>
                         <td>{result[1]}</td>
                     </tr>
@@ -148,21 +148,21 @@ function ActivityDetail() {
                 })}
             </Carousel>
         </div>
-        <div className="container">
+        <div className="container black-text-white-outline-2 mt-3">
             <div className="row">
-                <div className="col-4">
-                    <h2>Contact & Location</h2>
+                <div className="col-4 bg-for-text">
+                    <h2 className="text-center">Contact & Location</h2>
                     <div>
                         <dl className="dl-horizontal">
-                            <dt className="col-sm-3"><Badge bg="secondary">Address</Badge></dt>
-                            <dd className="col-sm-9">{address.current}</dd>
-                            <dt className="col-sm-3"><Badge bg="secondary">Phone</Badge></dt>
-                            <dd className="col-sm-9">{activity.display_phone}</dd>
+                            <dt className="col-sm-3 reg-white"><Badge bg="secondary">Address</Badge></dt>
+                            <dd className="col-sm-9">{address.current ? address.current : "No Address Listed"}</dd>
+                            <dt className="col-sm-3 reg-white"><Badge bg="secondary">Phone</Badge></dt>
+                            <dd className="col-sm-9">{activity.display_phone ? activity.display_phone : "No Phone Listed"}</dd>
                         </dl>
                     </div>
                 </div>
-                <div className="col-8">
-                    <h2>Hours of Operation</h2>
+                <div className="col-8 bg-for-text">
+                    <h2 className="text-center">Hours of Operation</h2>
                     <table className="table">
                         <tbody>
                             {findDays(days)}

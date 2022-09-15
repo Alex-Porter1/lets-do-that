@@ -8,7 +8,7 @@ body {
 }
 
 .homepage-bgimage {
-  background: url("https://images.unsplash.com/photo-1560359614-870d1a7ea91d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2glMjBwYXJ0eXxlbnwwfHwwfHw%3D&w=1000&q=80");
+  background: url("./img/—Pngtree—colorful cheering crowd advertising background_970640.jpg");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -52,7 +52,7 @@ body {
 }
 
 .loginpage-bgimage {
-  background: url("https://images.pexels.com/photos/326058/pexels-photo-326058.jpeg?auto=compress&cs=tinysrgb&w=1600");
+  background: url("./img/—Pngtree—dancing youth campus dance competition_1097214.jpg");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -68,3 +68,31 @@ code {
   alignItems: 'flex-end',
   float: 'right',
 } */
+
+.black-text-white-outline-2 {
+  text-shadow:
+		-1px -1px 0 white,
+		1px -1px 0 white,
+		-1px 1px 0 white,
+		1px 1px 0 white;
+}
+
+.black-text-white-outline {
+  color: white;
+  text-shadow:
+		-1px -1px 0 black,
+		1px -1px 0 black,
+		-1px 1px 0 black,
+		1px 1px 0 black;
+}
+
+.reg-white {
+  color: white;
+  text-shadow: none;
+}
+
+.bg-for-text {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-style: solid;
+  border-radius: 30px;
+}

@@ -87,19 +87,19 @@ function ActivityList() {
                 <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
             </div>
             <div className="mt-3">
-                <h2>Current Category: <Badge bg="success">{category.category.toUpperCase()}</Badge></h2>
+                <h2 className="black-text-white-outline">Current Category:</h2> <h2><Badge bg="success">{category.category.toUpperCase()}</Badge></h2>
             </div>
             <div className="mt-3">
-                <h2>Choose a location!</h2>
+                <h2 className="black-text-white-outline">Choose a location!</h2>
             </div>
             <form onSubmit={handleSubmit}>
                 <div className="form-floating mb-3">
                     <input placeholder="Type in a city or location" required type="text" name="location" id="location" className="form-control"/>
-                    <label htmlFor="location">Location</label>
+                    <label htmlFor="location">Type in a city</label>
                 </div>
                 <div className="form-floating mb-3">
                     <select required name="state" id="state" className="form-select">
-                    <option value="">Choose a state</option>
+                    <option value="">Choose a state from the dropdown</option>
                     {stateList.map(state => {
                         return (
                             <option key={state.abbreviation} value={state.abbreviation}>
@@ -109,13 +109,13 @@ function ActivityList() {
                     })}
                     </select>
                 </div>
-                <button className="btn btn-outline-dark">Submit</button>
+                <button className="btn btn-dark">Submit</button>
             </form>
             <div className="mt-3">
                 {location
                 ?   
                 <>
-                <h2>{activities.length} Results. Make a selection or try a different location!</h2>
+                <h2 className="black-text-white-outline">{activities.length} Results. Make a selection or try a different location!</h2>
                 <div className="row mt-5">
                     {activityColumns.map((column, col_idx) => {
                         return (
@@ -124,7 +124,7 @@ function ActivityList() {
                     })}
                 </div>
                 </>                
-                : <h2>Choose a location and state, then press Submit!</h2>}                
+                : <h2 className="black-text-white-outline">Choose a city and state, then press Submit!</h2>}                
             </div>
         </div>
         </div>
