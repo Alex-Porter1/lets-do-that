@@ -60,3 +60,16 @@ code {
   alignItems: 'flex-end',
   float: 'right',
 } */
+
+.black-text-white-outline {
+  text-shadow:
+		-1px -1px 0 white,
+		1px -1px 0 white,
+		-1px 1px 0 white,
+		1px 1px 0 white;
+}
+
+.reg-white {
+  color: white;
+  text-shadow: none;
+}

@@ -148,15 +148,15 @@ function ActivityDetail() {
                 })}
             </Carousel>
         </div>
-        <div className="container">
+        <div className="container black-text-white-outline">
             <div className="row">
                 <div className="col-4">
                     <h2>Contact & Location</h2>
                     <div>
                         <dl className="dl-horizontal">
-                            <dt className="col-sm-3"><Badge bg="secondary">Address</Badge></dt>
+                            <dt className="col-sm-3 reg-white"><Badge bg="secondary">Address</Badge></dt>
                             <dd className="col-sm-9">{address.current}</dd>
-                            <dt className="col-sm-3"><Badge bg="secondary">Phone</Badge></dt>
+                            <dt className="col-sm-3 reg-white"><Badge bg="secondary">Phone</Badge></dt>
                             <dd className="col-sm-9">{activity.display_phone}</dd>
                         </dl>
                     </div>
