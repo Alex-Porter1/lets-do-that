@@ -34,7 +34,7 @@ body {
 }
 
 .signup-bgimage {
-  background: url(./img/running_in_middle.jpg);
+  background: url(./img/running_in_middle.avif);
   height: 100vh;
   background-position: center;
   background-repeat: repeat;
@@ -44,7 +44,7 @@ body {
 
 
 .profilepage-bgimage {
-  background: url("./img/zoomed_in_running.jpg");
+  background: url("./img/zoomed_in_running.avif");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
