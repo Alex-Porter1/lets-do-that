@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react'
 import { useToken, useAuthContext } from './useToken'
+import "./index.css"
 
 function BootstrapInputFields(props) {
   const { id, label, value, onChange, type, placeholder } = props;
@@ -32,7 +33,7 @@ function SignupForm(props) {
     if (token) {
         console.log('user has logged in')
         navigate(`/`)
-        
+
         // redirect
     }
   }, [navigate, token])
@@ -52,6 +53,7 @@ function SignupForm(props) {
 
   return (
     <>
+    <div className="container-fluid signup-bgimage">
     <div className="text-center">
       <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
     </div>
@@ -117,7 +119,8 @@ function SignupForm(props) {
       <div className='text-center mt-4' style={{ color: 'red'}} >
       {ErrorMessage ? <h5>Email or Username already exists</h5> : ''}
       </div>
-      </>
+      </div>
+    </>
   )
 }
 
