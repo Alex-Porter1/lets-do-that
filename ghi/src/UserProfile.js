@@ -22,6 +22,7 @@ function UserProfile() {
         setDateJoined(Moment(data.date_joined).format("MMM Do YY"))
     }
 
+
     useEffect(() => {
       const url = "http://localhost:8080/api/accounts/"
       const fetchData = async () => {
