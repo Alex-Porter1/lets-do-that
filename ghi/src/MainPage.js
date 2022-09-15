@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Stack from 'react-bootstrap/Stack';
 import "./MainPage.css"
+import "./index.css"
 import category_list from './categories'
 import { Link } from "react-router-dom"
 import { useAuthContext } from "./useToken"

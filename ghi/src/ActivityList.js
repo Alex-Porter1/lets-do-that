@@ -5,6 +5,8 @@ import { useAuthContext } from "./useToken"
 import { useNavigate } from "react-router-dom";
 import Badge from 'react-bootstrap/Badge';
 import { useLocation } from 'react-router-dom'
+import "./index.css"
+
 
 
 function ActivityList() {
@@ -79,7 +81,8 @@ function ActivityList() {
     }, [activities])
 
     return (
-        <div className="container my-3">
+        <div class="container-fluid second-bgimage">
+        <div className="container">
             <div className="text-center">
                 <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
             </div>
@@ -123,6 +126,7 @@ function ActivityList() {
                 </>                
                 : <h2>Choose a location and state, then press Submit!</h2>}                
             </div>
+        </div>
         </div>
     )
 }

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Carousel from 'react-bootstrap/Carousel';
 import Badge from 'react-bootstrap/Badge';
 import './ActivityDetail.css'
+import './index.css'
 
 function ActivityDetail() {
     const [activity, setActivity] = useState({})
@@ -110,7 +111,8 @@ function ActivityDetail() {
 
     return (
         <>
-        <div className="container" style={{backgroundImage: `url(${images[0]})`}}>
+        <div class="container-fluid third-bgimage">
+        <div className="container">
             <Carousel activeIndex={index} onSelect={handleSelect}>
                 {images.map(image => {
                     return (
@@ -156,6 +158,7 @@ function ActivityDetail() {
                     </table>
                 </div>
             </div>
+        </div>
         </div>
         </>
     )
