@@ -12,14 +12,6 @@ code {
     monospace;
 }
 
-.homepage-bgimage {
-  background: url("https://images.unsplash.com/photo-1560359614-870d1a7ea91d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2glMjBwYXJ0eXxlbnwwfHwwfHw%3D&w=1000&q=80");
-  height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 /* .space {
   display: 'flex';
   alignItems: 'flex-end',
