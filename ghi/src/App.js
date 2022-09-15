@@ -7,7 +7,7 @@ import SignupForm from './SignupForm';
 import { AuthProvider } from "./useToken";
 import Nav from './Nav';
 import LogoutForm from './LogoutForm'
-import React from "react";
+import React, { useState } from "react";
 import "./MainPage.css"
 
 
