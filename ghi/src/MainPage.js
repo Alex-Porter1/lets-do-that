@@ -165,7 +165,9 @@ function chooseOutdoor() {
         </div>
         <Modal
           size="lg"
+          dialogClassName="border-radius-2"
           show={lgShow}
+          animation={true}
           onHide={() => setLgShow(false)}
           aria-labelledby="contained-modal-title-vcenter"
           centered

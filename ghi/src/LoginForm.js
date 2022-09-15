@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useToken, useAuthContext } from './useToken';
+import './index.css'
 
 function BootstrapInputFields(props) {
   const { id, label, value, onChange, type, placeholder } = props;
@@ -58,7 +59,7 @@ function LoginForm() {
         <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
     </div>
 
-    <div className="card shadow p-4 mt-4 offset-3 col-6">
+    <div className="card shadow p-4 mt-4 offset-3 col-6 bg-for-text">
       <div className="card-header mb-3">
         <h2>Login</h2>
       </div>
