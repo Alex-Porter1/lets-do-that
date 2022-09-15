@@ -8,6 +8,10 @@ import { AuthProvider } from "./useToken";
 import Nav from './Nav';
 import LogoutForm from './LogoutForm'
 import UserProfile from "./UserProfile";
+import React from "react";
+import "./MainPage.css"
+
+
 
 
 
@@ -26,6 +30,7 @@ function App() {
       <BrowserRouter basename={basename}>
       <Nav />
         <div className="App">
+
           <header className="App-header">
             <Routes>
               <Route path="" element={<MainPage />} />
@@ -39,7 +44,7 @@ function App() {
               <Route path="signup" element={<SignupForm />} />
             </Routes>
           </header>
-        </div>
+          </div>
       </BrowserRouter>
     </AuthProvider>
   );

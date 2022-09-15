@@ -65,28 +65,6 @@ function ActivityList() {
     }, [location, category.category, yelpURL, apiKey])  // made change
 
 
-    // useEffect(() => {
-    //     (async () => {
-    //         if (location) {
-    //             const corsAnywhere = "https://thingproxy.freeboard.io/fetch/"
-    //             // const corsAnywhere = "https://cors-anywhere.herokuapp.com/"
-    //             const url = `${yelpURL}search?location=${location}&categories=${category.category}`
-    //             const config = {
-    //                 headers: {
-    //                     Authorization: `Bearer ${apiKey}`,             
-    //             },               
-    //         }
-    //             const activitiesResponse = await fetch(`${corsAnywhere}${url}`, config)
-    //             // const activitiesResponse = await fetch(`${url}`, config)
-    //             if (activitiesResponse.ok) {
-    //                 const activitiesData = await activitiesResponse.json()
-    //                 setActivities(activitiesData.businesses)
-    //             }
-    //         }
-    //     })()
-    // }, [location, category.category, yelpURL, apiKey])  // made change
-
-
     useEffect(() => {
         const columns = [[],[],[]]
         let i = 0

@@ -1,8 +1,30 @@
+## September 14, 2022
+
+Today I worked on:
+
+* Finishing the modal. I was able to get something to show up and started playing with the buttons and different types of modals. I was able to check in with my team and ensure everyone liked the way it looked and brainstormed different ways we could use it. 
+
+
+
+## September 13, 2022
+
+Today I worked on:
+
+* We were getting a CORS issue and spent most of the day trying to figure it out. Joel saved the day and got our app working. For the rest of the day I looked up ways to add a modal to the app and combed through documentation and sites. 
+
+## September 12, 2022
+
+Today I worked on:
+
+* We got together as a team to see if our app was up in running. We forgot to add one section of it, and Joel led us in trying to figure out how to work through some bugs.
+
+
+
 ## September 9, 2022
 
 Today I worked on:
 
-* We will be working on deploying our app. Joel walked through the deployment guide and we worked together as a team to get it working. 
+* We will be working on deploying our app. Joel walked through the deployment guide and we worked together as a team to get it working. I also worked on fixing linting errors to help get the app to pass the tests for pipeline.
 
 
 ## September 8, 2022

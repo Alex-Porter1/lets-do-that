@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useAuthContext } from './useToken.js'
 import jwt_decode from "jwt-decode"
 import Moment from 'moment';
+import "./MainPage.css"
 
 function UserProfile() {
     const [userName, setUserName] = useState("");
@@ -53,22 +54,24 @@ function UserProfile() {
 
     return (
       <>
-        <div className="card m-3 text-center">
+        <div class="container-fluid profilepage-bgimage">
+        <div className="card page-center text-center text-white bg-secondary mb-3">
           <div className="card-header">
             <h4>Welcome Back {firstName} {lastName}!</h4>
           </div>
           <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} className="rounded mx-auto d-block rounded-pill border border-dark m-3" alt="logo" width="500" height="auto" />
-          <div className="card-body">
+          <div className="card-body ">
             <Link to="/activities/" className="btn btn-primary">
               Find Next Activity
             </Link>
           </div>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">User Name: {userName}</li>
-            <li className="list-group-item">Name: {firstName} {lastName}</li>
-            <li className="list-group-item">Email: {email}</li>
-            <li className="list-group-item">Date Joined: {dateJoined}</li>
+          <ul className="list-group list-group-flush text-white bg-secondary mb-3">
+            <li className="list-group-item text-white bg-secondary mb-3">User Name: {userName}</li>
+            <li className="list-group-item text-white bg-secondary mb-3">Name: {firstName} {lastName}</li>
+            <li className="list-group-item text-white bg-secondary mb-3">Email: {email}</li>
+            <li className="list-group-item text-white bg-secondary mb-3">Date Joined: {dateJoined}</li>
           </ul>
+        </div>
         </div>
       </>
         // <>
