@@ -114,11 +114,12 @@ function SignupForm(props) {
           <Link to="/login" className="float-end" variant = "body2">
             {signupPhrase}
           </Link>
+          <div className='text-center mt-4' style={{ color: 'red'}} >
+          {ErrorMessage ? <h5>Email or Username already exists</h5> : ''}
+          </div>
         </form>
       </div>
-      <div className='text-center mt-4' style={{ color: 'red'}} >
-      {ErrorMessage ? <h5>Email or Username already exists</h5> : ''}
-      </div>
+
       </div>
     </>
   )
