@@ -69,12 +69,21 @@ code {
   float: 'right',
 } */
 
-.black-text-white-outline {
+.black-text-white-outline-2 {
   text-shadow:
 		-1px -1px 0 white,
 		1px -1px 0 white,
 		-1px 1px 0 white,
 		1px 1px 0 white;
+}
+
+.black-text-white-outline {
+  color: white;
+  text-shadow:
+		-1px -1px 0 black,
+		1px -1px 0 black,
+		-1px 1px 0 black,
+		1px 1px 0 black;
 }
 
 .reg-white {

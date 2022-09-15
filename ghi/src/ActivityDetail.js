@@ -110,7 +110,7 @@ function ActivityDetail() {
             }
             return (results.map(result => {
                 return (
-                    <tr>
+                    <tr className="black-text-white-outline">
                         <th scope="row">{result[0]}:</th>
                         <td>{result[1]}</td>
                     </tr>
