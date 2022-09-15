@@ -1,33 +1,23 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Link, useNavigate, NavLink } from 'react-router-dom';
-import { useAuthContext } from './useToken'
-import LoadingPage from "./LoadingPage";
+import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
+import { useAuthContext } from './useToken.js'
+import jwt_decode from "jwt-decode"
 
 function UserProfile(props) {
-    const [userName, setUserName] = useState(undefined);
+    const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    const [data, setData] = useState([]);
+    const [data, setData] = useState({});
+    const [activityies, setActivities] = useState([])
     const { token } = useAuthContext();
 
-    async function parseJwt(token) {
-      console.log("PASEJTWO INPUT TOKEN: ", token)
-      if (!token) { return; }
-      const base64Url = token.split('.')[1];
-      const base64 = base64Url.replace('-', '+').replace('_', '/');
-      console.log("JWT FUNCTION RETURN: ", JSON.parse(window.atob(base64)))
-      return JSON.parse(window.atob(base64));
-    }
-
     function setStates() {
-        console.log("SETSTATES: ", data)
         setUserName(data.username)
         setEmail(data.email)
         setFirstName(data.first_name)
         setLastName(data.last_name)
     }
-
 
     useEffect(() => {
       const url = "http://localhost:8080/api/accounts/"
@@ -35,34 +25,36 @@ function UserProfile(props) {
         try {
           const response = await fetch(url);
           const json = await response.json();
-          let criteria = await parseJwt(token);
-          console.log("CRITERIA1: ", criteria, "\n", "JSON: ", json)
-          criteria = criteria.user.username
           if (response.ok) {
-            for (let user of json.accounts) {
-              console.log("CHECKING JSON IN LOOP: ", json.accounts)
-              if (user.username === criteria) {
-                setData(user)
-                console.log("USER: ", user)
+            let decode = jwt_decode(token)
+              if (decode) {
+                const searchParam = decode.user.username
+                for (let user of json.accounts) {
+                  if (user.username === searchParam) {
+                    setData(user)
+                    }
                 }
-            }
-            console.log("is this you: ", json);
+              }
           }
         } catch (error) {
           console.log("error", error);
         }
-        setStates()
       };
       fetchData();
-    }, []);
+    }, [token]);
 
-  // if (userName) {
-    return (
-      <>
-    {/* <div class="col d-flex justify-content-center"> */}
-      <div className="card text-center margin-left row ">
+    useEffect(() => {
+
+      setStates();
+
+    }, [data])
+
+  return (
+    <>
+    <div class="col d-flex justify-content-center">
+      <div className="card text-center row mt-3" style={{width: 690}}>
         <div className="card-header">
-          Lets Do That
+          <h4>Welcome Back {firstName} {lastName}!</h4>
         </div>
         <div className="card-body">
         <div className="text-center">
@@ -73,32 +65,71 @@ function UserProfile(props) {
           </Link>
         </div>
       </div>
-    {/* </div> */}
-    <div className="card card w-25">
-      <div className="m-3">
-        <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} className="rounded mx-auto d-block img-thumbnail" alt="logo" width="250" height="100" />
-      </div>
-      <div className="card-body">
-        <h5 className="card-title">{userName}</h5>
-        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-      <ul className="list-group list-group-flush">
-        <li className="list-group-item">Cras justo odio</li>
-        <li className="list-group-item">Dapibus ac facilisis in</li>
-        <li className="list-group-item">Vestibulum at eros</li>
-      </ul>
-      <div className="card-body">
-        <a href="#" className="card-link">Card link</a>
-        <a href="#" className="card-link">Another link</a>
+    </div>
+    <div className="container">
+      <div className="row">
+        <div className="card card w-25 col-sm m-3">
+          <div className="m-3">
+            <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} className="rounded mx-auto d-block img-thumbnail" alt="logo" width="250" height="100" />
+          </div>
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item">User Name: {userName}</li>
+            <li className="list-group-item">Name: {firstName} {lastName}</li>
+            <li className="list-group-item">Email: {email}</li>
+          </ul>
+        </div>
+        <div className="card overflow-scroll col-sm m-3" style={{height: 550}}>
+          <ul>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+          </ul>
+        </div>
       </div>
     </div>
     </>
   )
-  // } else {
-  //     return (
-  //         <LoadingPage />
-  //     )
-  // }
 }
 
 export default UserProfile
