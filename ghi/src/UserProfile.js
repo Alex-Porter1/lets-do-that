@@ -22,6 +22,7 @@ function UserProfile() {
         setDateJoined(Moment(data.date_joined).format("MMM Do YY"))
     }
 
+    /* eslint-disable */
     useEffect(() => {
       const url = "http://localhost:8080/api/accounts/"
       const fetchData = async () => {
@@ -45,12 +46,15 @@ function UserProfile() {
       };
       fetchData();
     }, [token]);
+    /* eslint-enable */
 
+    /* eslint-disable */
     useEffect(() => {
 
       setStates();
 
     }, [data])
+    /* eslint-enable */
 
     return (
       <>
