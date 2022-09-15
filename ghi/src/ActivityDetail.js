@@ -151,7 +151,7 @@ function ActivityDetail() {
         <div className="container black-text-white-outline-2 mt-3">
             <div className="row">
                 <div className="col-4 bg-for-text">
-                    <h2>Contact & Location</h2>
+                    <h2 className="text-center">Contact & Location</h2>
                     <div>
                         <dl className="dl-horizontal">
                             <dt className="col-sm-3 reg-white"><Badge bg="secondary">Address</Badge></dt>
@@ -162,7 +162,7 @@ function ActivityDetail() {
                     </div>
                 </div>
                 <div className="col-8 bg-for-text">
-                    <h2>Hours of Operation</h2>
+                    <h2 className="text-center">Hours of Operation</h2>
                     <table className="table">
                         <tbody>
                             {findDays(days)}
