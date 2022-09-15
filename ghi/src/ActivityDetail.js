@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react"
-import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Carousel from 'react-bootstrap/Carousel';
+import { useParams } from "react-router-dom";
+import { useAuthContext } from "./useToken"
 import Badge from 'react-bootstrap/Badge';
 import './ActivityDetail.css'
 
@@ -15,6 +17,16 @@ function ActivityDetail() {
     const address = useRef()
     const categories = useRef()
     const { yelpID } = useParams()
+
+    const navigate = useNavigate();
+    const { token } = useAuthContext();
+
+    useEffect(() => {
+        if (!token) {
+            console.log('user not logged in, redirect to login page')
+            navigate(`/login`)
+        }
+    }, [navigate, token])
 
     const handleSelect = (selectedIndex, e) => {
         setIndex(selectedIndex);
@@ -32,7 +44,7 @@ function ActivityDetail() {
             body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json',
-            },             
+            },
         }
         const activityResponse = await fetch(url, config)
         if (activityResponse.ok) {
