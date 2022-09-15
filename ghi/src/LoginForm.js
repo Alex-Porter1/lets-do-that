@@ -84,12 +84,13 @@ function LoginForm() {
           <Link to="/signup" className="float-end" variant="body2">
             {signupPhrase}
           </Link>
+          <div className='text-center mt-4' style={{ color: 'red'}} >
+          {ErrorMessage ? <h5>Invalid Username or Password</h5> : ''}
+          </div>
         </form>
 
       </div>
-      <div className='text-center mt-4' style={{ color: 'red'}} >
-      {ErrorMessage ? <h5>Invalid Username or Password</h5> : ''}
-      </div>
+      
       </div>
       </>
   )
