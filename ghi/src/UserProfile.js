@@ -24,7 +24,7 @@ function UserProfile() {
 
     /* eslint-disable */
     useEffect(() => {
-      const url = "http://localhost:8080/api/accounts/"
+      const url = `${process.env.REACT_APP_ACCOUNTS}/api/accounts/`
       const fetchData = async () => {
         try {
           const response = await fetch(url);
@@ -58,13 +58,13 @@ function UserProfile() {
 
     return (
       <>
-        <div class="container-fluid profilepage-bgimage">
-        <div className="card page-center text-center text-dark bg-warning mb-3">
+        <div className="container-fluid profilepage-bgimage">
+        <div className="card page-center opacity-75 text-center text-dark bg-warning mb-3">
           <div className="card-header">
             <h4>Welcome Back {firstName} {lastName}!</h4>
           </div>
           <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} className="rounded mx-auto d-block rounded-pill border border-dark m-3" alt="logo" width="500" height="auto" />
-          <div className="card-body ">
+          <div className="card-body">
             <Link to="/" className="btn btn-dark">
               Find Next Activity
             </Link>

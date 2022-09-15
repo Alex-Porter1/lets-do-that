@@ -13,7 +13,7 @@ Team Members:
 - Lijah Jordan
 - Perla Carlson
 
-This application will be used for planning dates/activities, both solo and with friends, based on what the user and their friends/dates are interested in. We will use Django for backend, React for frontend, and PostgreSQL for the database.
+This application will be used for finding dates/activities in the moment, both solo and with friends, based on what the user is interested in. We will use Django for the backend, React for  the frontend, and PostgreSQL for the database.
 
 ## Intended Market
 
@@ -22,12 +22,9 @@ Specifically, we are targeting smartphone users who tend to be in a younger demo
 
 ## Functionality
 
-* Users can create a profile with login/logout functionality.
-* Users will answer prompts when they open the app to filter out activities. / Or button click "New activity"
-    * Prompts - rate them 1 - 5, and based on that we suggest activities
-* Once they complete the prompts, suggestion of activities that fit their answers will be displayed.
-    * User will then choose an activity to do from the choices presetned.
-* Users can invite other users to join them on their activities.
-* User can have favorites list on their profile
-* Users can rate activities.
-* Users can create activities that show up in prompts.
+* Users can create a profile with login/logout/signup functionality.
+* USer will be able to view their profile page with their basic information.
+* Users will select primary categories when they open the app to filter out activities.
+* Once primary category is selected, suggestion of activities that fit their selection will be displayed.
+  * User will then choose an activity to do from the choices presented.
+  * User will then be navigated to a page that will display details about the activity chosen.
