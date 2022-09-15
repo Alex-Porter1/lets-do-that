@@ -99,3 +99,9 @@ class FeatureTests(TestCase):
             self.fail("Could not find 'activities_rest.models.Category'")
         except AttributeError:
             self.fail("Could not find 'Activity.name'")
+
+    def test_acls_functions_exist(self):
+        try:
+            from activities_rest.acls import get_yelp_id, get_yelp_list
+        except ModuleNotFoundError:
+            self.fail("Could not find 'get yelp id' or 'get yelp list' modules")

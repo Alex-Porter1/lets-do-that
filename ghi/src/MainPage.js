@@ -77,7 +77,7 @@ function chooseOutdoor() {
   
   return (
     <>
-      <div className="container-fluid homepage-bgimage">
+      <div class="container-fluid homepage-bgimage">
       <div className="text-center">
       
         <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
@@ -98,57 +98,57 @@ function chooseOutdoor() {
           <Col>
             <Stack gap={1} className="col-md-5 mx-auto">
               <Link state={{ category: `${selected[0]}` }} to="/activities/">
-                <button className="btn btn-outline-primary"><b>{selected[0].toUpperCase()}</b></button>
+                <button className="btn btn-primary"><b>{selected[0].toUpperCase()}</b></button>
               </Link>
               <Link state={{ category: `${selected[1]}` }} to="/activities/">
-                <button className="btn btn-outline-success"><b>{selected[1].toUpperCase()}</b></button>
+                <button className="btn btn-success"><b>{selected[1].toUpperCase()}</b></button>
               </Link>
               <Link state={{ category: `${selected[2]}` }} to="/activities/">
-                <button className="btn btn-outline-warning"><b>{selected[2].toUpperCase()}</b></button>
+                <button className="btn btn-warning"><b>{selected[2].toUpperCase()}</b></button>
               </Link>
               <Link state={{ category: `${selected[3]}` }} to="/activities/">
-                <button className="btn btn-outline-danger"><b>{selected[3].toUpperCase()}</b></button>
+                <button className="btn btn-danger"><b>{selected[3].toUpperCase()}</b></button>
               </Link>
               <Link state={{ category: `${selected[4]}` }} to="/activities/">
-                <button className="btn btn-outline-info"><b>{selected[4].toUpperCase()}</b></button>
+                <button className="btn btn-info"><b>{selected[4].toUpperCase()}</b></button>
               </Link>
             </Stack>
           </Col>
           <Col>
             <Stack gap={1} className="col-md-5 mx-auto">
               <Link state={{ category: `${selected[5]}` }} to="/activities/">
-                <button className="btn btn-outline-primary"><b>{selected[5].toUpperCase()}</b></button>
+                <button className="btn btn-primary"><b>{selected[5].toUpperCase()}</b></button>
               </Link>
               <Link state={{ category: `${selected[6]}` }} to="/activities/">
-                <button className="btn btn-outline-success"><b>{selected[6].toUpperCase()}</b></button>
+                <button className="btn btn-success"><b>{selected[6].toUpperCase()}</b></button>
               </Link>
               <Link state={{ category: `${selected[7]}` }} to="/activities/">
-                <button className="btn btn-outline-warning"><b>{selected[7].toUpperCase()}</b></button>
+                <button className="btn btn-warning"><b>{selected[7].toUpperCase()}</b></button>
               </Link>
               <Link state={{ category: `${selected[8]}` }} to="/activities/">
-                <button className="btn btn-outline-danger"><b>{selected[8].toUpperCase()}</b></button>
+                <button className="btn btn-danger"><b>{selected[8].toUpperCase()}</b></button>
               </Link>
               <Link state={{ category: `${selected[9]}` }} to="/activities/">
-                <button className="btn btn-outline-info"><b>{selected[9].toUpperCase()}</b></button>
+                <button className="btn btn-info"><b>{selected[9].toUpperCase()}</b></button>
               </Link>
             </Stack>
           </Col>
           <Col>
             <Stack gap={1} className="col-md-5 mx-auto">
               <Link state={{ category: `${selected[10]}` }} to="/activities/">
-                <button className="btn btn-outline-primary"><b>{selected[10].toUpperCase()}</b></button>
+                <button className="btn btn-primary"><b>{selected[10].toUpperCase()}</b></button>
               </Link>
               <Link state={{ category: `${selected[11]}` }} to="/activities/">
-                <button className="btn btn-outline-success"><b>{selected[11].toUpperCase()}</b></button>
+                <button className="btn btn-success"><b>{selected[11].toUpperCase()}</b></button>
               </Link>
               <Link state={{ category: `${selected[12]}` }} to="/activities/">
-                <button className="btn btn-outline-warning"><b>{selected[12].toUpperCase()}</b></button>
+                <button className="btn btn-warning"><b>{selected[12].toUpperCase()}</b></button>
               </Link>
               <Link state={{ category: `${selected[13]}` }} to="/activities/">
-                <button className="btn btn-outline-danger"><b>{selected[13].toUpperCase()}</b></button>
+                <button className="btn btn-danger"><b>{selected[13].toUpperCase()}</b></button>
               </Link>
               <Link state={{ category: `${selected[14]}` }} to="/activities/">
-                <button className="btn btn-outline-info"><b>{selected[14].toUpperCase()}</b></button>
+                <button className="btn btn-info"><b>{selected[14].toUpperCase()}</b></button>
               </Link>
             </Stack>
           </Col>
@@ -175,12 +175,12 @@ function chooseOutdoor() {
               Choose what type of Activity you would like to do!
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseActive} className='btn btn-outline-danger'>Active</button></div></Modal.Body>
-          <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseShopping} className="btn btn-outline-success">Shopping</button></div></Modal.Body>
-          <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseIndoor} className="btn btn-outline-warning">Indoors</button></div></Modal.Body>
-          <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseOutdoor} className="btn btn-outline-primary">Outdoors</button></div></Modal.Body>
-          <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseNight} className="btn btn-outline-dark">Night Life</button></div></Modal.Body>
-          <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseFood} className="btn btn-outline-info">Food</button></div></Modal.Body>
+          <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseActive} className='btn btn-danger'>Active</button></div></Modal.Body>
+          <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseShopping} className="btn btn-success">Shopping</button></div></Modal.Body>
+          <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseIndoor} className="btn btn-warning">Indoors</button></div></Modal.Body>
+          <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseOutdoor} className="btn btn-primary">Outdoors</button></div></Modal.Body>
+          <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseNight} className="btn btn-dark">Night Life</button></div></Modal.Body>
+          <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseFood} className="btn btn-info">Food</button></div></Modal.Body>
         </Modal>
         </>}
       </div>
