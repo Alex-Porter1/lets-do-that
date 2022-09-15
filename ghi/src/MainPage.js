@@ -11,8 +11,7 @@ import { useAuthContext } from "./useToken"
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 import Modal from 'react-bootstrap/Modal';
-
-
+import "./index.css"
 
 function MainPage(props) {
 
@@ -81,17 +80,22 @@ function chooseOutdoor() {
     <>
       <div class="container-fluid homepage-bgimage">
       <div className="text-center">
+      
         <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
       </div>
       <div className="container mx-auto mt-3">
+       
         <div className="mb-5 text-center">
           <h2 className="animated"><b>Let's Do That!</b></h2>
         </div>
+        
         {buttons ? 
         <>
         <Container fluid="true">
           
           <Row>
+            
+           
           <Col>
             <Stack gap={1} className="col-md-5 mx-auto">
               <Link state={{ category: `${selected[0]}` }} to="/activities/">

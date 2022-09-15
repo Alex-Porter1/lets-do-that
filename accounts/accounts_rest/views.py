@@ -49,7 +49,7 @@ def api_accounts(request):
 
 
 @require_http_methods(["DELETE", "GET"])
-def api_show_accounts(request, pk):
+def api_show_account(request, pk):
     if request.method == "GET":
         account = Account.objects.filter(id=pk)
         return JsonResponse(

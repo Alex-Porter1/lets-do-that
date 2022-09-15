@@ -1,19 +1,19 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react'
-import { useToken, useAuthContext } from './useToken'
+import { useEffect, useState } from 'react';
+import { useToken, useAuthContext } from './useToken';
 
 function BootstrapInputFields(props) {
   const { id, label, value, onChange, type, placeholder } = props;
 
   return (
-    <div className="mb-3">
+    <div className="mb-3 ">
         <label htmlFor={id} className="form-label">{label}</label>
         <input value={value} onChange={onChange} required type={type} className="form-control" id={id} placeholder={placeholder} />
       </div>
   )
 }
 
-function LoginForm(props) {
+function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   /* eslint-disable */
@@ -34,13 +34,13 @@ function LoginForm(props) {
     else {
       console.log("Invalid Username")
     }
-    
+
   }, [navigate, token])
 
-  
+
   async function handleSubmit (e) {
     e.preventDefault()
-    await login(username, password) 
+    await login(username, password)
     if (token) {
       setErrorMessage(false)
     }
@@ -53,10 +53,11 @@ function LoginForm(props) {
 
   return (
     <>
+    <div className="container-fluid loginpage-bgimage">
     <div className="text-center">
         <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
     </div>
-    
+
     <div className="card shadow p-4 mt-4 offset-3 col-6">
       <div className="card-header mb-3">
         <h2>Login</h2>
@@ -83,10 +84,11 @@ function LoginForm(props) {
             {signupPhrase}
           </Link>
         </form>
-        
+
       </div>
       <div className='text-center mt-4' style={{ color: 'red'}} >
       {ErrorMessage ? <h5>Invalid Username or Password</h5> : ''}
+      </div>
       </div>
       </>
   )

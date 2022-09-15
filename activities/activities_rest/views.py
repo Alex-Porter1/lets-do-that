@@ -43,7 +43,6 @@ class RatingEncoder(ModelEncoder):
     }
 
 
-@auth.jwt_login_required
 @require_http_methods(["GET", "POST"])
 def api_list_activities(request):
     if request.method == "GET":

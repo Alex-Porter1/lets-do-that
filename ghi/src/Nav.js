@@ -28,6 +28,11 @@ function Nav() {
                 <NavLink className="nav-link" to="">Category List</NavLink>
                 )}
             </li>
+            <li className="nav-item">
+              {token && (
+                <NavLink className="nav-link" to="/accounts/">Profile</NavLink>
+                )}
+            </li>
           </ul>
           <ul className='navbar-nav ms-auto'>
             <li className="nav-item">
@@ -37,13 +42,13 @@ function Nav() {
                 </NavLink>
               )}
             </li>
-      
+
           </ul>
           </div>
         </div>
         </nav>
-      
-    
+
+
   )
 }
 

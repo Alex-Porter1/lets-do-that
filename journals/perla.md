@@ -1,3 +1,10 @@
+## September 15, 2022
+
+Today I worked on:
+
+* Yesterday we ran into a merge problem that we got resolved today. The plan is to work on CSS for the rest of the day and making the site look nice. 
+
+
 ## September 14, 2022
 
 Today I worked on:
