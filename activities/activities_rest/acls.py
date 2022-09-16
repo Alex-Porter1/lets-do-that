@@ -1,7 +1,8 @@
 import os
 from yelpapi import YelpAPI
 
-YELP_API_KEY = os.environ["YELP_API_KEY"]
+
+YELP_API_KEY = os.environ["YELP_API_KEY"]  # noqa: F401
 
 
 def get_yelp_list(category, location):
