@@ -5,7 +5,6 @@ import MainPage from './MainPage';
 import LoginForm from './LoginForm';
 import SignupForm from './SignupForm';
 import { AuthProvider } from "./useToken";
-import Nav from './Nav';
 import LogoutForm from './LogoutForm'
 import UserProfile from "./UserProfile";
 import React from "react";
@@ -28,7 +27,6 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter basename={basename}>
-      {/* <Nav /> */}
         <div className="App">
 
           <header className="App-header">
