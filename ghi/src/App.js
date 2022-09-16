@@ -28,7 +28,7 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter basename={basename}>
-      <Nav />
+      {/* <Nav /> */}
         <div className="App">
 
           <header className="App-header">

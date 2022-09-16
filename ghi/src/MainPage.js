@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 import Modal from 'react-bootstrap/Modal';
 import "./index.css"
+import Nav from "./Nav"
 
 function MainPage(props) {
 
@@ -25,7 +26,7 @@ function MainPage(props) {
     setButtons(false)
 
   }
-  
+
  function chooseActive() {
 
     setSelected(category_list["active_life"])
@@ -75,27 +76,28 @@ function chooseOutdoor() {
       }
   }, [navigate, token])
 
-  
+
   return (
     <>
       <div class="container-fluid homepage-bgimage">
+      <div> <Nav /> </div>
       <div className="text-center">
-      
+
         <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
       </div>
       <div className="container mx-auto mt-3">
-       
+
         <div className="mb-5 text-center">
           <h2 className="animated"><b>Let's Do That!</b></h2>
         </div>
-        
-        {buttons ? 
+
+        {buttons ?
         <>
         <Container fluid="true">
-          
+
           <Row>
-            
-           
+
+
           <Col>
             <Stack gap={1} className="col-md-5 mx-auto">
               <Link state={{ category: `${selected[0]}` }} to="/activities/">
@@ -171,7 +173,7 @@ function chooseOutdoor() {
           onHide={() => setLgShow(false)}
           aria-labelledby="contained-modal-title-vcenter"
           centered
-          
+
         >
           <Modal.Header closeButton>
             <Modal.Title className="d-grid mx-auto" id="example-modal-sizes-title-lg">
@@ -188,12 +190,11 @@ function chooseOutdoor() {
         </>}
       </div>
       </div>
-      </>   
-    
+      </>
+
     );
   }
 
 
 export default MainPage;
 
- 

@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { useAuthContext } from './useToken.js'
 import jwt_decode from "jwt-decode"
 import Moment from 'moment';
-import "./MainPage.css"
+import Badge from 'react-bootstrap/Badge';
+import Nav from "./Nav"
 
 function UserProfile() {
     const [userName, setUserName] = useState("");
@@ -59,21 +60,22 @@ function UserProfile() {
     return (
       <>
         <div className="container-fluid profilepage-bgimage">
-        <div className="card page-center opacity-75 text-center text-dark bg-warning mb-3 rounded-corners">
-          <div className="card-header">
+        <div> <Nav /> </div>
+        <div className="card page-center text-center text-dark rounded-corners">
+          <div className="card-header p-3">
             <h4>Welcome Back {firstName} {lastName}!</h4>
           </div>
-          <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} className="rounded mx-auto d-block rounded-pill border border-dark m-3" alt="logo" width="500" height="auto" />
+          <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} className="rounded mx-auto d-block m-3" alt="logo" width="500" height="auto" />
           <div className="card-body">
-            <Link to="/" className="btn btn-dark">
+            <Link to="/" className="btn btn-primary" data-bs-toggle="button">
               Find Next Activity
             </Link>
           </div>
-          <ul className="list-group list-group-flush text-dark bg-warning mb-3">
-            <li className="list-group-item text-dark bg-warning mb-3">User Name: {userName}</li>
-            <li className="list-group-item text-dark bg-warning mb-3">Name: {firstName} {lastName}</li>
-            <li className="list-group-item text-dark bg-warning mb-3">Email: {email}</li>
-            <li className="list-group-item text-dark bg-warning mb-3">Date Joined: {dateJoined}</li>
+          <ul className="list-group list-group-flush text-dark mb-3">
+            <li className="list-group-item text-dark mb-3"><Badge bg="secondary">User Name: {userName}</Badge></li>
+            <li className="list-group-item text-dark mb-3"><Badge bg="secondary">Name: {firstName} {lastName}</Badge></li>
+            <li className="list-group-item text-dark mb-3"><Badge bg="secondary">Email: {email}</Badge></li>
+            <li className="list-group-item text-dark"><Badge bg="secondary">Date Joined: {dateJoined}</Badge></li>
           </ul>
         </div>
         </div>

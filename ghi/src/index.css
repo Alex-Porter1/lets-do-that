@@ -113,3 +113,12 @@ code {
 .border-radius-2 div {
   border-radius: 30px !important;
 }
+
+.page-center {
+  background-color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
