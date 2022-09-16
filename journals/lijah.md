@@ -1,11 +1,51 @@
 # Lijah's Journal
 
+## September 16, 2022
+
+* Website is fully deployed, CSS looks great!
+
+## September 15, 2022
+
+* Worked on CSS stuff for the website and learned a lot about using bootstrap in the process.
+
+## September 13-14, 2022
+
+* Started working on getting a profile page up and running.
+* Worked with the team to work out how to get the authentication to work.
+* Ran into issues with decoding the token to get the username to work.
+* Was able to get some logic down but had to seek help from seniors to decode token.
+
+* I learned how to properly seperate out logic into different useEffect functions when dealing with a multitude of async functions.
+
+## September 09, 2022
+
+* Worked as a team to get the deployment up and running. Ran into some linting errors, but we should be deployed by next week.
+
+* I learned alot about the process of deploying a project and how interconnected Gitlab and Heroku become in order to make a website visible on the internet. Alot of variables need to be established correctly for everything to come together properly.
+
+## September 08, 2022
+
+* Paired with Alex on more unit tests as we gear up for making the deployment work.
+
+## September 07, 2022
+
+* Paired with Alex to work on getting some unit tests up and running.
+
+* We had some difficulty getting them to run properly at first but learned that we needed to be running and testing them in the docker container and not the terminal in VSCode.
+
+## September 01, 2022
+
+* Implemented the Nav bar and added navigation for the routes we have setup.
+
+* Learned how to adjust the to property to properly align the navigation.
+
 ## August 31, 2022
 
-* Today I learned that when using a custom user model
+* Today I learned that when using a custom user model I need to inherit from the Abstract User rather than just the regular models.Model. This allows for more customization.
+
 ## August 30, 2022
 
-* Paired with Joel and Alex to today to work through the last of the authentication.
+* Paired with Joel and Alex today to work through the last of the authentication.
 * We needed to implement high order functions to handle logging in and out as well as associating an account with token to gain access to our protected pages.
 
 * Today I learned that the issue we were having on the backend with creating a user was related to an extra field being on our model. After commenting it out we were able to quickly create a new user.
