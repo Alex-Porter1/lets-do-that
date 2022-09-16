@@ -102,6 +102,7 @@ class FeatureTests(TestCase):
 
     def test_acls_functions_exist(self):
         try:
-            from activities_rest.acls import get_yelp_id, get_yelp_list # noqa: F401
+            from activities_rest.acls import get_yelp_id  # noqa: F401 
+            from activities_rest.acls import get_yelp_list  # noqa: F401
         except ModuleNotFoundError:
             self.fail("Could not find modules")
