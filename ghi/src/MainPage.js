@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 import Modal from 'react-bootstrap/Modal';
 import "./index.css"
+import Nav from "./Nav"
 
 function MainPage(props) {
 
@@ -25,7 +26,7 @@ function MainPage(props) {
     setButtons(false)
 
   }
-  
+
  function chooseActive() {
 
     setSelected(category_list["active_life"])
@@ -75,27 +76,28 @@ function chooseOutdoor() {
       }
   }, [navigate, token])
 
-  
+
   return (
     <>
       <div class="container-fluid homepage-bgimage">
+      <div> <Nav /> </div>
       <div className="text-center">
-      
+
         <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
       </div>
       <div className="container mx-auto mt-3">
-       
+
         <div className="mb-5 text-center">
           <h2 className="animated"><b>Let's Do That!</b></h2>
         </div>
-        
-        {buttons ? 
+
+        {buttons ?
         <>
         <Container fluid="true">
-          
+
           <Row>
-            
-           
+
+
           <Col>
             <Stack gap={1} className="col-md-5 mx-auto">
               <Link state={{ category: `${selected[0]}` }} to="/activities/">
@@ -156,7 +158,7 @@ function chooseOutdoor() {
           </Row>
         </Container>
         <div className="text-center mt-4">
-        <button className="text-center mt-4" onClick={Back}>Start Over</button>
+        <button className="btn btn-dark text-center mt-4" onClick={Back}>START OVER</button>
         </div>
         </>
         : <>
@@ -171,29 +173,29 @@ function chooseOutdoor() {
           onHide={() => setLgShow(false)}
           aria-labelledby="contained-modal-title-vcenter"
           centered
-          
         >
           <Modal.Header closeButton>
             <Modal.Title className="d-grid mx-auto" id="example-modal-sizes-title-lg">
               Choose what type of Activity you would like to do!
             </Modal.Title>
           </Modal.Header>
+          <div className="container-fluid modal-bg">
           <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseActive} className='btn btn-danger'>Active</button></div></Modal.Body>
           <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseShopping} className="btn btn-success">Shopping</button></div></Modal.Body>
           <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseIndoor} className="btn btn-warning">Indoors</button></div></Modal.Body>
           <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseOutdoor} className="btn btn-primary">Outdoors</button></div></Modal.Body>
           <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseNight} className="btn btn-dark">Night Life</button></div></Modal.Body>
           <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseFood} className="btn btn-info">Food</button></div></Modal.Body>
+          </div>
         </Modal>
         </>}
       </div>
       </div>
-      </>   
-    
+      </>
+
     );
   }
 
 
 export default MainPage;
 
- 

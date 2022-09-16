@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Badge from 'react-bootstrap/Badge';
 import { useLocation } from 'react-router-dom'
 import "./index.css"
-
+import Nav from "./Nav"
 
 
 function ActivityList() {
@@ -18,7 +18,7 @@ function ActivityList() {
     if (loc.state) {
         category = loc.state
         console.log("category:", category)
-    } 
+    }
     const apiKey = process.env.REACT_APP_YELP_API_KEY
     const yelpURL = process.env.REACT_APP_YELP_URL
 
@@ -54,7 +54,7 @@ function ActivityList() {
                     body: JSON.stringify(data),
                     headers: {
                         'Content-Type': 'application/json',
-                    },             
+                    },
             }
                 const activitiesResponse = await fetch(url, config)
                 // const activitiesResponse = await fetch(`${url}`, config)
@@ -82,6 +82,7 @@ function ActivityList() {
 
     return (
         <div class="container-fluid second-bgimage">
+        <div> <Nav /> </div>
         <div className="container">
             <div className="text-center">
                 <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
@@ -113,7 +114,7 @@ function ActivityList() {
             </form>
             <div className="mt-3">
                 {location
-                ?   
+                ?
                 <>
                 <h2 className="black-text-white-outline">{activities.length} Results. Make a selection or try a different location!</h2>
                 <div className="row mt-5">
@@ -123,8 +124,8 @@ function ActivityList() {
                         );
                     })}
                 </div>
-                </>                
-                : <h2 className="black-text-white-outline">Choose a city and state, then press Submit!</h2>}                
+                </>
+                : <h2 className="black-text-white-outline">Choose a city and state, then press Submit!</h2>}
             </div>
         </div>
         </div>

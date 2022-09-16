@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useToken, useAuthContext } from './useToken';
 import './index.css'
+import Nav from "./Nav"
 
 function BootstrapInputFields(props) {
   const { id, label, value, onChange, type, placeholder } = props;
@@ -55,6 +56,7 @@ function LoginForm() {
   return (
     <>
     <div className="container-fluid loginpage-bgimage">
+    <div> <Nav /> </div>
     <div className="text-center">
         <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo" width="500" height="auto" />
     </div>
@@ -90,7 +92,7 @@ function LoginForm() {
         </form>
 
       </div>
-      
+
       </div>
       </>
   )

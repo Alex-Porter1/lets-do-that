@@ -1,5 +1,5 @@
 stages:
-  # - test   # Run tests first
+  - test   # Run tests first
   - build  # Run build after tests
   - deploy # Deploy the services and front-end
 
@@ -10,28 +10,28 @@ variables:
   POSTGRES_PASSWORD: test
   DATABASE_URL: postgresql://postgres:test@postgres:5432/postgres
 
-# accounts-unit-test-job:
-#   image: python:3-bullseye
-#   stage: test
-#   script:
-#     - cd accounts
-#     - pip install -r requirements.txt
-#     - python manage.py test
+accounts-unit-test-job:
+  image: python:3-bullseye
+  stage: test
+  script:
+    - cd accounts
+    - pip install -r requirements.txt
+    - python manage.py test
 
-# activities-unit-test-job:
-#   image: python:3-bullseye
-#   stage: test
-#   script:
-#     - cd activities
-#     - pip install -r requirements.txt
-#     - python manage.py test
+activities-unit-test-job:
+  image: python:3-bullseye
+  stage: test
+  script:
+    - cd activities
+    - pip install -r requirements.txt
+    - python manage.py test
 
-# lint-job:
-#   image: python:3-bullseye
-#   stage: test
-#   script:
-#     - pip install flake8
-#     - flake8 accounts activities
+lint-job:
+  image: python:3-bullseye
+  stage: test
+  script:
+    - pip install flake8
+    - flake8 accounts activities
 
 build-front-end-job:
   stage: build

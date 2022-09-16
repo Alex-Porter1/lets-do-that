@@ -6,6 +6,7 @@ import { useAuthContext } from "./useToken"
 import Badge from 'react-bootstrap/Badge';
 import './ActivityDetail.css'
 import './index.css'
+import Nav from "./Nav"
 
 function ActivityDetail() {
     const [activity, setActivity] = useState({});
@@ -124,6 +125,7 @@ function ActivityDetail() {
     return (
         <>
         <div class="container-fluid third-bgimage">
+        <div> <Nav /> </div>
         <div className="container">
             <Carousel activeIndex={index} onSelect={handleSelect}>
                 {images.map(image => {
