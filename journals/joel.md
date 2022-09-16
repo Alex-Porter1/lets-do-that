@@ -1,3 +1,29 @@
+## September 16th, 2022
+
+Today I Worked On:
+
+* Deployment day! We brought back in the unit tests/linter for our deployment yaml file, there were a few minor clean up items but everything is looking good now. Project is ready to turn in!
+
+## September 15th, 2022
+
+Today I Worked On:
+
+* Polishing up the site with various CSS improvements and fixes, including adding in background images to each page that better suit the theme of our site.
+
+## September 14th, 2022
+
+Today I Worked On:
+
+* Started to update some of the CSS files.
+* We had a major git issue that we needed to resolve from an accidental push to main from a team member. Working through this with the team and SEIRs.
+
+## September 13th, 2022
+
+Today I Worked On:
+
+* Updated deployment files and got the site to finally deploy fully. Site is looking good!
+* Working on some minor bug fixes to various files.
+
 ## September 12th, 2022
 
 Today I Worked On:
