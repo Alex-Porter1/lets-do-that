@@ -7,59 +7,59 @@ import Badge from 'react-bootstrap/Badge';
 import Nav from "./Nav"
 
 function UserProfile() {
-    const [userName, setUserName] = useState("");
-    const [email, setEmail] = useState("");
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [dateJoined, setDateJoined] = useState("")
-    const [data, setData] = useState({});
-    const { token } = useAuthContext();
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [dateJoined, setDateJoined] = useState("")
+  const [data, setData] = useState({});
+  const { token } = useAuthContext();
 
-    function setStates() {
-        setUserName(data.username)
-        setEmail(data.email)
-        setFirstName(data.first_name)
-        setLastName(data.last_name)
-        setDateJoined(Moment(data.date_joined).format("MMM Do YY"))
-    }
+  function setStates() {
+    setUserName(data.username)
+    setEmail(data.email)
+    setFirstName(data.first_name)
+    setLastName(data.last_name)
+    setDateJoined(Moment(data.date_joined).format("MMM Do YY"))
+  }
 
-    /* eslint-disable */
-    useEffect(() => {
-      const url = `${process.env.REACT_APP_ACCOUNTS}/api/accounts/`
-      const fetchData = async () => {
-        try {
-          const response = await fetch(url);
-          const json = await response.json();
-          if (response.ok) {
-            let decode = jwt_decode(token)
-              if (decode) {
-                const searchParam = decode.user.username
-                for (let user of json.accounts) {
-                  if (user.username === searchParam) {
-                    setData(user)
-                    }
-                }
+  /* eslint-disable */
+  useEffect(() => {
+    const url = `${process.env.REACT_APP_ACCOUNTS}/api/accounts/`
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        const json = await response.json();
+        if (response.ok) {
+          let decode = jwt_decode(token)
+          if (decode) {
+            const searchParam = decode.user.username
+            for (let user of json.accounts) {
+              if (user.username === searchParam) {
+                setData(user)
               }
+            }
           }
-        } catch (error) {
-          console.log("error", error);
         }
-      };
-      fetchData();
-    }, [token]);
-    /* eslint-enable */
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+    fetchData();
+  }, [token]);
+  /* eslint-enable */
 
-    /* eslint-disable */
-    useEffect(() => {
+  /* eslint-disable */
+  useEffect(() => {
 
-      setStates();
+    setStates();
 
-    }, [data])
-    /* eslint-enable */
+  }, [data])
+  /* eslint-enable */
 
-    return (
-      <>
-        <div className="container-fluid profilepage-bgimage">
+  return (
+    <>
+      <div className="container-fluid profilepage-bgimage">
         <div> <Nav /> </div>
         <div className="card page-center text-center text-dark rounded-corners">
           <div className="card-header p-3">
@@ -78,8 +78,8 @@ function UserProfile() {
             <li className="list-group-item text-dark"><Badge bg="secondary">Date Joined: {dateJoined}</Badge></li>
           </ul>
         </div>
-        </div>
-      </>
+      </div>
+    </>
   )
 }
 

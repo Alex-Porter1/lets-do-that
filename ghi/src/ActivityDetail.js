@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef} from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { useNavigate } from "react-router-dom";
 import Carousel from 'react-bootstrap/Carousel';
 import { useParams } from "react-router-dom";
@@ -29,7 +29,7 @@ function ActivityDetail() {
 
     const handleSelect = (selectedIndex, e) => {
         setIndex(selectedIndex);
-      };
+    };
 
     const getActivityData = async () => {
 
@@ -65,11 +65,11 @@ function ActivityDetail() {
     /* eslint-disable */
     useEffect(() => {
         getActivityData()
-    }, [] )
+    }, [])
     /* eslint-enable */
 
     const findDays = (days) => {
-        const daysOfWeek = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+        const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
         const results = []
         if (days[0] === "No Hours Listed") {  // made change
             return (
@@ -89,19 +89,19 @@ function ActivityDetail() {
                 }
                 if (dayExists) {
                     let start = days[dayIndex].start
-                    let startHour = start.substring(0,2)
+                    let startHour = start.substring(0, 2)
                     let startMinute = start.substring(2)
 
                     let formatStart = startHour + ":" + startMinute
-                    let startDateFormat = new Date(`August 19, 1975 ${formatStart}:00`).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'})
+                    let startDateFormat = new Date(`August 19, 1975 ${formatStart}:00`).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
 
                     let end = days[dayIndex].end
 
-                    let endHour = end.substring(0,2)
+                    let endHour = end.substring(0, 2)
                     let endMinute = end.substring(2)
                     let formatEnd = endHour + ":" + endMinute
 
-                    let endDateFormat = new Date(`August 19, 1975 ${formatEnd}:00`).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'})
+                    let endDateFormat = new Date(`August 19, 1975 ${formatEnd}:00`).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
 
                     results.push([daysOfWeek[i], `${startDateFormat} - ${endDateFormat}`])
                 } else {
@@ -124,56 +124,56 @@ function ActivityDetail() {
 
     return (
         <>
-        <div class="container-fluid third-bgimage">
-        <div> <Nav /> </div>
-        <div className="container">
-            <Carousel activeIndex={index} onSelect={handleSelect}>
-                {images.map(image => {
-                    return (
-                        <Carousel.Item>
-                            <img
-                            className="d-block responsive"
-                            src={image}
-                            width="700px"
-                            height="500px"
-                            alt=""
-                            />
-                            <Carousel.Caption>
-                            <h1><Badge bg="dark">{activity.name}</Badge></h1>
-                            <p><Badge bg="primary">Rating: {activity.rating}</Badge> <Badge bg="success">Price: {activity.price ? activity.price : "N/A"}</Badge></p>
-                            <p>{categories.current.map(category => {
-                                return (<span><Badge bg="danger">{category.title}</Badge>{' '}</span>)
-                            })}</p>
-                            </Carousel.Caption>
-                    </Carousel.Item>
-                    )
-                })}
-            </Carousel>
-        </div>
-        <div className="container black-text-white-outline-2 mt-3">
-            <div className="row">
-                <div className="col-4 bg-for-text">
-                    <h2 className="text-center">Contact & Location</h2>
-                    <div>
-                        <dl className="dl-horizontal">
-                            <dt className="col-sm-3 reg-white"><Badge bg="secondary">Address</Badge></dt>
-                            <dd className="col-sm-9">{address.current ? address.current : "No Address Listed"}</dd>
-                            <dt className="col-sm-3 reg-white"><Badge bg="secondary">Phone</Badge></dt>
-                            <dd className="col-sm-9">{activity.display_phone ? activity.display_phone : "No Phone Listed"}</dd>
-                        </dl>
+            <div class="container-fluid third-bgimage">
+                <div> <Nav /> </div>
+                <div className="container">
+                    <Carousel activeIndex={index} onSelect={handleSelect}>
+                        {images.map(image => {
+                            return (
+                                <Carousel.Item>
+                                    <img
+                                        className="d-block responsive"
+                                        src={image}
+                                        width="700px"
+                                        height="500px"
+                                        alt=""
+                                    />
+                                    <Carousel.Caption>
+                                        <h1><Badge bg="dark">{activity.name}</Badge></h1>
+                                        <p><Badge bg="primary">Rating: {activity.rating}</Badge> <Badge bg="success">Price: {activity.price ? activity.price : "N/A"}</Badge></p>
+                                        <p>{categories.current.map(category => {
+                                            return (<span><Badge bg="danger">{category.title}</Badge>{' '}</span>)
+                                        })}</p>
+                                    </Carousel.Caption>
+                                </Carousel.Item>
+                            )
+                        })}
+                    </Carousel>
+                </div>
+                <div className="container black-text-white-outline-2 mt-3">
+                    <div className="row">
+                        <div className="col-4 bg-for-text">
+                            <h2 className="text-center">Contact & Location</h2>
+                            <div>
+                                <dl className="dl-horizontal">
+                                    <dt className="col-sm-3 reg-white"><Badge bg="secondary">Address</Badge></dt>
+                                    <dd className="col-sm-9">{address.current ? address.current : "No Address Listed"}</dd>
+                                    <dt className="col-sm-3 reg-white"><Badge bg="secondary">Phone</Badge></dt>
+                                    <dd className="col-sm-9">{activity.display_phone ? activity.display_phone : "No Phone Listed"}</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div className="col-8 bg-for-text">
+                            <h2 className="text-center">Hours of Operation</h2>
+                            <table className="table">
+                                <tbody>
+                                    {findDays(days)}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-                <div className="col-8 bg-for-text">
-                    <h2 className="text-center">Hours of Operation</h2>
-                    <table className="table">
-                        <tbody>
-                            {findDays(days)}
-                        </tbody>
-                    </table>
-                </div>
             </div>
-        </div>
-        </div>
         </>
     )
 }

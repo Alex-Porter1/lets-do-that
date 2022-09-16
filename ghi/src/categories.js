@@ -35,7 +35,7 @@ const category_list = {
         'sportsbars',
     ],
 
-    shopping : [
+    shopping: [
         'antiques',
         'artsandcrafts',
         'auctionhouses',
