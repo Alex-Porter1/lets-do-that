@@ -10,7 +10,7 @@ function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light" >
       <div className="container-fluid">
-        <NavLink className="navbar-brand" to="">
+        <NavLink className="navbar-brand" to="/">
           <img className="d-inline-block align-top" width="150" height="auto" src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo"/>
         </NavLink>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +25,7 @@ function Nav() {
             </li>
             <li className="nav-item">
               {token && (
-                <NavLink className="nav-link text-black" to="">Category List</NavLink>
+                <NavLink className="nav-link text-black" to="/">Category List</NavLink>
                 )}
             </li>
             <li className="nav-item">

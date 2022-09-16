@@ -67,7 +67,7 @@ function UserProfile() {
           </div>
           <img src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} className="rounded mx-auto d-block m-3" alt="logo" width="500" height="auto" />
           <div className="card-body">
-            <Link to="/" className="btn btn-primary" data-bs-toggle="button">
+            <Link to="/" className="btn btn-primary">
               Find Next Activity
             </Link>
           </div>
