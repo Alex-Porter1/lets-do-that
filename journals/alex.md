@@ -97,3 +97,13 @@ Learned that we had to include all environment variables that we were using for 
 Were able to get our MVP functioning properly!
 Learned that the APIKEY needs to be done from the backend strictly, with nothing on the front end.
 
+09/14/2022
+-Added background images and different styling to css for our pages.
+
+Got a better understanding of css and what the different styles do.
+
+09/15/2022
+-Worked to resolve a merging issue with main, got that issue resolved. Added a few more styling changes to our pages.
+
+Reverting back to a previous version isn't fun on Gitlab. But I'm glad we were able to get it resolved.
+

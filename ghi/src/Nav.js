@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { useToken, useAuthContext } from './useToken'
+import { useToken, useAuthContext } from './useToken';
 
 function Nav() {
   const { token } = useAuthContext();
