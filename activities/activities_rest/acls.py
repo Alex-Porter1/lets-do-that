@@ -3,7 +3,7 @@ from yelpapi import YelpAPI
 
 try:
     YELP_API_KEY = os.environ["YELP_API_KEY"]
-except:
+except KeyError:
     YELP_API_KEY = None
 
 
