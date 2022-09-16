@@ -158,7 +158,7 @@ function chooseOutdoor() {
           </Row>
         </Container>
         <div className="text-center mt-4">
-        <button className="text-center mt-4" onClick={Back}>Start Over</button>
+        <button className="btn btn-dark text-center mt-4" onClick={Back}>START OVER</button>
         </div>
         </>
         : <>
