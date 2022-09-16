@@ -173,19 +173,20 @@ function chooseOutdoor() {
           onHide={() => setLgShow(false)}
           aria-labelledby="contained-modal-title-vcenter"
           centered
-
         >
           <Modal.Header closeButton>
             <Modal.Title className="d-grid mx-auto" id="example-modal-sizes-title-lg">
               Choose what type of Activity you would like to do!
             </Modal.Title>
           </Modal.Header>
+          <div className="container-fluid modal-bg">
           <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseActive} className='btn btn-danger'>Active</button></div></Modal.Body>
           <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseShopping} className="btn btn-success">Shopping</button></div></Modal.Body>
           <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseIndoor} className="btn btn-warning">Indoors</button></div></Modal.Body>
           <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseOutdoor} className="btn btn-primary">Outdoors</button></div></Modal.Body>
           <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseNight} className="btn btn-dark">Night Life</button></div></Modal.Body>
           <Modal.Body><div className="d-grid col-6 mx-auto"><button onClick={chooseFood} className="btn btn-info">Food</button></div></Modal.Body>
+          </div>
         </Modal>
         </>}
       </div>

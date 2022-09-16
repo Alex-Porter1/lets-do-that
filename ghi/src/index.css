@@ -122,3 +122,9 @@ code {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
+.modal-bg {
+  background: url("./img/—Pngtree—colorful-cheering-crowd-advertising-background_970640.avif");
+  height: 100%;
+  width: 100%;
+}
