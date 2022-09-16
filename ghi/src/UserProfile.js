@@ -31,6 +31,10 @@ function UserProfile() {
           const response = await fetch(url);
           const json = await response.json();
           if (response.ok) {
+            if (Object.keys(data).length > 0) {
+              setStates()
+              return
+            }
             let decode = jwt_decode(token)
               if (decode) {
                 const searchParam = decode.user.username
@@ -46,15 +50,7 @@ function UserProfile() {
         }
       };
       fetchData();
-    }, [token]);
-    /* eslint-enable */
-
-    /* eslint-disable */
-    useEffect(() => {
-
-      setStates();
-
-    }, [data])
+    }, [token, data]);
     /* eslint-enable */
 
     return (
