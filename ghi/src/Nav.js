@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { useToken, useAuthContext } from './useToken'
+import { useToken, useAuthContext } from './useToken';
 
 function Nav() {
   const { token } = useAuthContext();
@@ -8,7 +8,7 @@ function Nav() {
   /* eslint-enable */
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark" >
+    <nav className="navbar navbar-expand-lg navbar-dark" >
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="">
           <img className="d-inline-block align-top" width="150" height="auto" src={`${process.env.PUBLIC_URL}/LDT_GRAF_2.png`} alt="logo"/>
